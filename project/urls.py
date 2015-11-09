@@ -19,4 +19,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'apps.mpm.views.home', name='home'),
+    url(r'^musica/', 'apps.mpm.views.musica', name='musica'),
+    url(r'^musicas-de/', 'apps.mpm.views.musicas_de', name='musicas-de'),
+    url(r'^sugestoes-para/', 'apps.mpm.views.sugestoes_para', name='sugestoes-para'),
 ]
