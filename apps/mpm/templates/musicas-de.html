@@ -1,1 +1,6 @@
-musicas-de
+<h1>{{ categoria.nome }}</h1>
+<ul>
+{% for musica in categoria.get_musicas %}
+    <li><a href="{% url 'musica' musica.slug %}">{{ musica.nome }}</a></li>
+{% endfor %}
+</ul>

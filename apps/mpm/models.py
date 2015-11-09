@@ -15,6 +15,9 @@ class Categoria(models.Model):
 			nome_completo += self.categoria_mae.__str__() + " / "
 		nome_completo += self.nome.encode('utf-8')
 		return nome_completo
+	def get_musicas(self):
+		return Musica.objects.filter(categorias__slug=self.slug)
+
 
 class Musica(models.Model):
 	slug = models.SlugField(primary_key=True)
