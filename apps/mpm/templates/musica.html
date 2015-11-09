@@ -1,3 +1,28 @@
 <h1>{{ musica.nome }}</h1>
 
-<div>{{ musica.letra }}</div>
+
+{% if musica.categorias %}
+<h2>Categorias</h2>
+{% endif %}
+
+<ul>
+{% for categoria in musica.categorias.all %}
+    <li><a href="{% url 'musicas-de' categoria.slug %}">{{ categoria }}</a></li>
+{% endfor %}
+</ul>
+
+{% autoescape off %}
+
+<h2>Letra</h2>
+
+<pre>{{ musica.letra }}</pre>
+
+<h2>Cifra</h2>
+
+<pre>{{ musica.cifra }}</pre>
+
+<h2>Info</h2>
+
+<p>{{ musica.info }}</p>
+
+{% endautoescape %}

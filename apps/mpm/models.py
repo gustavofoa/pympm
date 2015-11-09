@@ -18,6 +18,8 @@ class Categoria(models.Model):
 		return nome_completo
 	def get_musicas(self):
 		return Musica.objects.filter(categorias__slug=self.slug)
+	def get_filhas(self):
+		return Categoria.objects.filter(categoria_mae__slug=self.slug)
 
 
 class Musica(models.Model):
@@ -25,6 +27,7 @@ class Musica(models.Model):
 	nome = models.CharField(max_length=255)
 	letra = models.TextField()
 	cifra = models.TextField()
+	info = models.TextField()
 	link_video = models.URLField(blank=True, null=True)
 	categorias = models.ManyToManyField("Categoria")
 	rating = models.PositiveSmallIntegerField(validators=[MaxValueValidator(5),MinValueValidator(1)], blank=True, null=True)

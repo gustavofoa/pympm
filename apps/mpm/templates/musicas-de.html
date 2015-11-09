@@ -1,4 +1,19 @@
 <h1>{{ categoria.nome }}</h1>
+
+{% if categoria.get_filhas %}
+<h2>Filhas</h2>
+{% endif %}
+
+<ul>
+{% for filha in categoria.get_filhas %}
+    <li><a href="{% url 'musicas-de' filha.slug %}">{{ filha.nome }}</a></li>
+{% endfor %}
+</ul>
+
+{% if categoria.get_musicas %}
+<h2>Músicas</h2>
+{% endif %}
+
 <ul>
 {% for musica in categoria.get_musicas %}
     <li><a href="{% url 'musica' musica.slug %}">{{ musica.nome }}</a></li>
