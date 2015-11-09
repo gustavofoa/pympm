@@ -9,6 +9,7 @@ class Categoria(models.Model):
 	nome = models.CharField(max_length=255)
 	descricao = models.CharField(max_length=500)
 	categoria_mae = models.ForeignKey("self", blank=True, null=True)
+	ordem = models.PositiveSmallIntegerField()
 	def __str__(self):
 		nome_completo = ""
 		if(self.categoria_mae):
