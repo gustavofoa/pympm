@@ -7,6 +7,10 @@
 <h1>{{ musica.nome }}</h1>
 
 
+<iframe type="text/html" width="100%" height="350" frameborder="0" src="http://www.youtube.com/embed{{ musica.get_video_code }}">
+</iframe>
+
+
 <div class="row row-tabs" role="tabpanel">
     <div class="tabs-top">
 	  <ul class="nav nav-tabs">
