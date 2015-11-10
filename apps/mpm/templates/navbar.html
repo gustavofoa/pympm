@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!-- NAVBAR -->
+    <!--===============================================================-->
+    <div id="header">
+      <nav id="nav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img class="img-responsive" src="{% static 'images/logoMpM-300x223.png' %}" alt="theme-img"></a>
+          </div>
+
+          <div id="navbar" class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tempos Litúrgicos</a>
+                <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                  <li><a href="index.html">Default</a></li>
+                  <li><a href="home-bg-slider.html">Background Image Slider</a></li>
+                </ul>
+              </li>
+
+              <li class="li-search">
+                <form class="nav-search">
+                  <label for="focus-input"><i class="fa fa-search"></i></label>
+                  <input id="focus-input" class="container" type="search" name="s" placeholder="Digite o que procura e tecle ENTER!">
+                </form>
+              </li>
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+    <!-- NAVBAR END -->
