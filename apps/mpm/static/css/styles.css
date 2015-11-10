@@ -1,0 +1,16 @@
+
+#cifra {
+	font-size: 20px;
+	background: white;
+	font-family: monospace;
+}
+
+pre {
+	background: white;
+	border-width: 0px;
+}
+
+#cifra b {
+	color: #FF0000;
+	font-weight: bold;
+}
