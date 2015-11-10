@@ -5732,7 +5732,8 @@ a .fa-round:hover {
 }
 
 .row-tabs .tabs-top .tab-content {
-    border: solid 1px #ddd;
+    border: 0px;
+    border-top: solid 1px #ddd;
 }
 
 .row-tabs .tabs-top > .nav-tabs > li {

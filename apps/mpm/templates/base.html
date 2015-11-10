@@ -54,10 +54,33 @@
 <body class="body-nav-fixed">
 	<div class="wrapper-body">
 
-		<div class="container">
-			{% include 'navbar.html' %}
-            {% block content %}
-            {% endblock %}
+		{% include 'navbar.html' %}
+
+	    <!-- GRIDS -->
+	    <!--===============================================================-->
+	    <div class="container">
+	      <div class="row">
+	        <!-- GRID POSTS -->
+	        <!--===============================================================-->
+	        <div class="col-sm-8 grid-posts">
+	          <!-- POST ITEM 1 -->
+	          <div class="row">
+	            <div class="col-sm-12">
+              	  <div class="wrapper-post">
+                    <div class="wrapper-post-text">
+            	      {% block content %}
+            	      {% endblock %}
+            	    </div>
+            	  </div>
+              </div>
+            </div>
+            </div>
+        	<!-- GRID POSTS END -->
+        	<!--===============================================================-->
+
+        	{% include 'sidebar.html' %}
+	        
+	      </div>
 		</div>
 
 	</div>

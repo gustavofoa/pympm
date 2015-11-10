@@ -17,13 +17,65 @@
           <div id="navbar" class="navbar-collapse collapse">
 
             <ul class="nav navbar-nav navbar-right">
+              
+              <!-- TEMPOS LITÚRGICOS -->
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tempos Litúrgicos</a>
                 <ul class="dropdown-menu dropdown-menu-left" role="menu">
-                  <li><a href="index.html">Default</a></li>
-                  <li><a href="home-bg-slider.html">Background Image Slider</a></li>
+                {% for categoria in tempos %}
+                  {% if categoria.get_filhas %}
+                    <li class="dropdown-submenu">
+                    <a href="#">{{ categoria.nome }}</a>
+                    <ul class="dropdown-menu" role="menu">
+                      {% for categoria_sub1 in categoria.get_filhas %}
+                        <li><a href="{% url 'musicas-de' categoria_sub1.slug %}">{{ categoria_sub1.nome }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                  {% else %}
+                  <li><a href="{% url 'musicas-de' categoria.slug %}">{{ categoria.nome }}</a></li>
+                  {% endif %}
+                {% endfor %}
                 </ul>
               </li>
+
+              <!-- ESPECIAIS -->
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Especiais</a>
+                <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                {% for categoria in especiais %}
+                  {% if categoria.get_filhas %}
+                    <li class="dropdown-submenu">
+                    <a href="#">{{ categoria.nome }}</a>
+                    <ul class="dropdown-menu" role="menu">
+                      {% for categoria_sub1 in categoria.get_filhas %}
+                        <li><a href="{% url 'musicas-de' categoria_sub1.slug %}">{{ categoria_sub1.nome }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                  {% else %}
+                  <li><a href="{% url 'musicas-de' categoria.slug %}">{{ categoria.nome }}</a></li>
+                  {% endif %}
+                {% endfor %}
+                </ul>
+              </li>
+
+              <!-- SUGESTÕES POR DATA -->              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sugestões por data</a>
+                <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                    CALENDÁRIO
+                </ul>
+              </li>
+
+              <!-- BLOG -->              
+              <li class="dropdown dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog</a>
+                <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                    BLOG
+                </ul>
+              </li>
+
 
               <li class="li-search">
                 <form class="nav-search">
@@ -38,3 +90,25 @@
       </nav>
     </div>
     <!-- NAVBAR END -->
+
+
+    <!-- HEADING -->
+    <!--===============================================================-->
+    <div class="section-heading-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-3">
+            <h1 class="heading-page text-center-xs">Músicas por e-mail?</h1>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <input type="text" class="form-control input-lg" placeholder="Nome">
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <input type="text" class="form-control input-lg" placeholder="E-mail">
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <button type="button" class="btn btn-primary input-lg btn-z-index"><i class="fa fa-paper-plane"></i>Quero receber as sugestões</button>
+          </div>
+        </div>
+      </div>
+    </div>
