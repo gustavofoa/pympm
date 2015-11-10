@@ -6,6 +6,10 @@
 
 <h1>{{ categoria.nome }}</h1>
 
+{% if categoria.categoria_mae %}
+<h3>Mãe: <a href="{% url 'musicas-de' categoria.categoria_mae.slug %}">{{ categoria.categoria_mae.nome }}</a></h3>
+{% endif %}
+
 {% if categoria.get_filhas %}
 <h2>Filhas</h2>
 {% endif %}

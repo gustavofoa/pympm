@@ -1,20 +1,11 @@
 {% extends 'base.html' %}
 
+{% block title2 %}{% block title %}{{ musica.nome }} - Músicas para Missa{% endblock %}{% endblock %}
+
 
 {% block content %}
 
 <h1>{{ musica.nome }}</h1>
-
-
-{% if musica.categorias %}
-<h2>Categorias</h2>
-{% endif %}
-
-<ul>
-{% for categoria in musica.categorias.all %}
-    <li><a href="{% url 'musicas-de' categoria.slug %}">{{ categoria }}</a></li>
-{% endfor %}
-</ul>
 
 
 <div class="container">
@@ -29,12 +20,22 @@
 		<li>
 		  <a data-toggle="tab" href="#info">Informações</a>
 		</li>
+		<li>
+		  <a data-toggle="tab" href="#cat">Categorias</a>
+		</li>
 	</ul>
 	<div class="tab-content">
 	{% autoescape off %}
 		<div id="letra" class="tab-pane fade in active">{{ musica.letra|linebreaks }}</div>
 		<div id="cifra" class="tab-pane fade"><pre>{{ musica.cifra|linebreaks }}</pre></div>
 		<div id="info" class="tab-pane fade">{{ musica.info }}</div>
+		<div id="cat" class="tab-pane fade">
+			<ul>
+			{% for categoria in musica.categorias.all %}
+			    <li><a href="{% url 'musicas-de' categoria.slug %}">{{ categoria }}</a></li>
+			{% endfor %}
+			</ul>
+		</div>
 	{% endautoescape %}
 	</div>
 
