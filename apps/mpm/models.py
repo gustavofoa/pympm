@@ -34,7 +34,7 @@ class Musica(models.Model):
 	def __str__(self):
 		return self.nome.encode('utf-8')
 	def get_video_code(self):
-		return self.link_video[self.link_video.rindex('/'):].replace("embed",'').replace('?v=','')
+		return self.link_video[self.link_video.rindex('/'):].replace("embed",'').replace('watch?v=','').replace('v=','')
 
 class ANO(enum.Enum):
     A = 0
