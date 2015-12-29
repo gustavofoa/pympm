@@ -25,7 +25,7 @@
                 {% for categoria in tempos %}
                   {% if categoria.get_filhas %}
                     <li class="dropdown-submenu">
-                    <a href="#">{{ categoria.nome }}</a>
+                    <a href="{% url 'musicas-de' categoria.slug %}">{{ categoria.nome }}</a>
                     <ul class="dropdown-menu" role="menu">
                       {% for categoria_sub1 in categoria.get_filhas %}
                         <li><a href="{% url 'musicas-de' categoria_sub1.slug %}">{{ categoria_sub1.nome }}</a></li>
@@ -46,7 +46,7 @@
                 {% for categoria in especiais %}
                   {% if categoria.get_filhas %}
                     <li class="dropdown-submenu">
-                    <a href="#">{{ categoria.nome }}</a>
+                    <a href="{% url 'musicas-de' categoria.slug %}">{{ categoria.nome }}</a>
                     <ul class="dropdown-menu" role="menu">
                       {% for categoria_sub1 in categoria.get_filhas %}
                         <li><a href="{% url 'musicas-de' categoria_sub1.slug %}">{{ categoria_sub1.nome }}</a></li>

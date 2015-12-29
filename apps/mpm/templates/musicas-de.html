@@ -4,30 +4,41 @@
 {% block content %}
 
 
-<h1>{{ categoria.nome }}</h1>
-
 {% if categoria.categoria_mae %}
-<h3>Mãe: <a href="{% url 'musicas-de' categoria.categoria_mae.slug %}">{{ categoria.categoria_mae.nome }}</a></h3>
+<h1><a href="{% url 'musicas-de' categoria.categoria_mae.slug %}">{{ categoria.categoria_mae.nome }}</a><h1> 
 {% endif %}
 
-{% if categoria.get_filhas %}
-<h2>Filhas</h2>
-{% endif %}
+<h2>>>{{ categoria.nome }}</h2>
 
 <ul>
 {% for filha in categoria.get_filhas %}
-    <li><a href="{% url 'musicas-de' filha.slug %}">{{ filha.nome }}</a></li>
+    <h4><li><a href="{% url 'musicas-de' filha.slug %}">{{ filha.nome }}</a></li></h4>
 {% endfor %}
 </ul>
 
-{% if categoria.get_musicas %}
+{% if not categoria.get_filhas %}
 <h2>Músicas</h2>
-{% endif %}
 
 <ul>
 {% for musica in categoria.get_musicas %}
-    <li><a href="{% url 'musica' musica.slug %}">{{ musica.nome }}</a></li>
+    <h4><li><a href="{% url 'musica' musica.slug %}">{{ musica.nome }}</a></li></h4>
 {% endfor %}
 </ul>
+
+{% endif %}
+
+
+<center>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Ret. Grande Final do Post MpM -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-6041601556788047"
+     data-ad-slot="6801998970"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
 
 {% endblock %}

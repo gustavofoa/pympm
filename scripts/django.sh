@@ -18,7 +18,13 @@ sudo apt-get -y install python-dev
 echo ">> Install Django"
 sudo pip install Django
 
-ECHO ">> Instal Django EnumField"
+echo ">> Instal Django EnumField"
 sudo pip install django-enumfield
+
+echo ">> Install npm"
+sudo apt-get -y install npm
+
+echo ">> Install less"
+sudo npm install -g less
 
 echo ">> Done."

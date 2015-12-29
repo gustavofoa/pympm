@@ -1,3 +1,4 @@
+#python manage.py shell
 #execfile('import/categoriasImport.py')
 
 import requests
