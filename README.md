@@ -1,2 +1,4 @@
 # pympm
-Site Músicas para Missa - Python
+Novo site Músicas para Missa
+
+Para desenvolvimento usar Vagrantup
