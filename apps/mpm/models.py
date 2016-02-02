@@ -72,8 +72,8 @@ class Leitura(models.Model):
 
 class SugestaoMusica(models.Model):
 	itemLiturgia = models.OneToOneField("ItemLiturgia", primary_key=True)
-	categorias = models.ManyToManyField("Categoria", null=True)
-	avulsas = models.ManyToManyField("Musica", related_name="SugestoesAvulsas", blank=True, null=True)
-	remover = models.ManyToManyField("Musica", related_name="MusicasARemover", blank=True, null=True)
+	categorias = models.ManyToManyField("Categoria")
+	avulsas = models.ManyToManyField("Musica", related_name="SugestoesAvulsas", blank=True)
+	remover = models.ManyToManyField("Musica", related_name="MusicasARemover", blank=True)
 	def __str__(self):
 		return "Sugestões de músicas para: "+self.itemLiturgia.__str__()
