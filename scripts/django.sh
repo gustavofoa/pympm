@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-echo ">> Update repository"
-sudo apt-get update
+#echo ">> Update repository"
+#sudo apt-get update
 
 # need to be in first as it installs add-apt-repository command
 sudo apt-get install -y python-software-properties
