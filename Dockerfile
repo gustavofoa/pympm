@@ -30,4 +30,4 @@ ADD . /code/
 
 #CMD ["sh", "./scripts/container_start.sh"]
 
-EXPOSE 8000
+EXPOSE 80
