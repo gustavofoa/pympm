@@ -16,12 +16,12 @@ RUN apt-get update \
 # Install python and npm
 ##############################################################################
 
-RUN sudo apt-get install -y python-software-properties
-RUN sudo apt-get -y install -y openssh-server vim git zip bzip2 fontconfig curl make
-RUN sudo apt-get -y install python-pip
-RUN sudo apt-get -y install python-dev
-RUN sudo apt-get -y install npm
-RUN sudo npm install -g less
+RUN apt-get install -y python-software-properties
+RUN apt-get -y install -y openssh-server vim git zip bzip2 fontconfig curl make
+RUN apt-get -y install python-pip
+RUN apt-get -y install python-dev
+RUN apt-get -y install npm
+RUN npm install -g less
 
 ####################################################
 # setup startup script for gunicord WSGI service
@@ -40,12 +40,10 @@ ADD ./deploy/supervisor_conf.d/webapp.conf /etc/supervisor/conf.d/webapp.conf
 ####################################################
 # Install dependencies and run scripts.
 ####################################################
-
-RUN mkdir /var/projects/pympm
 WORKDIR /var/projects/pympm
 ADD requirements.txt /var/projects/pympm/
-RUN pip install -r /var/projects/pympm/requirements.txt
 ADD . /var/projects/pympm/
+RUN pip install -r /var/projects/pympm/requirements.txt
 
 CMD ["sh", "./scripts/container_start.sh"]
 
