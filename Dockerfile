@@ -47,4 +47,4 @@ RUN pip install -r /var/projects/pympm/requirements.txt
 
 CMD ["sh", "./scripts/container_start.sh"]
 
-EXPOSE 8002
+EXPOSE 8000
