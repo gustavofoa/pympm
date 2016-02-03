@@ -28,6 +28,6 @@ ADD requirements.txt /code/
 RUN pip install -r requirements.txt
 ADD . /code/
 
-#CMD ["sh", "./scripts/container_start.sh"]
+EXPOSE 80
 
-EXPOSE 80 8000
+CMD ["sh", "./scripts/container_start.sh"]
