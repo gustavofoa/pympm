@@ -1,3 +1,4 @@
 
 #!/bin/sh
-cd /code && python manage.py migrate --noinput
+cd /var/projects/pympm && python manage.py migrate --noinput
+supervisord -n -c /etc/supervisor/supervisord.conf
