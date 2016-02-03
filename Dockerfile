@@ -1,4 +1,5 @@
-FROM python:3.4
+FROM python:latest
+MAINTAINER Gustavo (gustavo.foa@gmail.com)
 
 ##############################################################################
 # Environment variables
@@ -43,7 +44,7 @@ ADD ./deploy/supervisor_conf.d/webapp.conf /etc/supervisor/conf.d/webapp.conf
 RUN mkdir /var/projects/pympm
 WORKDIR /var/projects/pympm
 ADD requirements.txt /var/projects/pympm/
-RUN pip install -r requirements.txt
+RUN pip install -r /var/projects/pympm/requirements.txt
 ADD . /var/projects/pympm/
 
 CMD ["sh", "./scripts/container_start.sh"]

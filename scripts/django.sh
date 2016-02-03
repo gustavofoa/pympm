@@ -16,7 +16,7 @@ echo ">> Install Python-dev"
 sudo apt-get -y install python-dev
 
 echo ">> Install Requirements"
-sudo pip install -r requirements.txt
+cd sudo pip install -r /vagrant/requirements.txt
 
 echo ">> Install npm"
 sudo apt-get -y install npm
