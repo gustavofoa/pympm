@@ -11,4 +11,4 @@ sudo apt-get update
 
 sudo apt-get -y install lxc-docker
 
-sudo docker pull ubuntu
+sudo docker pull python
