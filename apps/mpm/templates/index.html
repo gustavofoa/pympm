@@ -1,3 +1,27 @@
-{% extends 'base.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
 
-{% block title2 %}{% block title %}Músicas para Missa - O site do músico servo do Senhor!{% endblock %}{% endblock %}
+	<title>Músicas para Missa - O site do músico servo do Senhor!</title>
+
+	{% include 'header.html' %}
+
+</head>
+
+<body class="body-nav-fixed">
+	<div class="wrapper-body">
+
+		{% include 'navbar.html' %}
+
+		{% include 'calendario.html' %}
+
+    
+
+	</div>
+
+  {% include 'footer.html' %}
+
+  {% include 'footer-calendario.html' %}
+
+</body>

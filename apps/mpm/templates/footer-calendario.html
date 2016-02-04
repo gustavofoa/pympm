@@ -1,0 +1,14 @@
+{% load staticfiles %}
+
+<script>
+
+var calendarOptions = {
+  language: "pt-BR",
+  todayHighlight: true
+};
+
+$(document).ready(function() {
+  $('#calendar-navbar').datepicker(calendarOptions);
+  $('#calendar').datepicker(calendarOptions);
+});
+</script>
