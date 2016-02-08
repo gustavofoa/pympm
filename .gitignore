@@ -70,3 +70,7 @@ target/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# Elastic Beanstalk Extensions
+.ebextensions/*
+!.ebextentions/*.config
