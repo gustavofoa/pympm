@@ -10,6 +10,7 @@ upstream webapp_server {
 
 server {
     listen   80 default_server;
+    listen [::]:80 default_server ipv6only=on;
     #server_name	webapp.com;
     client_max_body_size 20M;
     access_log /var/log/webapp/nginx-access.log;
