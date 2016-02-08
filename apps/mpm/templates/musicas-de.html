@@ -5,10 +5,10 @@
 
 
 {% if categoria.categoria_mae %}
-<h1><a href="{% url 'musicas-de' categoria.categoria_mae.slug %}">{{ categoria.categoria_mae.nome }}</a><h1> 
+<h1><a href="{% url 'musicas-de' categoria.categoria_mae.slug %}">{{ categoria.categoria_mae.nome }}</a><h1>
 {% endif %}
 
-<h2>>>{{ categoria.nome }}</h2>
+<h2 class="title-sm text-uppercase hr-left text-theme">{{ categoria.nome }}</h2>
 
 <ul>
 {% for filha in categoria.get_filhas %}
@@ -17,7 +17,7 @@
 </ul>
 
 {% if not categoria.get_filhas %}
-<h2>Músicas</h2>
+<!--<h2>Músicas</h2>-->
 
 <ul>
 {% for musica in categoria.get_musicas %}

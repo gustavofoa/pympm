@@ -12,7 +12,8 @@ def base_context():
 	return ctx
 
 def index(request):
-	return render(request, 'index.html', {})
+	ctx = base_context();
+	return render(request, 'index.html', ctx)
 
 def musica(request, slug):
 	ctx = base_context();

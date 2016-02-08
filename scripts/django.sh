@@ -4,16 +4,14 @@
 #sudo apt-get update
 
 # need to be in first as it installs add-apt-repository command
+echo ">> Install Python"
 sudo apt-get install -y python-software-properties
 
 echo ">> Install utilities"
 sudo apt-get -y install -y openssh-server vim git zip bzip2 fontconfig curl make
 
-echo ">> Install Python-pip"
-sudo apt-get -y install python-pip
-
-echo ">> Install Python-dev"
-sudo apt-get -y install python-dev
+echo ">> Install Python-pip and Python-dev"
+sudo apt-get -y install python-pip python-dev
 
 echo ">> Install Requirements"
 sudo pip install -r /vagrant/requirements.txt

@@ -14,3 +14,16 @@
   <!-- Calendário -->
   <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
   <script src="{% static 'locale/bootstrap-datepicker.pt-BR.min.js' %}"></script>
+
+  <script>
+
+  var calendarOptions = {
+    language: "pt-BR",
+    todayHighlight: true
+  };
+
+  $(document).ready(function() {
+    $('#calendar-navbar').datepicker(calendarOptions);
+    $('#calendar').datepicker(calendarOptions);
+  });
+  </script>
