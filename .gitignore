@@ -67,6 +67,8 @@ docs/_build/
 target/
 
 
-# Elastic Beanstalk Extensions
-.ebextensions/*
-!.ebextentions/*.config
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
