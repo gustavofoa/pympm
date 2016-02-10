@@ -1,4 +1,3 @@
 Django
 django-enumfield
 requests
-json
