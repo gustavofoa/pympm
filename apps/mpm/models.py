@@ -45,6 +45,7 @@ class DiaLiturgico(models.Model):
 	slug = models.SlugField(primary_key=True)
 	titulo = models.CharField(max_length=255)
 	introducao = models.TextField()
+	img = models.URLField(max_length=255)
 	ano = enum.EnumField(ANO, default=ANO.A)
 	def __str__(self):
 		return self.titulo.encode('utf-8')
