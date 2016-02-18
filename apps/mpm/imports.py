@@ -4,7 +4,7 @@
 import requests
 import json
 import django
-from apps.mpm.models import Categoria, Musica
+from apps.mpm.models import Categoria, Musica, DiaLiturgico
 
 class ImportCategorias:
 
@@ -66,6 +66,34 @@ class ImportMusicas:
             print "Dados validos"
             jsonMusicas = json.loads(httpMusicas.content, strict=False)
             self.importMusicas(jsonMusicas)
+            print "Importou"
+        else:
+            print "Dados invalidos"
+
+
+
+class ImportPaginasSugestoes:
+
+    def __init__(self, URLSugestoes):
+        self.URL = URLSugestoes
+
+    def importPaginasSugestoes(self, json):
+        ordem = 1
+        for pagina in json:
+            print "->" + pagina['slug']
+            m = DiaLiturgico(slug = pagina["slug"], nome = pagina["title"], img = pagina["img"])
+            m.save()
+
+    def run_import(self):
+        DiaLiturgico.objects.all().delete()
+        print "Excluiu as dias liturgicos atuais"
+        httpSugestoes = requests.get(self.URL)
+        print "Buscou dados da URL"
+
+        if httpSugestoes.status_code == 200:
+            print "Dados validos"
+            jsonSugestoes = json.loads(httpSugestoes.content, strict=False)
+            self.importPaginasSugestoes(jsonSugestoes)
             print "Importou"
         else:
             print "Dados invalidos"

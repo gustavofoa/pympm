@@ -48,6 +48,12 @@ def import_data(request):
 			if url_musicas != '':
 				impMus = ImportMusicas(url_musicas)
 				impMus.run_import()
+			#import Sugestões
+			url_sugestoes =  form.cleaned_data["url_sugestoes"]
+			print "URL Sugestões: ", url_sugestoes
+			if url_sugestoes != '':
+				impSug = ImportPaginasSugestoes(url_sugestoes)
+				impSug.run_import()
 			return HttpResponse("<html><body>Importação realizada com sucesso! <a href='/'>Voltar</a></body></html>")
 	else:
 		form = ImportData()

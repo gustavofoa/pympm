@@ -37,16 +37,17 @@ class Musica(models.Model):
 		return self.link_video[self.link_video.rindex('/'):].replace("embed",'').replace('watch?v=','').replace('v=','')
 
 class ANO(enum.Enum):
-    A = 0
-    B = 1
-    C = 2
+	TODOS = 0
+	A = 1
+	B = 2
+	C = 3
 
 class DiaLiturgico(models.Model):
 	slug = models.SlugField(primary_key=True)
 	titulo = models.CharField(max_length=255)
+	ano = enum.EnumField(ANO)
 	introducao = models.TextField()
 	img = models.URLField(max_length=255)
-	ano = enum.EnumField(ANO, default=ANO.A)
 	def __str__(self):
 		return self.titulo.encode('utf-8')
 
