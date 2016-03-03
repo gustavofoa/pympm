@@ -1,1 +1,13 @@
-sugestoes-para
+{% extends 'base.html' %}
+
+{% block title2 %}{% block title %}{{ diaLiturgico.titulo }} - Músicas para Missa{% endblock %}{% endblock %}
+
+{% block content %}
+
+<h3 style="text-align:center;">Sugestões de músicas para a missa <br/> {{ diaLiturgico.titulo }}<h3>
+
+<div style="text-align:center;"><img src="{{ diaLiturgico.img }}" /></div>
+
+
+
+{% endblock %}

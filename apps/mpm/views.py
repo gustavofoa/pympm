@@ -3,7 +3,7 @@
 from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404, render
 
-from .models import Musica, Categoria
+from .models import Musica, Categoria, DiaLiturgico
 from .forms import ImportData
 from .imports import ImportCategorias, ImportMusicas, ImportPaginasSugestoes
 
@@ -29,8 +29,11 @@ def musicas_de(request, slug):
 	ctx['categoria'] = categoria
 	return render(request, 'musicas-de.html', ctx)
 
-def sugestoes_para(request):
-	return render(request, 'sugestoes-para.html', {})
+def sugestoes_para(request, slug):
+	ctx = base_context();
+	diaLiturgico = get_object_or_404(DiaLiturgico, slug=slug)
+	ctx['diaLiturgico'] = diaLiturgico
+	return render(request, 'sugestoes-para.html', ctx)
 
 def import_data(request):
 	if request.method == 'POST':
