@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-#echo ">> Update repository"
-#sudo apt-get update
+echo ">> Update repository"
+sudo apt-get update
 
 # need to be in first as it installs add-apt-repository command
 echo ">> Install Python"
@@ -23,6 +23,6 @@ echo ">> Install less"
 sudo npm install -g less
 
 echo ">> Install Python-mysqldb"
-sudo apt-get install python-mysqldb
+sudo apt-get -y install python-mysqldb
 
 echo ">> Done."
