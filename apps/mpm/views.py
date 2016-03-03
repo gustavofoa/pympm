@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, render
 
 from .models import Musica, Categoria
 from .forms import ImportData
-from .imports import ImportCategorias, ImportMusicas
+from .imports import ImportCategorias, ImportMusicas, ImportPaginasSugestoes
 
 def base_context():
 	tempos = Categoria.objects.filter(categoria_mae=None,slug__startswith="tempo");
@@ -41,13 +41,13 @@ def import_data(request):
 			print "URL Categorias: ", url_categorias
 			if url_categorias != '':
 				impCat = ImportCategorias(url_categorias)
-				impCat.run_import()
+				# impCat.run_import()
 			#import Musicas
 			url_musicas =  form.cleaned_data["url_musicas"]
 			print "URL Musicas: ", url_musicas
 			if url_musicas != '':
 				impMus = ImportMusicas(url_musicas)
-				impMus.run_import()
+				# impMus.run_import()
 			#import Sugestões
 			url_sugestoes =  form.cleaned_data["url_sugestoes"]
 			print "URL Sugestões: ", url_sugestoes

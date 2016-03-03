@@ -81,7 +81,7 @@ class ImportPaginasSugestoes:
         ordem = 1
         for pagina in json:
             print "->" + pagina['slug']
-            m = DiaLiturgico(slug = pagina["slug"], nome = pagina["title"], img = pagina["img"])
+            m = DiaLiturgico(slug = pagina["slug"], titulo = pagina["title"], img = pagina["img"])
             m.save()
 
     def run_import(self):

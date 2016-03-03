@@ -2,10 +2,9 @@
 
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django_enumfield import enum
 
 class Categoria(models.Model):
-	slug = models.SlugField(primary_key=True)
+	slug = models.SlugField(primary_key=True, max_length=100)
 	nome = models.CharField(max_length=255)
 	descricao = models.CharField(max_length=500)
 	categoria_mae = models.ForeignKey("self", blank=True, null=True)
@@ -23,7 +22,7 @@ class Categoria(models.Model):
 
 
 class Musica(models.Model):
-	slug = models.SlugField(primary_key=True)
+	slug = models.SlugField(primary_key=True, max_length=100)
 	nome = models.CharField(max_length=255)
 	letra = models.TextField()
 	cifra = models.TextField()
@@ -36,18 +35,11 @@ class Musica(models.Model):
 	def get_video_code(self):
 		return self.link_video[self.link_video.rindex('/'):].replace("embed",'').replace('watch?v=','').replace('v=','')
 
-class ANO(enum.Enum):
-	TODOS = 0
-	A = 1
-	B = 2
-	C = 3
-
 class DiaLiturgico(models.Model):
-	slug = models.SlugField(primary_key=True)
+	slug = models.SlugField(primary_key=True, max_length=100)
 	titulo = models.CharField(max_length=255)
-	ano = enum.EnumField(ANO)
 	introducao = models.TextField()
-	img = models.URLField(max_length=255)
+	img = models.URLField(max_length=255, blank=True, null=True)
 	def __str__(self):
 		return self.titulo.encode('utf-8')
 
@@ -75,7 +67,7 @@ class Leitura(models.Model):
 class SugestaoMusica(models.Model):
 	itemLiturgia = models.OneToOneField("ItemLiturgia", primary_key=True)
 	categorias = models.ManyToManyField("Categoria")
-	avulsas = models.ManyToManyField("Musica", related_name="SugestoesAvulsas", blank=True)
-	remover = models.ManyToManyField("Musica", related_name="MusicasARemover", blank=True)
+	avulsas = models.ManyToManyField("Musica", related_name="avulsas", blank=True)
+	remover = models.ManyToManyField("Musica", related_name="remover", blank=True)
 	def __str__(self):
 		return "Sugestões de músicas para: "+self.itemLiturgia.__str__()
