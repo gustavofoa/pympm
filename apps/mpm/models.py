@@ -29,11 +29,16 @@ class Musica(models.Model):
 	info = models.TextField()
 	link_video = models.URLField(blank=True, null=True)
 	categorias = models.ManyToManyField("Categoria")
-	rating = models.PositiveSmallIntegerField(validators=[MaxValueValidator(5),MinValueValidator(1)], blank=True, null=True)
+	rating = models.FloatField(blank=True, null=True)
+	votes = models.PositiveIntegerField(blank=True, null=True)
 	def __str__(self):
 		return self.nome.encode('utf-8')
 	def get_video_code(self):
 		return self.link_video[self.link_video.rindex('/'):].replace("embed",'').replace('watch?v=','').replace('v=','')
+	def add_rate(self, rate):
+		#weighted average
+		self.rating = (self.rating * self.votes + rate*100/5) / (self.votes + 1)
+		self.votes += 1
 
 class DiaLiturgico(models.Model):
 	slug = models.SlugField(primary_key=True, max_length=100)
