@@ -6,7 +6,7 @@ class MusicaTestCase(TestCase):
     def setUp(self):
         Musica.objects.create(
             slug="oracao-pela-familia",
-            nome="ORACAOO PELA FAMILIA",
+            nome="ORACAO PELA FAMILIA",
             rating=81.4,
             votes=15)
     def test_add_music_rate(self):
