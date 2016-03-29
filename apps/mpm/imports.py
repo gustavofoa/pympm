@@ -50,7 +50,16 @@ class ImportMusicas:
         ordem = 1
         for musica in json:
             print "->" + musica['slug']
-            m = Musica(slug = musica["slug"], nome = musica["title"], letra = musica["letra"], cifra = musica["cifra"], info = musica["info"], link_video = musica["video"].replace('\r\n',''), rating=musica["rating"], votes=musica["votes"])
+            m = Musica(
+                slug = musica["slug"],
+                nome = musica["title"],
+                letra = musica["letra"],
+                cifra = musica["cifra"],
+                info = musica["info"],
+                link_video = musica["video"].replace('\r\n',''),
+                rating = float(musica["rating"]),
+                votes = int(musica["votes"])
+            )
             m.save()
             for cat in musica["categorias"].split(","):
                 m.categorias.add(Categoria.objects.get(slug = cat))
