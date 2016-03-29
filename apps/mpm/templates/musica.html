@@ -2,6 +2,7 @@
 
 {% block title2 %}{% block title %}{{ musica.nome }} - Músicas para Missa{% endblock %}{% endblock %}
 
+
 {% block content %}
 
 <h1>{{ musica.nome }}</h1>
@@ -12,21 +13,40 @@
 
 
 <div class="row row-tabs" role="tabpanel">
+  <div class="kk-star-ratings  top-right rgt" data-id="{{ musica.slug }}">
+      <div class="kksr-stars kksr-star gray">
+          <div class="kksr-fuel kksr-star yellow" style="width:{{ musica.get_formated_rating }}%;"></div>
+          <!-- sr-fuel --><a href="#1"></a><a href="#2"></a><a href="#3"></a><a href="#4"></a><a href="#5"></a>
+      </div>
+      <!-- sr-stars -->
+      <div class="kksr-legend">
+        <div vocab="http://schema.org/" typeof="Blog">
+          <div property="aggregateRating" typeof="AggregateRating">
+            <span property="ratingValue">{{ musica.get_rating_per_5 }}</span> em <span property="ratingCount">{{ musica.votes }}</span> votos
+            <meta property="bestRating" content="5"/>
+            <meta property="worstRating" content="1"/>
+          </div>
+        </div>
+      </div>
+      <!-- sr-legend -->
+  </div>
+  <!-- star-ratings -->
     <div class="tabs-top">
 	  <ul class="nav nav-tabs">
-		<li class="active">
-	  	  <a data-toggle="tab" href="#letra">Letra</a>
-		</li>
-		<li>
-	  	  <a data-toggle="tab" href="#cifra">Cifra</a>
-		</li>
-		<li>
-	  	  <a data-toggle="tab" href="#info">Informações</a>
-		</li>
-		<li>
-	  	  <a data-toggle="tab" href="#cat">Categorias</a>
-		</li>
-	  </ul>
+  		<li class="active">
+  	  	  <a data-toggle="tab" href="#letra">Letra</a>
+  		</li>
+  		<li>
+  	  	  <a data-toggle="tab" href="#cifra">Cifra</a>
+  		</li>
+  		<li>
+  	  	  <a data-toggle="tab" href="#info">Informações</a>
+  		</li>
+  		<li>
+  	  	  <a data-toggle="tab" href="#cat">Categorias</a>
+  		</li>
+    </ul>
+
 	  <div class="tab-content">
 		{% autoescape off %}
 		<div id="letra" class="tab-pane fade in active">{{ musica.letra|linebreaks }}</div>
@@ -47,6 +67,7 @@
 	  </div>
     </div>
 </div>
+
 
 {% include 'banner-bottom.html' %}
 
