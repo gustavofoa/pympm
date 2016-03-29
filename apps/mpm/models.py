@@ -20,7 +20,6 @@ class Categoria(models.Model):
 	def get_filhas(self):
 		return Categoria.objects.filter(categoria_mae__slug=self.slug)
 
-
 class Musica(models.Model):
 	slug = models.SlugField(primary_key=True, max_length=100)
 	nome = models.CharField(max_length=255)
@@ -39,6 +38,10 @@ class Musica(models.Model):
 		#weighted average
 		self.rating = (self.rating * self.votes + rate*100/5) / (self.votes + 1)
 		self.votes += 1
+	def get_rating_per_5(self):
+		return self.rating * 5 / 100
+	def get_formated_rating(self):
+		return "%.2f" % self.rating
 
 class DiaLiturgico(models.Model):
 	slug = models.SlugField(primary_key=True, max_length=100)
@@ -51,6 +54,7 @@ class DiaLiturgico(models.Model):
 class Data(models.Model):
 	data = models.DateField(primary_key=True)
 	liturgia = models.ForeignKey("DiaLiturgico")
+	destaque = models.BooleanField()
 	def __str__(self):
 		return self.data.strftime('%d/%m/%Y')  + " - " + self.liturgia.titulo.encode('utf-8)')
 
