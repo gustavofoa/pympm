@@ -71,13 +71,14 @@ def starratins_ajax(request):
 		jsonObj = {}
 		jsonObj[id] = {}
 		jsonObj[id]["success"] = 1
+		jsonObj[id]["disable"] = "false"
 		musica = get_object_or_404(Musica, slug=id)
 		if stars != "0":
 			musica.add_rate(int(stars))
 			musica.save()
+			jsonObj[id]["disable"] = "true"
 		jsonObj[id]["fuel"] = musica.rating
 		jsonObj[id]["legend"] = musica.get_legend()
-		jsonObj[id]["disable"] = 0
 		return JsonResponse(jsonObj)
 
 	return HttpResponse(str("0"))

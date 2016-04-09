@@ -55,6 +55,8 @@
  			var legend = $('.sr-legend', obj).html(),
  				fuel = $('.sr-fuel', obj).css('width');
  			$('.sr-stars a', obj).hover( function(){
+        if(obj.hasClass('disabled'))
+          return;
  				var stars = $(this).attr('href').split('#')[1];
  				if($.fn.starratings.options.tooltip!=0)
  				{
@@ -78,6 +80,8 @@
  					}
  				});
  			}, function(){
+        if(obj.hasClass('disabled'))
+          return;
  				$('.sr-stars a', obj).removeClass('sr-star').removeClass('orange');
  				if($.fn.starratings.options.tooltip!=0) $('.sr-legend', obj).html(legend);
  				$('.sr-fuel', obj).stop(true,true).animate({'width':fuel}, $.fn.starratings.options.fuelspeed);
@@ -197,7 +201,6 @@
  	$.fn.starratings.options = {
  		ajaxurl   : starratings_config_js.ajaxurl,
  		func      : starratings_config_js.func,
- 		nonce     : starratings_config_js.nonce,
  		grs       : starratings_config_js.grs,
  		tooltip   : starratings_config_js.tooltip,
  		tooltips  : starratings_config_js.tooltips,

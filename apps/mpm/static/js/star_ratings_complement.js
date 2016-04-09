@@ -1,8 +1,8 @@
 var starratings_config_js = {
-  "grs":true,
+  "grs":false,
   "ajaxurl":"/starratins-ajax.do",
   "msg":"Avalie esta m\u00fasica!",
-  "fuelspeed":400,
+  "fuelspeed":600,
   "thankyou":"Obrigado pelo seu voto!",
   "error_msg":"Aconteceu um problema!",
   "tooltip":"1",
