@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from __future__ import division
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
@@ -39,9 +39,15 @@ class Musica(models.Model):
 		self.rating = (self.rating * self.votes + rate*100/5) / (self.votes + 1)
 		self.votes += 1
 	def get_rating_per_5(self):
-		return self.rating * 5 / 100
+		return self.rating * 5 / 100.0
 	def get_formated_rating(self):
 		return "%.2f" % self.rating
+	def get_legend(self):
+		plural = ""
+		if(self.votes > 1):
+			plural = "s"
+		retorno = "<span property='ratingValue'>%.2f</span> em <span property='ratingCount'>%d</span> voto%s"
+		return retorno % (self.get_rating_per_5(), self.votes, plural)
 
 class DiaLiturgico(models.Model):
 	slug = models.SlugField(primary_key=True, max_length=100)

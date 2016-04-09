@@ -14,16 +14,16 @@
 
 <div class="row row-tabs" role="tabpanel">
 
-  <div class="kk-star-ratings  top-right rgt" data-id="{{ musica.slug }}">
-      <div class="kksr-stars kksr-star gray">
-          <div class="kksr-fuel kksr-star yellow" style="width:{{ musica.get_formated_rating }}%;"></div>
+  <div class="star-ratings  top-right rgt" data-id="{{ musica.slug }}">
+      <div class="sr-stars sr-star gray">
+          <div class="sr-fuel sr-star yellow" style="width:{{ musica.get_formated_rating }}%;"></div>
           <!-- sr-fuel --><a href="#1"></a><a href="#2"></a><a href="#3"></a><a href="#4"></a><a href="#5"></a>
       </div>
       <!-- sr-stars -->
-      <div class="kksr-legend">
+      <div class="sr-legend">
         <div vocab="http://schema.org/" typeof="Blog">
           <div property="aggregateRating" typeof="AggregateRating">
-            <span property="ratingValue">{{ musica.get_rating_per_5 }}</span> em <span property="ratingCount">{{ musica.votes }}</span> votos
+            {% autoescape off %}{{ musica.get_legend }}{% endautoescape %}
             <meta property="bestRating" content="5"/>
             <meta property="worstRating" content="1"/>
           </div>
@@ -32,7 +32,7 @@
       <!-- sr-legend -->
   </div>
   <!-- star-ratings -->
-  
+
     <div class="tabs-top">
 	  <ul class="nav nav-tabs">
   		<li class="active">

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render
 
 from .models import Musica, Categoria, DiaLiturgico
@@ -61,3 +61,23 @@ def import_data(request):
 	else:
 		form = ImportData()
 	return render(request, 'import_data.html', {'form': form})
+
+
+def starratins_ajax(request):
+	id = request.POST.get('id', 0)
+	stars = request.POST.get('stars', 0)
+	print "Rating ", stars, " to ", id
+	if request.method == 'POST':
+		jsonObj = {}
+		jsonObj[id] = {}
+		jsonObj[id]["success"] = 1
+		musica = get_object_or_404(Musica, slug=id)
+		if stars != "0":
+			musica.add_rate(int(stars))
+			musica.save()
+		jsonObj[id]["fuel"] = musica.rating
+		jsonObj[id]["legend"] = musica.get_legend()
+		jsonObj[id]["disable"] = 0
+		return JsonResponse(jsonObj)
+
+	return HttpResponse(str("0"))
