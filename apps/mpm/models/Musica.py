@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Musica(models.Model):
 	slug = models.SlugField(primary_key=True, max_length=100)
 	nome = models.CharField(max_length=255)
