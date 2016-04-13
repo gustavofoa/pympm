@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^sugestoes-para/(?P<slug>[-\w\d]+)/$', views.sugestoes_para, name='sugestoes-para'),
     url(r'^import-data/', view_import.import_data, name='import-data'),
     url(r'^starratings-ajax.do$', view_starratings.starratings_ajax, name='starratings-ajax'),
+    url(r'^datas.json$', view_datas.datas, name='datas'),
 ]
