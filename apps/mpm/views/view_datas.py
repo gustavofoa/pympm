@@ -4,12 +4,12 @@ from django.http import JsonResponse
 from ..models import Data
 
 def datas(request):
-    retorno = []
+    retorno = {}
     for data in Data.objects.all():
-        retorno.append({
-            "data": data.data.strftime("%d/%m/%Y"),
-            "url": "http://musicasparamissa.com.br/" + data.liturgia.slug,
+        retorno[data.data.strftime("%d/%m/%Y")] = {
+            "url": "http://localhost:8000/sugestoes-para/" + data.liturgia.slug,
             "title": data.liturgia.titulo,
             "destaque": data.destaque
-        })
+        }
+
     return JsonResponse(retorno, safe=False)

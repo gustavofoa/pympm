@@ -18,16 +18,4 @@
   <script src="{% static 'js/star_ratings_complement.js' %}"></script>
   <script src="{% static 'js/star_ratings.min.js' %}"></script>
 
-  <script>
-
-  var calendarOptions = {
-    language: "pt-BR",
-    todayHighlight: true
-  };
-
-  $(document).ready(function() {
-    $('#calendar-navbar').datepicker(calendarOptions);
-    $('#calendar').datepicker(calendarOptions);
-    $('#calendar-footer').datepicker(calendarOptions);
-  });
-  </script>
+  <script src="{% static 'js/calendar.js' %}"></script>
