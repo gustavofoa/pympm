@@ -9,6 +9,7 @@ Vagrant.configure(2) do |config|
 
   # config.vm.provision :shell, path: "scripts/runserver.sh"
   config.vm.network :forwarded_port, guest: 8000, host: 8000
+  config.vm.network :forwarded_port, guest: 8001, host: 8001
   # VirtualBox Specific Customization
     config.vm.provider "virtualbox" do |vb|
     # Use VBoxManage to customize the VM. For example to change memory:
