@@ -1,12 +1,14 @@
 from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404, render
+from datetime import date, timedelta
 
-from ..models import Musica, Categoria, DiaLiturgico
+from ..models import Musica, Categoria, DiaLiturgico, Data
 
 def base_context():
-	tempos = Categoria.objects.filter(categoria_mae=None,slug__startswith="tempo");
-	especiais = Categoria.objects.filter(categoria_mae=None).exclude(slug__startswith="tempo");
-	ctx = {'tempos': tempos, 'especiais': especiais}
+	tempos = Categoria.objects.filter(categoria_mae=None,slug__startswith="tempo")
+	especiais = Categoria.objects.filter(categoria_mae=None).exclude(slug__startswith="tempo")
+	destaques = Data.objects.filter(data__gt = (date.today()+timedelta(days=-1)), destaque = 1)
+	ctx = {'tempos': tempos, 'especiais': especiais, 'destaques': destaques}
 	return ctx
 
 def index(request):
