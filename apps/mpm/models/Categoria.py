@@ -19,3 +19,5 @@ class Categoria(models.Model):
 		return Musica.objects.filter(categorias__slug=self.slug)
 	def get_filhas(self):
 		return Categoria.objects.filter(categoria_mae__slug=self.slug)
+	def get_absolute_url(self):
+		return "/musicas-de/%s/" % self.slug

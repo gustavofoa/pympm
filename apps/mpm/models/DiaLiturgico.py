@@ -9,3 +9,5 @@ class DiaLiturgico(models.Model):
 		app_label = "mpm"
 	def __str__(self):
 		return self.titulo.encode('utf-8')
+	def get_absolute_url(self):
+		return "/sugestoes-para/%s/" % self.slug

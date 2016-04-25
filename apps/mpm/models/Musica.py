@@ -30,3 +30,5 @@ class Musica(models.Model):
 			plural = "s"
 		retorno = "<span property='ratingValue'>%.2f</span> em <span property='ratingCount'>%d</span> voto%s"
 		return retorno % (self.get_rating_per_5(), self.votes, plural)
+	def get_absolute_url(self):
+		return "/musica/%s/" % self.slug
