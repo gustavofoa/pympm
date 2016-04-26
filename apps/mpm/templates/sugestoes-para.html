@@ -4,10 +4,16 @@
 
 {% block content %}
 
-<h3 style="text-align:center;">Sugestões de músicas para a missa <br/> {{ diaLiturgico.titulo }}<h3>
+<h2 style="text-align:center;">{{ diaLiturgico.titulo }}</h2>
 
-<div style="text-align:center;"><img src="{{ diaLiturgico.img }}" /></div>
+<h3 style="text-align:center;">{{ data }}</h3>
 
+<img class="img-responsive" src="{{ diaLiturgico.img }}" />
 
+<ul>
+{% for item in items %}
+    <li>{{ item.titulo }}</li>
+{% endfor %}
+</ul>
 
 {% endblock %}

@@ -6,7 +6,7 @@ import json
 import django
 import time
 from datetime import datetime
-from apps.mpm.models import Categoria, Musica, DiaLiturgico, Data
+from apps.mpm.models import Categoria, Musica, DiaLiturgico, Data, Leitura, SugestaoMusica
 
 class ImportCategorias:
 
@@ -43,7 +43,6 @@ class ImportCategorias:
             print "Importou"
         else:
             print "Dados invalidos"
-
 
 class ImportMusicas:
 
@@ -85,8 +84,6 @@ class ImportMusicas:
         else:
             print "Dados invalidos"
 
-
-
 class ImportPaginasSugestoes:
 
     def __init__(self, URLSugestoes):
@@ -98,6 +95,38 @@ class ImportPaginasSugestoes:
             print cont, ": " + pagina['slug']
             m = DiaLiturgico(slug = pagina["slug"], titulo = pagina["title"], img = pagina["img"])
             m.save()
+
+            posicao = 1
+
+            for item in pagina['items']:
+                if item["leitura"]:
+                    i = Leitura(
+                        titulo = item["title"],
+                        diaLiturgico = m,
+                        posicao = posicao,
+                        texto = item["leitura"]
+                    )
+                    i.save()
+                else:
+                    i = SugestaoMusica(
+                        titulo = item["title"],
+                        diaLiturgico = m,
+                        posicao = posicao
+                    )
+                    i.save()
+                    for cat in item["categorias"].split(","):
+                        if cat:
+                            i.categorias.add(Categoria.objects.get(slug=cat.strip()))
+                    for av in item["sugestoesAvulsas"].split(","):
+                        if av:
+                            i.avulsas.add(Musica.objects.get(slug=av.strip()))
+                    for ret in item["tirarMusica"].split(","):
+                        if ret:
+                            i.remover.add(Musica.objects.get(slug=ret.strip()))
+                    i.save()
+                print ">>> ", posicao, " - ", item["title"]
+                posicao = posicao + 1
+
             cont = cont + 1
 
     def run_import(self):

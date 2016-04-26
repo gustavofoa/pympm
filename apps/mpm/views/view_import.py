@@ -15,13 +15,13 @@ def import_data(request):
 			print "URL Categorias: ", url_categorias
 			if url_categorias != '':
 				impCat = ImportCategorias(url_categorias)
-				impCat.run_import()
+			#	impCat.run_import()
 			#import Musicas
 			url_musicas =  form.cleaned_data["url_musicas"]
 			print "URL Musicas: ", url_musicas
 			if url_musicas != '':
 				impMus = ImportMusicas(url_musicas)
-				impMus.run_import()
+			#	impMus.run_import()
 			#import Sugestoes
 			url_sugestoes =  form.cleaned_data["url_sugestoes"]
 			print "URL Sugestões: ", url_sugestoes
@@ -33,7 +33,7 @@ def import_data(request):
 			print "URL Datas: ", url_datas
 			if url_datas != '':
 				impDat = ImportDatas(url_datas)
-				impDat.run_import()
+			 	impDat.run_import()
 			return HttpResponse("<html><body>Importação realizada com sucesso! <a href='/'>Voltar</a></body></html>")
 	else:
 		form = ImportData()

@@ -7,7 +7,6 @@
 
 <h1>{{ musica.nome }}</h1>
 
-
 <iframe type="text/html" width="100%" height="350" frameborder="0" src="http://www.youtube.com/embed{{ musica.get_video_code }}">
 </iframe>
 
@@ -40,34 +39,35 @@
   		</li>
   		<li>
   	  	  <a data-toggle="tab" href="#cifra">Cifra</a>
-  		</li>
+  		</li><!--
   		<li>
   	  	  <a data-toggle="tab" href="#info">Informações</a>
   		</li>
   		<li>
   	  	  <a data-toggle="tab" href="#cat">Categorias</a>
-  		</li>
+  		</li>-->
     </ul>
 
 	  <div class="tab-content">
 		{% autoescape off %}
-		<div id="letra" class="tab-pane fade in active">{{ musica.letra|linebreaks }}</div>
-		<div id="cifra" class="tab-pane fade">
-			<pre>
-				{{ musica.cifra }}
-			</pre>
-		</div>
-		<div id="info" class="tab-pane fade">{{ musica.info|linebreaks }}</div>
-		<div id="cat" class="tab-pane fade">
-			<ul>
-			{% for categoria in musica.categorias.all %}
-			    <li><a href="{% url 'musicas-de' categoria.slug %}">{{ categoria }}</a></li>
-			{% endfor %}
-			</ul>
-		</div>
+  		<div id="letra" class="tab-pane fade in active">{{ musica.letra|linebreaks }}</div>
+  		<div id="cifra" class="tab-pane fade">
+  			<pre>
+  				{{ musica.cifra }}
+  			</pre>
+  		</div><!--
+  		<div id="info" class="tab-pane fade">{{ musica.info|linebreaks }}</div>
+  		<div id="cat" class="tab-pane fade">
+  			<ul>
+  			{% for categoria in musica.categorias.all %}
+  			    <li><a href="{% url 'musicas-de' categoria.slug %}">{{ categoria }}</a></li>
+  			{% endfor %}
+  			</ul>
+  		</div>-->
+
 		{% endautoescape %}
 	  </div>
-    </div>
+  </div>
 </div>
 
 
