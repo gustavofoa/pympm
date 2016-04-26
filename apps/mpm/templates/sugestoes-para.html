@@ -30,11 +30,21 @@
             {{ item.leitura.texto }}
           {% endautoescape %}
         {% elif item.sugestaomusica %}
-        <ul class="list-unstyled">
-          {% for mus in item.sugestaomusica.get_musicas %}
-            <a href="{{ mus.get_absolute_url }}"><li>{{ mus.nome }}</li></a>
-          {% endfor %}
-        </ul>
+
+          <ul class="list-unstyled">
+            {% for mus in item.sugestaomusica.get_musicas %}
+            <div class="star-ratings top-right rgt">
+              <div class="sr-stars sr-star gray">
+                <div class="sr-fuel sr-star yellow" style="width:{{ mus.get_formated_rating }}%;"></div>
+                <!-- sr-fuel --><a href="#1"></a><a href="#2"></a><a href="#3"></a><a href="#4"></a><a href="#5"></a>
+              </div>
+            </div>
+              <li>
+              <a href="{{ mus.get_absolute_url }}">{{ mus.nome }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+
         {% endif %}
       </div>
       </div>
