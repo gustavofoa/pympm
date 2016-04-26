@@ -1,7 +1,7 @@
 from django.db import models
+from . import ItemLiturgia
 
-class Leitura(models.Model):
-	itemLiturgia = models.OneToOneField("ItemLiturgia", primary_key=True)
+class Leitura(ItemLiturgia):
 	marcacao_biblia = models.CharField(max_length=100)
 	texto = models.TextField()
 	class Meta:
