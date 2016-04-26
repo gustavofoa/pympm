@@ -10,10 +10,39 @@
 
 <img class="img-responsive" src="{{ diaLiturgico.img }}" />
 
-<ul>
-{% for item in items %}
-    <li>{{ item.titulo }}</li>
-{% endfor %}
-</ul>
+<div class="panel-group accordion nav-side" id="accorside1">
+  <div class="panel accordion-group">
+
+    {% for item in items %}
+    <div class="accordion-heading accordion-collapse-in">
+      <a class="active accordion-toggle icon-toggle" data-toggle="collapse" data-parent="#accorside{{ item.posicao }}" href="#accorside-{{ item.posicao }}">
+        {% if item.leitura %}<i class="fa fa-font"></i>
+        {% elif item.sugestaomusica %}<i class="fa fa-microphone"></i>{% endif %}
+        {{ item.titulo }}
+      </a>
+    </div>
+    <div id="accorside-{{ item.posicao }}" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <div class="panel-body">
+
+        {% if item.leitura %}
+          {% autoescape off %}
+            {{ item.leitura.texto }}
+          {% endautoescape %}
+        {% elif item.sugestaomusica %}
+        <ul class="list-unstyled">
+          {% for mus in item.sugestaomusica.get_musicas %}
+            <a href="{{ mus.get_absolute_url }}"><li>{{ mus.nome }}</li></a>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      </div>
+    </div>
+    {% endfor %}
+
+
+  </div>
+</div>
 
 {% endblock %}

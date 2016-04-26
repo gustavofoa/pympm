@@ -7,4 +7,4 @@ class Leitura(ItemLiturgia):
 	class Meta:
 		app_label = "mpm"
 	def __str__(self):
-		return self.itemLiturgia.titulo.encode('utf-8') + " (" + self.marcacao_biblia.encode("utf-8") + ") - " + self.itemLiturgia.descricao.encode('utf-8')
+		return self.titulo
