@@ -5,3 +5,4 @@ from ItemLiturgia import ItemLiturgia
 from Leitura import Leitura
 from Musica import Musica
 from SugestaoMusica import SugestaoMusica
+from Post import Post
