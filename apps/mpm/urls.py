@@ -3,7 +3,9 @@ from django.conf.urls import url
 from views import *
 from views.view_import import import_data
 from views.view_starratings import starratings_ajax
+from views.view_errors import page_not_found
 from django.contrib.sitemaps.views import sitemap
+from django.conf.urls import handler404
 from sitemap import MusicaSitemap, CategoriaSitemap, DiaLiturgicoSitemap
 
 sitemaps = {
@@ -24,3 +26,6 @@ urlpatterns = [
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     #url(r'^datas-top-destaque.json$', view_datas.datas_top_destaque, name='datas-top-destaque'),
 ]
+
+
+handler404 = view_errors.page_not_found
