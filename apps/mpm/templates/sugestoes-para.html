@@ -51,13 +51,13 @@
     </div>
     {% endfor %}
 
-
-    {% include 'banner-bottom.html' %}
-
-    <div class="fb-comments" data-href="http://musicasparamissa.com.br{% url 'sugestoes-para' diaLiturgico.slug %}" data-width="640" data-numposts="5" data-colorscheme="light"></div>
-
-
   </div>
 </div>
+
+
+{% include 'banner-bottom.html' %}
+
+<div class="fb-comments" data-href="http://musicasparamissa.com.br{% url 'sugestoes-para' diaLiturgico.slug %}" data-width="640" data-numposts="5" data-colorscheme="light"></div>
+
 
 {% endblock %}
