@@ -22,7 +22,7 @@ sudo apt-get -y install npm
 echo ">> Install less"
 sudo npm install -g less
 
-echo ">> Install Python-mysqldb"
-sudo apt-get -y install python-mysqldb
+#echo ">> Install Python-mysqldb"
+#sudo apt-get -y install python-mysqldb
 
 echo ">> Done."
