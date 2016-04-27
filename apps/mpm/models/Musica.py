@@ -15,7 +15,10 @@ class Musica(models.Model):
 	def __str__(self):
 		return self.nome.encode('utf-8')
 	def get_video_code(self):
-		return self.link_video[self.link_video.rindex('/'):].replace("embed",'').replace('watch?v=','').replace('v=','')
+		if self.link_video:
+			return self.link_video[self.link_video.rindex('/'):].replace("embed",'').replace('watch?v=','').replace('v=','')
+		else:
+			return ""
 	def add_rate(self, rate):
 		#weighted average
 		self.rating = (self.rating * self.votes + rate*100/5) / (self.votes + 1)

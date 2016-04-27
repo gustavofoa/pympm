@@ -6,9 +6,10 @@
 {% block content %}
 
 <h1>{{ musica.nome }}</h1>
-
+{% if musica.get_video_code %}
 <iframe type="text/html" width="100%" height="350" frameborder="0" src="http://www.youtube.com/embed{{ musica.get_video_code }}">
 </iframe>
+{% endif %}
 
 
 <div class="row row-tabs" role="tabpanel">
