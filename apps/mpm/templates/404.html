@@ -6,17 +6,17 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Z-Theme | Multipurpose Responsive Template</title>
+  <title>Página não encontrada - Músicas para Missa</title>
   <link rel="icon" href="assets/images/favicon.ico">
   <!--[if IE 8]><html class="ie8"><![endif]-->
   <!-- Bootstrap -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
   <!-- Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- Theme -->
-  <link href="assets/css/coming-soon-404.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/css/theme.css">
+  <link href="{% static 'assets/css/coming-soon-404.css' %}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/theme.css' %}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,8 +42,8 @@
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="assets/js/jquery.backstretch.js"></script>
-  <script src="assets/js/page/page.404.js"></script>
+  <script src="{% static 'assets/js/jquery.backstretch.js' %}"></script>
+  <script src="{% static 'assets/js/page/page.404.js' %}"></script>
 </body>
 
 </html>
