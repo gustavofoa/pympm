@@ -15,7 +15,8 @@ pre {
 	font-weight: bold;
 }
 
-#center {
-	text-align: center;
-	color: #0000FF;
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
 }
