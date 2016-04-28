@@ -21,7 +21,20 @@
 
 <ul>
 {% for musica in categoria.get_musicas %}
-    <h4><li><a href="{% url 'musica' musica.slug %}">{{ musica.nome }}</a></li></h4>
+
+    <div class="star-ratings top-right rgt">
+      <div class="sr-stars sr-star gray">
+        <div class="sr-fuel sr-star yellow" style="width:{{ musica.get_formated_rating }}%;"></div>
+        <!-- sr-fuel --><a href="#1"></a><a href="#2"></a><a href="#3"></a><a href="#4"></a><a href="#5"></a>
+      </div>
+    </div>
+
+    <a href="{% url 'musica' musica.slug %}">
+      <h4><li>{{ musica.nome }}</li></h4>
+    {% autoescape off %}
+    <p>{{ musica.get_inicio }}</p>
+    {% endautoescape %}
+    </a>
 {% endfor %}
 </ul>
 

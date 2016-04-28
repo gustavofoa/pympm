@@ -35,3 +35,8 @@ class Musica(models.Model):
 		return retorno % (self.get_rating_per_5(), self.votes, plural)
 	def get_absolute_url(self):
 		return "/musica/%s/" % self.slug
+	def get_inicio(self):
+		retorno = self.letra[:140].replace("<strong>",'').replace("<strong",'').replace("<stron",'').replace("<stro",'').replace("<str",'').replace("<st",'').replace("<s",'')
+		retorno = retorno.replace("</strong>",'').replace("</strong",'').replace("</stron",'').replace("</stro",'').replace("</str",'').replace("</st",'').replace("</s",'')
+		retorno = retorno.replace("</",'').replace("<",'')
+		return retorno
