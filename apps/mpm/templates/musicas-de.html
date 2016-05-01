@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 
+{% block title2 %}{% block title %}Músicas para Missa - Músicas de {{ categoria.nome }}{% endblock %}{% endblock %}
 
 {% block content %}
+
+{% include 'email-header.html' %}
+
+{% include 'banner-top.html' %}
+
+{% include 'container-default.html' %}
+
 
 
 {% if categoria.categoria_mae %}

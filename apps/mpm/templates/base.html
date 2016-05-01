@@ -15,25 +15,9 @@
 
 		{% include 'navbar.html' %}
 
-		{% include 'email-header.html' %}
+    {% block content %}
+    {% endblock %}
 
-    {% include 'banner-top.html' %}
-
-    <!-- GRIDS -->
-    <!--===============================================================-->
-    <div class="container">
-			<div class="row">
-
-			  <!-- GRID CONTENT -->
-			  <!--===============================================================-->
-			  <div class="col-sm-8 grid-posts">
-			    <!-- POST ITEM 1 -->
-			    <div class="row">
-			      <div class="col-sm-12">
-			          <div class="wrapper-post">
-			            <div class="wrapper-post-text">
-			            {% block content %}
-			            {% endblock %}
 			          </div>
 			        </div>
 			      </div>

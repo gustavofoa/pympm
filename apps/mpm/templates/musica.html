@@ -2,8 +2,14 @@
 
 {% block title2 %}{% block title %}{{ musica.nome }} - Músicas para Missa{% endblock %}{% endblock %}
 
-
 {% block content %}
+
+<br />
+
+{% include 'banner-top.html' %}
+
+{% include 'container-default.html' %}
+
 
 <h1>{{ musica.nome }}</h1>
 {% if musica.get_video_code %}
