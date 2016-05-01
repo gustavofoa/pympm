@@ -39,14 +39,14 @@ body.player-1 {
     height: 31px;
     top: 3px;
 }
-.rf-player.player-1 .rf-player-container .rf-player-background {
+/*.rf-player.player-1 .rf-player-container .rf-player-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 65px;
     z-index: 0;
     background-image: url("../images/player/1/background.png");
-}
+}*/
 
 .rf-player.player-1 .rf-player-container .rf-player-play-pause {
 	position: absolute;
