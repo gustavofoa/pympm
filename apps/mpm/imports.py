@@ -124,7 +124,7 @@ class ImportPaginasSugestoes:
                         if ret:
                             i.remover.add(Musica.objects.get(slug=ret.strip()))
                     i.save()
-                print ">>> Importando Pg. ", posicao#, " - ", item["title"]
+                print ">>> Importando Pg. ", posicao
                 posicao = posicao + 1
 
             cont = cont + 1
