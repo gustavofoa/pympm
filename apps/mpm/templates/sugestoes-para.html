@@ -36,7 +36,7 @@
 
         {% if item.leitura %}
           {% autoescape off %}
-            {{ item.leitura.texto }}
+            {{ item.leitura.get_formated_texto }}
           {% endautoescape %}
         {% elif item.sugestaomusica %}
 
