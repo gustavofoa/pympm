@@ -13,6 +13,9 @@ sudo apt-get -y install -y openssh-server vim git zip bzip2 fontconfig curl make
 echo ">> Install Python-pip and Python-dev"
 sudo apt-get -y install python-pip python-dev
 
+echo ">> Install Mysql client"
+sudo apt-get -y install libmysqlclient-dev
+
 echo ">> Install Requirements"
 sudo pip install -r /vagrant/requirements.txt
 
@@ -21,8 +24,5 @@ sudo apt-get -y install npm
 
 echo ">> Install less"
 sudo npm install -g less
-
-#echo ">> Install Python-mysqldb"
-#sudo apt-get -y install python-mysqldb
 
 echo ">> Done."
