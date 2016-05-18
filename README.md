@@ -1,16 +1,16 @@
 # pympm
-Novo site Músicas para Missa
+#Novo site Músicas para Missa
 
-necessário instalar o Vagrant e o Virtual Box
+##necessário instalar o Vagrant e o Virtual Box
 
-*Iniciar máquina virtual*
+###Iniciar máquina virtual
 vagrant up
 
-*Acessar a máquina virtual*
+###Acessar a máquina virtual
 vagrant ssh
 
-*Executar a aplicação*
+###Executar a aplicação*
 sh /vagrant/script/runserver.sh
 
-*Acessar a URL*
+###Acessar a URL
 http://localhost:8000
