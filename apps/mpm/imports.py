@@ -93,7 +93,7 @@ class ImportPaginasSugestoes:
         cont = 1
         for pagina in json:
             print cont, ": " + pagina['slug']
-            m = DiaLiturgico(slug = pagina["slug"], titulo = pagina["title"], img = pagina["img"])
+            m = DiaLiturgico(slug = pagina["slug"], titulo = pagina["title"], img = pagina["img"].replace('cdn.musicasparamissa.com.br.s3-sa-east-1.amazonaws.com','musicasparamissa.com.br'))
             m.save()
 
             posicao = 1
