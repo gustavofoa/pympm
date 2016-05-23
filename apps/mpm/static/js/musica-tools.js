@@ -69,7 +69,9 @@ function printPopup(title, data)
     mywindow.document.write('</body></html>');
     mywindow.document.close();
     mywindow.focus();
-    mywindow.print();
-    mywindow.close();
+    setTimeout(function(){
+      mywindow.print();
+      mywindow.close();
+    },100);
     return true;
 }
