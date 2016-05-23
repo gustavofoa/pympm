@@ -11,7 +11,7 @@
 {% include 'container-default.html' %}
 
 
-<h1>{{ musica.nome }}</h1>
+<h1 id='titulo-musica'>{{ musica.nome }}</h1>
 {% if musica.get_video_code %}
 <iframe type="text/html" width="100%" height="350" frameborder="0" src="http://www.youtube.com/embed{{ musica.get_video_code }}">
 </iframe>
@@ -74,7 +74,9 @@
             <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
           </button>
         </div>
-        {{ musica.letra|linebreaks }}
+        <div id='div-letra'>
+          {{ musica.letra|linebreaks }}
+        </div>
       </div>
   		<div id="cifra" class="tab-pane fade">
         <div class="btn-group btn-group-xs" role="group">
@@ -104,9 +106,9 @@
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>½
           </button>
         </div>
-  			<pre>
-  				{{ musica.cifra }}
-  			</pre>
+    			<pre id='div-cifra'>
+    				{{ musica.cifra }}
+    			</pre>
   		</div><!--
   		<div id="info" class="tab-pane fade">{{ musica.info|linebreaks }}</div>
   		<div id="cat" class="tab-pane fade">
@@ -121,15 +123,7 @@
 	  </div>
   </div>
 </div>
-
-{% block js-import %}
-<script src="{% static 'js/star_ratings_complement.js' %}"></script>
-<script src="{% static 'js/star_ratings.min.js' %}"></script>
-<script src="{% static 'js/musica-tools.js' %}"></script>
-{% endblock %}
-
 {% include 'banner-bottom.html' %}
-
+{% block js-import %}<script src="{% static 'js/musica-tools.js' %}"></script>{% endblock %}
 <div class="fb-comments" data-href="http://musicasparamissa.com.br{% url 'musica' musica.slug %}" data-width="640" data-numposts="5" data-colorscheme="light"></div>
-
 {% endblock %}
