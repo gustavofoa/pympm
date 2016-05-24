@@ -13,7 +13,7 @@ $('#print-letra').on('click', function (e) {
   printPopup($('#titulo-musica').html(), '<div id="letra">'+$('#div-letra').html()+'</div>');
 });
 
-var tamFonteCifra = 16;
+var tamFonteCifra = 13;
 
 $('#remove-font-size-cifra').on('click', function (e) {
   updateFontSize(--tamFonteCifra, 'div-cifra');
