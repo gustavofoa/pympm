@@ -1,13 +1,30 @@
+
+var tamFonteLetra = 16;
+
+$('#remove-font-size-letra').on('click', function (e) {
+  updateFontSize(--tamFonteLetra, 'div-letra');
+});
+
+$('#add-font-size-letra').on('click', function (e) {
+  updateFontSize(++tamFonteLetra, 'div-letra');
+});
+
 $('#print-letra').on('click', function (e) {
   printPopup($('#titulo-musica').html(), '<div id="letra">'+$('#div-letra').html()+'</div>');
 });
 
-$('#remove-font-size-letra').on('click', function (e) {
+var tamFonteCifra = 16;
 
+$('#remove-font-size-cifra').on('click', function (e) {
+  updateFontSize(--tamFonteCifra, 'div-cifra');
 });
 
-$('#add-font-size-letra').on('click', function (e) {
+$('#add-font-size-cifra').on('click', function (e) {
+  updateFontSize(++tamFonteCifra, 'div-cifra');
+});
 
+$('#print-cifra').on('click', function (e) {
+  printPopup($('#titulo-musica').html(), '<pre id="cifra">'+$('#div-cifra').html()+'</pre>');
 });
 
 $('#remove-meio-tom-cifra').on('click', function (e) {
@@ -15,18 +32,6 @@ $('#remove-meio-tom-cifra').on('click', function (e) {
 });
 
 $('#add-meio-tom-cifra').on('click', function (e) {
-
-});
-
-$('#print-cifra').on('click', function (e) {
-  printPopup($('#titulo-musica').html(), '<pre id="cifra">'+$('#div-cifra').html()+'</pre>');
-});
-
-$('#remove-font-size-cifra').on('click', function (e) {
-
-});
-
-$('#add-font-size-cifra').on('click', function (e) {
 
 });
 
@@ -74,4 +79,12 @@ function printPopup(title, data)
       mywindow.close();
     },100);
     return true;
+}
+
+function updateFontSize(size, element){
+  document.getElementById(element).style.fontSize = size+"px";
+  var ps = document.getElementById(element).getElementsByTagName("p")
+  for (i = 0; i < ps.length; i++) {
+    ps[i].style.fontSize = size+"px";
+  }
 }

@@ -124,6 +124,10 @@
   </div>
 </div>
 {% include 'banner-bottom.html' %}
-{% block js-import %}<script src="{% static 'js/musica-tools.js' %}"></script>{% endblock %}
+
 <div class="fb-comments" data-href="http://musicasparamissa.com.br{% url 'musica' musica.slug %}" data-width="640" data-numposts="5" data-colorscheme="light"></div>
+{% endblock %}
+
+{% block js-import %}
+<script src="{% static 'js/musica-tools.js' %}"></script>
 {% endblock %}
