@@ -570,10 +570,12 @@ label {
     top: 0;
     right: 0;
     left: 0;
-    height: 35px;
+/*    height: 35px; #####player1#####*/
+    height: 79px;
   }
   .body-nav-fixed-menu-top #nav.navbar-fixed-top {
-    top: 35px;
+/*    top: 35px;    ######player1#####*/
+    top: 79px; /* #####player12#####*/
   }
 }
 /* Navbar
