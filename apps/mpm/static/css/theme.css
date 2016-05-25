@@ -139,6 +139,7 @@ label {
 }
 .section-heading-page {
   margin-bottom: 40px;
+  margin-top: 48px; /* #####player12#####*/
   padding: 20px 0;
   color: black;
   border-bottom: 1px solid #ddd;
