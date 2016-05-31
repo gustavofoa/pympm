@@ -9,7 +9,7 @@
 
  * Website: http://mamoot-themes.com
 */
-/* Body  
+/* Body
    ================================================== */
 body {
   overflow-x: hidden;
@@ -61,7 +61,7 @@ body {
     width: 1200px;
   }
 }
-/* Rows and Columns  
+/* Rows and Columns
    ================================================== */
 .row-heading {
   margin-right: -15px;
@@ -94,7 +94,7 @@ body {
     margin-top: 16px;
   }
 }
-/* Typography  
+/* Typography
    ================================================== */
 body {
   font-family: 'Open Sans', sans-serif;
@@ -138,7 +138,7 @@ label {
   padding: 0;
 }
 .section-heading-page {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 20px 0;
   color: black;
   border-bottom: 1px solid #ddd;
@@ -412,7 +412,7 @@ label {
   border-top: solid 1px #ddd;
   border-bottom: solid 1px #ddd;
 }
-/* Forms  
+/* Forms
    ================================================== */
 .form-control {
   -webkit-transition: none;
@@ -444,7 +444,7 @@ label {
   z-index: 2;
   margin-right: -2px;
 }
-/* Navbar Menu-Top  
+/* Navbar Menu-Top
    ================================================== */
 @media (max-width: 767px) {
   .menu-top .row > div + div {
@@ -561,7 +561,7 @@ label {
   font-size: 15px;
   font-weight: 400;
 }
-/* Navbar Positioning  
+/* Navbar Positioning
    ================================================== */
 @media (min-width: 768px) {
   .body-nav-fixed-menu-top .menu-top {
@@ -576,7 +576,7 @@ label {
     top: 35px;
   }
 }
-/* Navbar  
+/* Navbar
    ================================================== */
 .navbar {
   min-height: 92px;
@@ -624,7 +624,7 @@ label {
     margin: 0;
   }
 }
-/* Navbar Brand 
+/* Navbar Brand
    ================================================== */
 .navbar-brand {
   font-size: 24px;
@@ -657,7 +657,7 @@ label {
     margin: 0 auto;
   }
 }
-/* Navbar Toggle  
+/* Navbar Toggle
    ================================================== */
 .navbar-toggle {
   margin-top: 13px;
@@ -772,7 +772,7 @@ label {
     display: none;
   }
 }
-/* Navbar Dropdown Menu 
+/* Navbar Dropdown Menu
    ================================================== */
 .navbar-nav .dropdown-menu {
   margin-top: 2px;
@@ -829,7 +829,7 @@ label {
     display: none;
   }
 }
-/* Navbar Search Box  
+/* Navbar Search Box
    ================================================== */
 form.nav-search {
   position: relative;
@@ -917,7 +917,7 @@ form.nav-search > input:focus {
     float: right !important;
   }
 }
-/* Navbar Mega Menu  
+/* Navbar Mega Menu
    ================================================== */
 .li-mega-menu {
   position: static !important;
@@ -955,7 +955,7 @@ form.nav-search > input:focus {
     padding-bottom: 30px;
   }
 }
-/* Navbar Mega Menu Content 
+/* Navbar Mega Menu Content
    ================================================== */
 .li-mega-menu > .wrapper-mega-menu.v1 [class^='col'] {
   margin-top: 0;
@@ -1612,7 +1612,7 @@ form.nav-search > input:focus {
     padding: 0 8px;
   }
 }
-/* Navbar Transitions and Animations  
+/* Navbar Transitions and Animations
    ================================================== */
 #header .navbar li a {
   -webkit-transition: 0.2s linear background-color, 0.2s linear color;
@@ -1845,7 +1845,7 @@ form.nav-search > input:focus {
     opacity: 1;
   }
 }
-/* Helper Classes  
+/* Helper Classes
    ================================================== */
 .inset-shadow-top {
   box-shadow: inset 0 4px 0 0 rgba(0, 0, 0, 0.08);
@@ -2058,7 +2058,7 @@ form.nav-search > input:focus {
     float: none !important;
   }
 }
-/* Img Wrapper - Hover Effect  
+/* Img Wrapper - Hover Effect
    ================================================== */
 .img-wrapper {
   position: relative;
@@ -2132,7 +2132,7 @@ form.nav-search > input:focus {
   opacity: .35;
   -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=35)';
 }
-/* Filterable Portfolio  
+/* Filterable Portfolio
    ================================================== */
 #container-mixitup {
   margin-top: 50px;
@@ -2149,7 +2149,7 @@ form.nav-search > input:focus {
     margin-bottom: 4px;
   }
 }
-/* Portfolio Fluid  
+/* Portfolio Fluid
    ================================================== */
 @media (min-width: 768px) {
   .portfolio-fluid > div > div {
@@ -2157,7 +2157,7 @@ form.nav-search > input:focus {
     padding: 0;
   }
 }
-/* Portfolio Caption Box  
+/* Portfolio Caption Box
    ================================================== */
 .caption-portfolio {
   padding-top: 16px;
@@ -2180,14 +2180,14 @@ form.nav-search > input:focus {
     margin: 0 auto;
   }
 }
-/* Portfolio Item Page Description  
+/* Portfolio Item Page Description
    ================================================== */
 @media (min-width: 768px) {
   .portfolio-item-description {
     padding-left: 30px;
   }
 }
-/* Browser (safari)  
+/* Browser (safari)
    ================================================== */
 .browser {
   position: relative;
@@ -2235,7 +2235,7 @@ form.nav-search > input:focus {
 .btn-browser-3 {
   background-color: #15cc37;
 }
-/* Dials  
+/* Dials
    ================================================== */
 .wrapper-dial-sm,
 .wrapper-dial-md,
@@ -2288,7 +2288,7 @@ form.nav-search > input:focus {
   right: 0;
   left: 0;
 }
-/* Progress Bars  
+/* Progress Bars
    ================================================== */
 .progress {
   height: 20px;
@@ -2328,7 +2328,7 @@ form.nav-search > input:focus {
 .countto-bar:after {
   content: '%';
 }
-/* Breadcrumbs  
+/* Breadcrumbs
    ================================================== */
 .breadcrumb {
   margin: 0;
@@ -2353,7 +2353,7 @@ form.nav-search > input:focus {
   content: '/\00a0';
   color: #ccc;
 }
-/* Buttons  
+/* Buttons
    ================================================== */
 .btn {
   -webkit-transition-timing-function: ease-in-out;
@@ -2792,7 +2792,7 @@ form.nav-search > input:focus {
   border-color: #839596;
   background-color: #839596;
 }
-/* Icons  
+/* Icons
    ================================================== */
 .fa.colored {
   color: #862a15;
@@ -2866,7 +2866,7 @@ a .fa-round:hover {
   height: 120px;
   padding-top: 29px;
 }
-/* Social Icons 
+/* Social Icons
    ================================================== */
 .fa-box-social,
 .fa-bg-social {
@@ -3101,7 +3101,7 @@ a .fa-round:hover {
 .fa-xing.fa-bg-social:hover {
   background-color: #003334;
 }
-/* Social Icons Hover V1  
+/* Social Icons Hover V1
    ================================================== */
 .social-hover-v1 {
   position: relative;
@@ -3200,7 +3200,7 @@ a .fa-round:hover {
 .social-hover-v1.a-youtube:after {
   background-color: #e52d27;
 }
-/* Boxes  
+/* Boxes
    ================================================== */
 .shop-box {
   position: relative;
@@ -3362,7 +3362,7 @@ a .fa-round:hover {
   width: 12px;
   text-align: center;
 }
-/* Panels  
+/* Panels
    ================================================== */
 .panel {
   margin-bottom: 20px;
@@ -3439,7 +3439,7 @@ a .fa-round:hover {
   border-color: #e74c3c;
   background-color: #e74c3c;
 }
-/* Accordion  
+/* Accordion
    ================================================== */
 .panel.accordion-group {
   margin-bottom: 0;
@@ -3512,7 +3512,7 @@ a .fa-round:hover {
   right: 19px;
   content: '\f104';
 }
-/* Accordion Sidebar Style  
+/* Accordion Sidebar Style
    ================================================== */
 .nav-side .panel.accordion-group .accordion-heading > a,
 .nav-side .panel.accordion-group .accordion-heading > a.acc-on.collapsed,
@@ -3557,7 +3557,7 @@ a .fa-round:hover {
 .nav-side .panel.accordion-group .accordion-heading > a.active {
   background-color: #ebebeb !important;
 }
-/* Accordion Versions  
+/* Accordion Versions
    ================================================== */
 /* Accordion Group V1 */
 .panel-acc.panel-group-v1 .panel {
@@ -3730,7 +3730,7 @@ a .fa-round:hover {
   left: 3px;
   content: '\f054';
 }
-/* Pagination  
+/* Pagination
    ================================================== */
 .pagination > li > a,
 .pagination > li > span {
@@ -3779,7 +3779,7 @@ a .fa-round:hover {
 .pagination .active a:hover {
   background-color: #862a15;
 }
-/* Dropdowns  
+/* Dropdowns
    ================================================== */
 .dropdown-menu {
   font-weight: 400;
@@ -3815,7 +3815,7 @@ a .fa-round:hover {
   color: black;
   background-color: #deddd8;
 }
-/* MFP Lightbox Animation  
+/* MFP Lightbox Animation
    ================================================== */
 .mfp-content {
   -webkit-animation-name: zoomIn;
@@ -3846,7 +3846,7 @@ a .fa-round:hover {
     opacity: 1;
   }
 }
-/* Bootstrap Carousel Settings  
+/* Bootstrap Carousel Settings
    ================================================== */
 .wrapper-slider {
   position: relative;
@@ -3976,7 +3976,7 @@ a .fa-round:hover {
   margin-top: 60px;
   margin-bottom: 0;
 }
-/* Macbook Slider  
+/* Macbook Slider
    ================================================== */
 .wrapper-macbook {
   position: relative;
@@ -3991,7 +3991,7 @@ a .fa-round:hover {
   right: 0;
   left: 0;
 }
-/* Iphone Slider  
+/* Iphone Slider
    ================================================== */
 .wrapper-iphone {
   position: relative;
@@ -4029,7 +4029,7 @@ a .fa-round:hover {
 .carousel-indicators.carousel-indicators-iphone li {
   line-height: 0;
 }
-/* BX Slider Global   
+/* BX Slider Global
    ================================================== */
 .bx-wrapper {
   position: relative;
@@ -4093,7 +4093,7 @@ a .fa-round:hover {
   color: white;
   background-color: #862a15;
 }
-/* Bx Slider Shop (Thumbnail Slider)  
+/* Bx Slider Shop (Thumbnail Slider)
    ================================================== */
 .bx-pager-shop {
   display: block;
@@ -4137,7 +4137,7 @@ a .fa-round:hover {
   border-color: #c4c4c4;
   background-color: #f6f6f6;
 }
-/* Owl Slider Portfolio Items  
+/* Owl Slider Portfolio Items
    ================================================== */
 #owl-portfolio-item {
   position: relative;
@@ -4176,7 +4176,7 @@ a .fa-round:hover {
   font-family: FontAwesome;
   content: '\f105';
 }
-/* Owl Slider Page Specific Styling  
+/* Owl Slider Page Specific Styling
    ================================================== */
 #owl-our-work .owl-pagination {
   margin-top: 39px;
@@ -4217,7 +4217,7 @@ a .fa-round:hover {
     margin: 0 30px;
   }
 }
-/* Timeline  
+/* Timeline
    ================================================== */
 .container-timeline {
   position: relative;
@@ -4281,7 +4281,7 @@ a .fa-round:hover {
 .timeline-box-left-v2:hover:after {
   background-color: #862a15;
 }
-/* Timeline Left  
+/* Timeline Left
    ================================================== */
 .timeline-box-right-v2 {
   position: relative;
@@ -4401,7 +4401,7 @@ a .fa-round:hover {
     margin: 0 auto;
   }
 }
-/* Pricetables  
+/* Pricetables
    ================================================== */
 .pricetable {
   overflow: hidden;
@@ -4559,7 +4559,7 @@ a .fa-round:hover {
   padding: 0;
   color: white;
 }
-/* Tabs  
+/* Tabs
    ================================================== */
 /* tabs reset */
 .nav > li > a {
@@ -4749,7 +4749,7 @@ a .fa-round:hover {
   margin: 0;
   padding: 0;
 }
-/* Sections  
+/* Sections
    ================================================== */
 .section-primary {
   position: relative;
@@ -4964,7 +4964,7 @@ a .fa-round:hover {
   /* For IE 8*/
   -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=82)';
 }
-/* Arrow Colors Polygonal Primary  
+/* Arrow Colors Polygonal Primary
    ================================================== */
 .section-polygonal-primary.section-arrow-top:after {
   border-bottom-color: #862a15;
@@ -4972,7 +4972,7 @@ a .fa-round:hover {
 .section-polygonal-primary.section-arrow-bottom:after {
   border-top-color: #862a15;
 }
-/* Arrow Colors Polygonal Black  
+/* Arrow Colors Polygonal Black
    ================================================== */
 .section-polygonal-black.section-arrow-top:after {
   border-bottom-color: #141414;
@@ -4980,7 +4980,7 @@ a .fa-round:hover {
 .section-polygonal-black.section-arrow-bottom:after {
   border-top-color: #0b0b0b;
 }
-/* Arrow Colors Polygonal Light  
+/* Arrow Colors Polygonal Light
    ================================================== */
 .section-polygonal-light.section-arrow-top:after {
   border-bottom-color: #e5e5e5;
@@ -4988,7 +4988,7 @@ a .fa-round:hover {
 .section-polygonal-light.section-arrow-bottom:after {
   border-top-color: #e5e5e5;
 }
-/* Arrow Colors Primary  
+/* Arrow Colors Primary
    ================================================== */
 .section-primary.section-arrow-top:after {
   border-bottom-color: #862a15;
@@ -4996,7 +4996,7 @@ a .fa-round:hover {
 .section-primary.section-arrow-bottom:after {
   border-top-color: #862a15;
 }
-/* Arrow Colors Dark  
+/* Arrow Colors Dark
    ================================================== */
 .section-black.section-arrow-top:after {
   border-bottom-color: black;
@@ -5004,7 +5004,7 @@ a .fa-round:hover {
 .section-black.section-arrow-bottom:after {
   border-top-color: black;
 }
-/* Arrow Colors Light  
+/* Arrow Colors Light
    ================================================== */
 .section-light.section-arrow-top:after {
   border-bottom-color: #f5f5f5;
@@ -5012,7 +5012,7 @@ a .fa-round:hover {
 .section-light.section-arrow-bottom:after {
   border-top-color: #f5f5f5;
 }
-/* Section Intro Sliders Global  
+/* Section Intro Sliders Global
    ================================================== */
 .carousel-intro {
   height: auto;
@@ -5080,7 +5080,7 @@ a .fa-round:hover {
   visibility: visible;
   opacity: 1;
 }
-/* Section Default Index Page Slider  
+/* Section Default Index Page Slider
    ================================================== */
 .section-intro-index {
   position: relative;
@@ -5111,7 +5111,7 @@ a .fa-round:hover {
     margin-top: 0;
   }
 }
-/* Section Shopping Page Slider  
+/* Section Shopping Page Slider
    ================================================== */
 .section-intro-shop {
   position: relative;
@@ -5142,7 +5142,7 @@ a .fa-round:hover {
     margin-top: 0;
   }
 }
-/* Section Background Image Page Slider  
+/* Section Background Image Page Slider
    ================================================== */
 .section-intro-bg-slider {
   position: relative;
@@ -5194,7 +5194,7 @@ a .fa-round:hover {
 .item-bg-3 {
   background-image: url('../images/bg/bg-7.jpg');
 }
-/* Section Call To 
+/* Section Call To
    ================================================== */
 .section-call-to {
   box-shadow: inset 0 4px 0 0 rgba(0, 0, 0, 0.08);
@@ -5209,7 +5209,7 @@ a .fa-round:hover {
   padding-right: 30px;
   padding-left: 30px;
 }
-/* Section of Application Pages Intro 
+/* Section of Application Pages Intro
    ================================================== */
 .list-app-stores {
   margin-top: 26px;
@@ -5252,7 +5252,7 @@ a .fa-round:hover {
     margin-left: auto;
   }
 }
-/* Section Contact Form Error-Success  
+/* Section Contact Form Error-Success
    ================================================== */
 .required {
   color: #fe5555;
@@ -5418,7 +5418,7 @@ a .fa-round:hover {
 .wrapper-item-comments {
   padding-top: 16px;
 }
-/* Blog  
+/* Blog
    ================================================== */
 .grid-posts > .row + .row {
   margin-top: 60px;
@@ -5609,7 +5609,7 @@ a .fa-round:hover {
 .media > .media-body > .media:before {
   margin-top: 40px;
 }
-/* Section Footer  
+/* Section Footer
    ================================================== */
 .section.footer {
   padding: 100px 0;
@@ -5630,7 +5630,7 @@ a .fa-round:hover {
 .section.footer li a:hover {
   color: #862a15;
 }
-/* Section Footer Bottom  
+/* Section Footer Bottom
    ================================================== */
 .section.footer-bottom {
   color: white;
@@ -5669,7 +5669,7 @@ a .fa-round:hover {
   border-color: #862a15;
   background-color: #862a15;
 }
-/* Styling of "feature - Ui Elements" pages  
+/* Styling of "feature - Ui Elements" pages
    ================================================== */
 .btn-show,
 .btn-show-manual {
