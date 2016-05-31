@@ -2,7 +2,7 @@ from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404, render
 from datetime import date, timedelta
 
-from ..models import Musica, Categoria, DiaLiturgico, Data, ItemLiturgia
+from ..models import Musica, Categoria, DiaLiturgico, Data, ItemLiturgia, Post
 
 def base_context():
 	tempos = Categoria.objects.filter(categoria_mae=None,slug__startswith="tempo")
@@ -19,6 +19,10 @@ def musica(request, slug):
 	ctx = base_context();
 	musica = get_object_or_404(Musica, slug=slug)
 	ctx['musica'] = musica
+
+	posts = Post.objects.all()
+	ctx['posts'] = posts
+
 	return render(request, 'musica.html', ctx)
 
 def musicas_de(request, slug):

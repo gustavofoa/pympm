@@ -126,8 +126,14 @@
 {% include 'banner-bottom.html' %}
 
 <div class="fb-comments" data-href="http://musicasparamissa.com.br{% url 'musica' musica.slug %}" data-width="640" data-numposts="5" data-colorscheme="light"></div>
+
+{% endblock %}
+
+{% block sub %}
+{% include 'blog-carousel.html' %}
 {% endblock %}
 
 {% block js-import %}
 <script src="{% static 'js/musica-tools.js' %}"></script>
+<script src="{% static 'assets/js/page/page.portfolio.js' %}"></script>
 {% endblock %}
