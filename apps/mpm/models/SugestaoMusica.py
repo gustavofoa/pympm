@@ -18,5 +18,6 @@ class SugestaoMusica(ItemLiturgia):
 		for mus in self.avulsas.all():
 			musicas.append(mus)
 		for mus in self.remover.all():
-			musicas.remove(mus)
+			if mus in musicas:
+				musicas.remove(mus)
 		return musicas

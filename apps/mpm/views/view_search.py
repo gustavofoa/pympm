@@ -4,4 +4,4 @@ from views import base_context
 
 def search(request):
 	ctx = base_context();
-	return render(request, 'index.html', ctx)
+	return render(request, 'search.html', ctx)
