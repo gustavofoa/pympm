@@ -3,11 +3,14 @@ from django.http import HttpResponse, JsonResponse
 
 from ..models import Musica
 
+import re
+
 def starratings_ajax(request):
 	id = request.POST.get('id', 0)
 	stars = request.POST.get('stars', 0)
+
 	print "Rating ", stars, " to ", id
-	if request.method == 'POST':
+	if request.method == 'POST' and re.match('^[\w\d-]+$', id):
 		jsonObj = {}
 		jsonObj[id] = {}
 		jsonObj[id]["success"] = 1

@@ -175,14 +175,16 @@
  				$.each(obj, function(){
  					var current = $(this),
  						current_id = current.attr('data-id');
- 					if(response[current_id].success)
- 					{
- 						$.fn.starratings.update(current, response[current_id].fuel+'%', response[current_id].legend, response[current_id].disable, is_fetch);
- 					}
- 					else
- 					{
- 						$.fn.starratings.update(current, fallback_fuel, fallback_legend, false, is_fetch);
- 					}
+          if(response[current_id]){
+   					if(response[current_id].success)
+   					{
+   						$.fn.starratings.update(current, response[current_id].fuel+'%', response[current_id].legend, response[current_id].disable, is_fetch);
+   					}
+   					else
+   					{
+   						$.fn.starratings.update(current, fallback_fuel, fallback_legend, false, is_fetch);
+   					}
+          }
  				});
  			},
  			complete: function(){
