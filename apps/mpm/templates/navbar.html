@@ -140,10 +140,31 @@
 
 
               <li class="li-search">
-                <form class="nav-search" action="/search">
-                  <label for="focus-input"><i class="fa fa-search"></i></label>
-                  <input id="focus-input" class="container" type="search" name="s" placeholder="Digite o que procura e tecle ENTER!">
+                <script>
+                  (function() {
+                    var cx = '015019343761254316434:icocp0vwhke';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                  })();
+                </script>
+                <div style="width:0px;overflow:hidden;height:0px;"> <!-- if you use display:none here, it doesn't work-->
+                    <gcse:searchbox-only resultsUrl="YOUR_RESULTS_PAGE_URL"></gcse:searchbox-only>
+                </div>
+                <form id="searchbox_015019343761254316434:icocp0vwhke" class="nav-search" action="/search">
+                    <label for="focus-input"><i class="fa fa-search"></i></label>
+                    <input value="015019343761254316434:icocp0vwhke" name="cx" type="hidden"/>
+                    <input id="focus-input" class="container" name="q" size="75" type="search" placeholder="Digite o que procura e tecle ENTER!"/>
                 </form>
+
+                <!--<form class="nav-search" action="/search">
+                  <label for="focus-input"><i class="fa fa-search"></i></label>
+                  <input id="focus-input" class="container" type="search" name="q" placeholder="Digite o que procura e tecle ENTER!">
+                  <input type="hiden" value="015019343761254316434:icocp0vwhke">
+                </form>-->
               </li>
 
             </ul>

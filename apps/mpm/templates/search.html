@@ -14,39 +14,22 @@
 
 		{% include 'navbar.html' %}
 
-		<div style="padding-top:50px;">
-    	{% include 'banner-top.html' %}
+		<div class="container" style="padding-top:50px">
+		  <div class="row">
+			  <script>
+					(function() {
+						var cx = '015019343761254316434:icocp0vwhke';
+						var gcse = document.createElement('script');
+						gcse.type = 'text/javascript';
+						gcse.async = true;
+						gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+						var s = document.getElementsByTagName('script')[0];
+						s.parentNode.insertBefore(gcse, s);
+					})();
+				</script>
+				<gcse:searchresults-only></gcse:searchresults-only>
+			</div>
 		</div>
-
-
-		{% if categorias %}
-		<h2>Categorias encontradas</h2>
-		<ul>
-		{% for cat in categorias %}
-			<a href="{% url 'musicas-de' cat.slug %}">
-		    <h4><li>{{ cat.nome }}</li></h4>
-				<p>{{ cat.descricao }}</p>
-			</a>
-		{% endfor %}
-		</ul>
-		{% endif %}
-
-
-
-		{% if musicas %}
-		<h2>Músicas encontradas</h2>
-		<ul>
-		{% for mus in musicas %}
-			<a href="{% url 'musica' mus.slug %}">
-		    <h4><li>{{ mus.nome }}</li></h4>
-				<p>{{ mus.get_inicio }}</p>
-			</a>
-		{% endfor %}
-		</ul>
-		{% endif %}
-
-
-
 
 	</div>
 
