@@ -31,6 +31,23 @@
 		</ul>
 		{% endif %}
 
+
+
+		{% if musicas %}
+		<h2>Músicas encontradas</h2>
+		<ul>
+		{% for mus in musicas %}
+			<a href="{% url 'musica' mus.slug %}">
+		    <h4><li>{{ mus.nome }}</li></h4>
+				<p>{{ mus.get_inicio }}</p>
+			</a>
+		{% endfor %}
+		</ul>
+		{% endif %}
+
+
+
+
 	</div>
 
 	{% include 'footer.html' %}
