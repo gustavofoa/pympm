@@ -18,6 +18,19 @@
     	{% include 'banner-top.html' %}
 		</div>
 
+
+		{% if categorias %}
+		<h2>Categorias encontradas</h2>
+		<ul>
+		{% for cat in categorias %}
+			<a href="{% url 'musicas-de' cat.slug %}">
+		    <h4><li>{{ cat.nome }}</li></h4>
+				<p>{{ cat.descricao }}</p>
+			</a>
+		{% endfor %}
+		</ul>
+		{% endif %}
+
 	</div>
 
 	{% include 'footer.html' %}

@@ -1,14 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from views import base_context
+from ..models import Categoria
+from django.db.models import Q
 
 def search(request):
     ctx = base_context()
 
-    search_query = request.GET.get('s', None)
+    s = request.GET.get('s', None)
 
-    print search_query
-
-    print 'pagina de busca'
+    categorias = Categoria.objects.filter(Q(nome__icontains=s) | Q(descricao__icontains=s))
+    ctx['categorias'] = categorias
 
     return render(request, 'search.html', ctx)
