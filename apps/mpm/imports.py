@@ -21,7 +21,7 @@ class ImportCategorias:
             categoriaMae = None
             if( parent != ''):
                 categoriaMae = Categoria.objects.get(slug=parent)
-            c = Categoria(slug = categoria["slug"], nome = categoria["title"], ordem = ordem)
+            c = Categoria(slug = categoria["slug"], nome = categoria["title"], descricao = categoria["description"], ordem = ordem)
             if(categoriaMae):
                 c.categoria_mae = categoriaMae
             c.save()
