@@ -27,13 +27,13 @@ $('#print-cifra').on('click', function (e) {
   printPopup($('#titulo-musica').html(), '<pre id="cifra">'+$('#div-cifra').html()+'</pre>');
 });
 
-$('#remove-meio-tom-cifra').on('click', function (e) {
-
-});
-
-$('#add-meio-tom-cifra').on('click', function (e) {
-
-});
+function updateFontSize(size, element){
+  document.getElementById(element).style.fontSize = size+"px";
+  var ps = document.getElementById(element).getElementsByTagName("p")
+  for (i = 0; i < ps.length; i++) {
+    ps[i].style.fontSize = size+"px";
+  }
+}
 
 function printPopup(title, data)
 {
@@ -81,10 +81,30 @@ function printPopup(title, data)
     return true;
 }
 
-function updateFontSize(size, element){
-  document.getElementById(element).style.fontSize = size+"px";
-  var ps = document.getElementById(element).getElementsByTagName("p")
-  for (i = 0; i < ps.length; i++) {
-    ps[i].style.fontSize = size+"px";
-  }
+
+
+var tomFrom = ['C#','D#','F#','G#','A#','Db','Eb','Gb','Ab','Bb','C', 'D', 'E', 'F', 'G', 'A', 'B' ];
+var tomMore = ['D', 'E', 'G', 'A', 'B', 'D', 'E', 'G', 'A', 'B', 'C#','D#','F', 'F#','G#','A#','C' ];
+var tomLess = ['C', 'D', 'F', 'G', 'A', 'C', 'D', 'F', 'G', 'A', 'B', 'C#','D#','E', 'F#','G#','A#'];
+
+$('#remove-meio-tom-cifra').on('click', function (e) {
+  mudarCifras(tomLess);
+});
+
+$('#add-meio-tom-cifra').on('click', function (e) {
+  mudarCifras(tomMore);
+});
+
+function mudarCifras(novosTons){
+  var cifras = document.getElementsByTagName ('b');
+  for (b = 0; b < cifras.length; b++) {
+    var cifra = cifras[b].innerHTML;
+    tomFrom.forEach(function(tom, i){
+      cifra = cifra.replace(new RegExp(tom, 'g'), "$"+i+"$");
+    });
+    for(i=0;i<novosTons.length;i++){
+      cifra = cifra.replace("$"+i+"$",novosTons[i]);
+    }
+    cifras[b].innerHTML = cifra;
+  };
 }
