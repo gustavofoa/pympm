@@ -2,3 +2,4 @@ Django
 django-enumfield
 requests
 MySQL-python
+django-htmlmin
