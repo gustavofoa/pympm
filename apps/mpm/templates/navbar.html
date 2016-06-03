@@ -140,17 +140,7 @@
 
 
               <li class="li-search">
-                <script>
-(function() {
-var cx = '015019343761254316434:icocp0vwhke';
-var gcse = document.createElement('script');
-gcse.type = 'text/javascript';
-gcse.async = true;
-gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(gcse, s);
-})();
-                </script>
+                <script src="{% static 'js/search.js' %}"></script>
                 <div style="width:0px;overflow:hidden;height:0px;"> <!-- if you use display:none here, it doesn't work-->
                     <gcse:searchbox-only resultsUrl="YOUR_RESULTS_PAGE_URL"></gcse:searchbox-only>
                 </div>
