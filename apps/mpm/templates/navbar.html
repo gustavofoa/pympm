@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load compress %}
 <!-- NAVBAR -->
     <!--===============================================================-->
     <div id="header">
@@ -140,6 +141,7 @@
 
 
               <li class="li-search">
+                {% compress js %}
                 <script>
                   (function() {
                     var cx = '015019343761254316434:icocp0vwhke';
@@ -151,6 +153,7 @@
                     s.parentNode.insertBefore(gcse, s);
                   })();
                 </script>
+                {% endcompress %}
                 <div style="width:0px;overflow:hidden;height:0px;"> <!-- if you use display:none here, it doesn't work-->
                     <gcse:searchbox-only resultsUrl="YOUR_RESULTS_PAGE_URL"></gcse:searchbox-only>
                 </div>
