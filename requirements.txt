@@ -3,3 +3,5 @@ django-enumfield
 requests
 MySQL-python
 django-htmlmin
+django_compressor
+csscompressor
