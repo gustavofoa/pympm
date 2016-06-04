@@ -3,7 +3,7 @@ from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render
 
 from ..forms import ImportData
-from ..imports import ImportCategorias, ImportMusicas, ImportPaginasSugestoes, ImportDatas
+from ..imports import ImportCategorias, ImportMusicas, ImportPaginasSugestoes, ImportDatas, ImportBlog
 
 
 def import_data(request):
@@ -34,6 +34,10 @@ def import_data(request):
 			if url_datas != '':
 				impDat = ImportDatas(url_datas)
 			 	impDat.run_import()
+
+			impBlog = ImportBlog()
+		 	#impBlog.run_import()
+
 			return HttpResponse("<html><body>Importação realizada com sucesso! <a href='/'>Voltar</a></body></html>")
 	else:
 		form = ImportData()

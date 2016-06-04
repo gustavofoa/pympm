@@ -6,7 +6,7 @@ import json
 import django
 import time
 from datetime import datetime
-from apps.mpm.models import Categoria, Musica, DiaLiturgico, Data, Leitura, SugestaoMusica
+from apps.mpm.models import Categoria, Musica, DiaLiturgico, Data, Leitura, SugestaoMusica, Post
 
 class ImportCategorias:
 
@@ -180,3 +180,31 @@ class ImportDatas:
             print "Importou"
         else:
             print "Dados invalidos"
+
+
+class ImportBlog:
+
+    def run_import(self):
+        Post.objects.all().delete()
+        print "Excluiu posts atuais"
+
+        post1 = Post()
+        post1.url = "http://blog.musicasparamissa.com.br/musicas-para-missa/como-nasceu-o-musicas-para-missa/"
+        post1.titulo = "Como nasceu o M&uacute;sicas para Missa"
+        post1.imagem = "http://blog.musicasparamissa.com.br/wp-content/uploads/2014/11/IMG_20141111_1752531.jpg"
+        post1.autor = "Gustavo Furtado Alves"
+        post1.save()
+
+        post2 = Post()
+        post2.url = "http://blog.musicasparamissa.com.br/musicas-para-missa/porque-nao-cantar-o-abraco-da-paz-na-missa/"
+        post2.titulo = "Porque N&Atilde;O cantar o \"Abra&ccedil;o da Paz\" na missa"
+        post2.imagem = "http://blog.musicasparamissa.com.br/wp-content/uploads/2015/01/canto-abra%C3%A7o-da-paz.jpg"
+        post2.autor = "Gustavo Furtado Alves"
+        post2.save()
+
+        post3 = Post()
+        post3.url = "http://blog.musicasparamissa.com.br/musicas-para-missa/o-instrumento-mais-importante-musico-catolico/"
+        post3.titulo = "O instrumento mais importante do m&uacute;sico cat&oacute;lico!"
+        post3.imagem = "http://blog.musicasparamissa.com.br/wp-content/uploads/2015/02/m%C3%BAsico-e-ter%C3%A7o.png"
+        post3.autor = "Gustavo Furtado Alves"
+        post3.save()
