@@ -3,3 +3,4 @@ django-enumfield
 requests
 MySQL-python
 django-htmlmin
+python-memcached
