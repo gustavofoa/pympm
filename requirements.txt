@@ -4,3 +4,5 @@ requests
 MySQL-python
 django-htmlmin
 python-memcached
+django-storages
+boto
