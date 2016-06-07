@@ -96,7 +96,7 @@ MEDUSA_RENDERER_CLASS = "django_medusa.renderers.S3StaticSiteRenderer"
 MEDUSA_MULTITHREAD = False
 AWS_ACCESS_KEY = "AKIAIDT4QTAPUFWW2ANQ"
 AWS_SECRET_ACCESS_KEY = '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'
-MEDUSA_AWS_STORAGE_BUCKET_NAME = "staticpympm" # (also accepts AWS_STORAGE_BUCKET_NAME)
+MEDUSA_AWS_STORAGE_BUCKET_NAME = "html.musicasparamissa.com.br" # (also accepts AWS_STORAGE_BUCKET_NAME)
 
 AWS_HEADERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
