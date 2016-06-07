@@ -25,7 +25,6 @@ urlpatterns = [
     url(r'^import-data/', view_import.import_data, name='import-data'),
     url(r'^starratings-ajax.do$', view_starratings.starratings_ajax, name='starratings-ajax'),
     url(r'^datas.json$', view_datas.datas, name='datas'),
-    url(r'^datas-destaque.json$', view_datas.datas_destaque, name='datas-destaque'),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     url(r'^(?P<slug>[-\w\d]+)/$', RedirectView.as_view(url='/sugestoes-para/%(slug)s')),
 ]
