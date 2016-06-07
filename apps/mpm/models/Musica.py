@@ -16,7 +16,10 @@ class Musica(models.Model):
 		return self.nome.encode('utf-8')
 	def get_video_code(self):
 		if self.link_video:
-			return self.link_video[self.link_video.rindex('/'):].replace("embed",'').replace('watch?v=','').replace('v=','')
+			try:
+				return self.link_video[self.link_video.rindex('/'):].replace("embed",'').replace('watch?v=','').replace('v=','')
+			except ValueError:
+				return ""
 		else:
 			return ""
 	def add_rate(self, rate):
@@ -28,11 +31,13 @@ class Musica(models.Model):
 	def get_formated_rating(self):
 		return "%.2f" % self.rating
 	def get_legend(self):
-		plural = ""
-		if(self.votes > 1):
-			plural = "s"
-		retorno = "<span property='ratingValue'>%.2f</span> em <span property='ratingCount'>%d</span> voto%s"
-		return retorno % (self.get_rating_per_5(), self.votes, plural)
+		#plural = ""
+		#if(self.votes > 1):
+		#	plural = "s"
+		#retorno = "<span property='ratingValue'>%.2f</span> em <span property='ratingCount'>%d</span> voto%s"
+		retorno = "<span property='ratingValue'>%.2f %</span>""
+		#return retorno % (self.get_rating_per_5(), self.votes, plural)
+		return retorno % self.rating
 	def get_absolute_url(self):
 		return "/musica/%s/" % self.slug
 	def get_inicio(self):
