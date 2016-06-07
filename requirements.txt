@@ -6,3 +6,4 @@ django-htmlmin
 python-memcached
 django-storages
 boto
+django-medusa
