@@ -33,4 +33,4 @@ class GeralRenderer(StaticSiteRenderer):
 
         return paths
 
-renderers = [MusicaRenderer, CategoriaRenderer, DiaLiturgicoRenderer, GeralRenderer, ]
+renderers = [GeralRenderer, MusicaRenderer, CategoriaRenderer, DiaLiturgicoRenderer, ]

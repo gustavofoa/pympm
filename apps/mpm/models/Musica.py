@@ -31,13 +31,11 @@ class Musica(models.Model):
 	def get_formated_rating(self):
 		return "%.2f" % self.rating
 	def get_legend(self):
-		#plural = ""
-		#if(self.votes > 1):
-		#	plural = "s"
-		#retorno = "<span property='ratingValue'>%.2f</span> em <span property='ratingCount'>%d</span> voto%s"
-		retorno = "<span property='ratingValue'>%.2f %</span>""
-		#return retorno % (self.get_rating_per_5(), self.votes, plural)
-		return retorno % self.rating
+		plural = ""
+		if(self.votes > 1):
+			plural = "s"
+		retorno = "<span property='ratingValue'>%.2f</span> em <span property='ratingCount'>%d</span> voto%s"
+		return retorno % (self.get_rating_per_5(), self.votes, plural)
 	def get_absolute_url(self):
 		return "/musica/%s/" % self.slug
 	def get_inicio(self):
