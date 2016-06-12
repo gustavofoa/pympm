@@ -11,3 +11,7 @@ class DiaLiturgico(models.Model):
 		return self.titulo.encode('utf-8')
 	def get_absolute_url(self):
 		return "/sugestoes-para/%s/" % self.slug
+	def get_img_80x80_url(self):
+		return "/images/diasLiturgicos/80x80/%s" %self.img
+	def get_img_url(self):
+		return "/images/diasLiturgicos/%s" %self.img

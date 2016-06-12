@@ -6,4 +6,4 @@ django-htmlmin
 python-memcached
 django-storages
 boto
-django-medusa
+https://github.com/alsoicode/django-medusa/tarball/master#egg=django-medusa

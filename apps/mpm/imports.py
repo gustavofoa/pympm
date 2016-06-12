@@ -95,7 +95,11 @@ class ImportPaginasSugestoes:
             print cont, ": " + pagina['slug']
             m = DiaLiturgico(slug = pagina["slug"], titulo = pagina["title"], img = pagina["img"])
             m.img = m.img.replace('cdn.musicasparamissa.com.br.s3-sa-east-1.amazonaws.com','musicasparamissa.com.br')
-            #m.img = m.img.substring(m.img.lastIndexOf('/'))...
+            try:
+                m.img = m.img[m.img.rindex('/')+1:]
+            except ValueError:
+				print "Pagina sem imagem"
+
             m.save()
 
             posicao = 1

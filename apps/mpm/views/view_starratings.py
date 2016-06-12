@@ -8,8 +8,8 @@ import re
 def starratings_ajax(request):
 	id = request.POST.get('id', 0)
 	stars = request.POST.get('stars', 0)
-
-	print "Rating ", stars, " to ", id
+	if int(stars) > 0:
+		print "Rating ", stars, " to ", id
 	if request.method == 'POST' and re.match('^[\w\d-]+$', id):
 		jsonObj = {}
 		jsonObj[id] = {}
