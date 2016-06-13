@@ -1,0 +1,45 @@
+{% load staticfiles %}
+
+<div class="container">
+  <div class="wrapper-row">
+    <div class="row">
+      <div class="col-sm-3 col-md-7">
+        <h3 class="title-sm hr-full">Missas em destaque</h3>
+        <div class="row">
+          <div class="col-md-6">
+            {% if destaques.0 %}
+            <div class="post-xs-side">
+              <a href="{{destaques.0.liturgia.get_absolute_url }}"><img class="img-responsive" src="{% static destaques.0.liturgia.get_img_80x80_url %}" alt="theme-img"></a>
+                <a href="{{destaques.0.liturgia.get_absolute_url }}" class="category">{{ destaques.0.liturgia.titulo }}</a>
+                <p class="meta hidden-md hidden-sm">{{ destaques.0.data }}</p>
+            </div>
+            {% endif %}
+            {% if destaques.1 %}
+            <div class="post-xs-side">
+              <a href="{{destaques.1.liturgia.get_absolute_url }}"><img class="img-responsive" src="{% static destaques.1.liturgia.get_img_80x80_url %}" alt="theme-img"></a>
+                <a href="{{destaques.1.liturgia.get_absolute_url }}" class="category">{{ destaques.1.liturgia.titulo }}</a>
+                <p class="meta hidden-md hidden-sm">{{ destaques.1.data }}</p>
+            </div>
+            {% endif %}
+          </div>
+          <div class="col-md-6">
+            {% if destaques.2 %}
+            <div class="post-xs-side">
+              <a href="{{destaques.2.liturgia.get_absolute_url }}"><img class="img-responsive" src="{% static destaques.2.liturgia.get_img_80x80_url %}" alt="theme-img"></a>
+                <a href="{{destaques.2.liturgia.get_absolute_url }}" class="category">{{ destaques.2.liturgia.titulo }}</a>
+                <p class="meta hidden-md hidden-sm">{{ destaques.2.data }}</p>
+            </div>
+            {% endif %}
+            {% if destaques.3 %}
+            <div class="post-xs-side">
+              <a href="{{destaques.3.liturgia.get_absolute_url }}"><img class="img-responsive" src="{% static destaques.3.liturgia.get_img_80x80_url %}" alt="theme-img"></a>
+                <a href="{{destaques.3.liturgia.get_absolute_url }}" class="category">{{ destaques.3.liturgia.titulo }}</a>
+                <p class="meta hidden-md hidden-sm">{{ destaques.3.data }}</p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
