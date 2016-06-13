@@ -5,10 +5,16 @@ from datetime import date, timedelta
 from ..models import Musica, Categoria, DiaLiturgico, Data, ItemLiturgia, Post
 
 def base_context():
+	catPartesComuns = Categoria.objects.get(slug='partes-comuns-da-missa')
+	partesComuns = Categoria.objects.filter(categoria_mae=catPartesComuns)
+
 	tempos = Categoria.objects.filter(categoria_mae=None,slug__startswith="tempo")
-	especiais = Categoria.objects.filter(categoria_mae=None).exclude(slug__startswith="tempo")
+
+	catSolenidadesEFestas = Categoria.objects.get(slug='solenidades-e-festas')
+	solenidadesEFestas = Categoria.objects.filter(categoria_mae=catSolenidadesEFestas)
+
 	destaques = Data.objects.filter(data__gt = (date.today()+timedelta(days=-1)), destaque = 1)
-	ctx = {'tempos': tempos, 'especiais': especiais, 'destaques': destaques}
+	ctx = {'partesComuns': partesComuns, 'tempos': tempos, 'solenidadesEFestas': solenidadesEFestas, 'destaques': destaques}
 	return ctx
 
 def index(request):
