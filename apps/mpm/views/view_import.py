@@ -29,13 +29,13 @@ def import_data(request):
 				impSug = ImportPaginasSugestoes(url_sugestoes)
 				impSug.run_import()
 			#import Dtas
-			url_datas =  form.cleaned_data["url_datas"]
-			print "URL Datas: ", url_datas
-			if url_datas != '':
-				impDat = ImportDatas(url_datas)
-			 	impDat.run_import()
+			#url_datas =  form.cleaned_data["url_datas"]
+			#print "URL Datas: ", url_datas
+			#if url_datas != '':
+				#impDat = ImportDatas(url_datas)
+			 	#impDat.run_import()
 
-			impBlog = ImportBlog()
+			#impBlog = ImportBlog()
 		 	#impBlog.run_import()
 
 			return HttpResponse("<html><body>Importação realizada com sucesso! <a href='/'>Voltar</a></body></html>")
