@@ -1,3 +1,4 @@
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, JsonResponse
 
@@ -5,6 +6,7 @@ from ..models import Musica
 
 import re
 
+@csrf_exempt
 def starratings_ajax(request):
 	id = request.POST.get('id', 0)
 	stars = request.POST.get('stars', 0)
