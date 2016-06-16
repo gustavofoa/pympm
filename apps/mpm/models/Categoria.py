@@ -18,6 +18,6 @@ class Categoria(models.Model):
 	def get_musicas(self):
 		return Musica.objects.filter(categorias__slug=self.slug)
 	def get_filhas(self):
-		return Categoria.objects.filter(categoria_mae__slug=self.slug)
+		return Categoria.objects.filter(categoria_mae__slug=self.slug).order_by('ordem')
 	def get_absolute_url(self):
 		return "/musicas-de/%s/" % self.slug

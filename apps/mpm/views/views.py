@@ -6,7 +6,7 @@ from ..models import Musica, Categoria, DiaLiturgico, Data, ItemLiturgia, Post
 
 def base_context():
 	catPartesComuns = Categoria.objects.get(slug='partes-comuns-da-missa')
-	partesComuns = Categoria.objects.filter(categoria_mae=catPartesComuns)
+	partesComuns = Categoria.objects.filter(categoria_mae=catPartesComuns).order_by('ordem')
 
 	tempos = Categoria.objects.filter(categoria_mae=None,slug__startswith="tempo")
 
