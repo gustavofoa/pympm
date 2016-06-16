@@ -28,12 +28,12 @@ def import_data(request):
 			if url_sugestoes != '':
 				impSug = ImportPaginasSugestoes(url_sugestoes)
 				impSug.run_import()
-			#import Dtas
-			#url_datas =  form.cleaned_data["url_datas"]
-			#print "URL Datas: ", url_datas
-			#if url_datas != '':
-				#impDat = ImportDatas(url_datas)
-			 	#impDat.run_import()
+			import Dtas
+			url_datas =  form.cleaned_data["url_datas"]
+			print "URL Datas: ", url_datas
+			if url_datas != '':
+				impDat = ImportDatas(url_datas)
+			 	impDat.run_import()
 
 			#impBlog = ImportBlog()
 		 	#impBlog.run_import()
