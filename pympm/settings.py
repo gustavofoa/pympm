@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the pympm like this: os.path.join(BASE_DIR, ...)
 import os
 
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -31,7 +32,6 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -42,6 +42,8 @@ INSTALLED_APPS = (
     'django_medusa',
     'storages',
     'apps.mpm',
+    'suit',
+    'django.contrib.admin',
 )
 
 
@@ -72,9 +74,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
             ],
         },
-    },
+    }
 ]
 
 WSGI_APPLICATION = 'pympm.wsgi.application'
@@ -142,3 +145,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 #STATIC_URL = '/static/'
+
+
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'MpM Admin',
+    'CONFIRM_UNSAVED_CHANGES': True,
+
+}
