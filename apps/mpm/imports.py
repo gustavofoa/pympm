@@ -95,6 +95,7 @@ class ImportPaginasSugestoes:
             print cont, ": " + pagina['slug']
             m = DiaLiturgico(slug = pagina["slug"], titulo = pagina["title"], img = pagina["img"])
             m.img = m.img.replace('cdn.musicasparamissa.com.br.s3-sa-east-1.amazonaws.com','musicasparamissa.com.br')
+            print m.img
             try:
                 m.img = m.img[m.img.rindex('/')+1:]
             except ValueError:
@@ -164,7 +165,7 @@ class ImportDatas:
 
             d = Data()
             d.data = datetime.strptime(data, '%d/%m/%Y')
-            if(json[data]["destaque"] == "true"):
+            if(json[data]["destaque"] == True):
                 d.destaque = 1
             else:
                 d.destaque = 0
