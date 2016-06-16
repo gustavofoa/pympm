@@ -28,7 +28,7 @@ def import_data(request):
 			if url_sugestoes != '':
 				impSug = ImportPaginasSugestoes(url_sugestoes)
 				impSug.run_import()
-			import Dtas
+			#import Datas
 			url_datas =  form.cleaned_data["url_datas"]
 			print "URL Datas: ", url_datas
 			if url_datas != '':

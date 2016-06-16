@@ -157,9 +157,10 @@ class ImportDatas:
     def importDatas(self, json):
         cont = 1
         for data in json.keys():
-            index = json[data]["url"].index(".com.br/")+8
-            sl = json[data]["url"][index:len(json[data]["url"])-1]
-            print cont, ": " + data + " - " + sl + " - " + json[data]["destaque"]
+            index = 16#json[data]["url"].index("/sugestoes-para/")+16
+            sl = json[data]["url"][index:]
+            print json[data]
+            print cont, ": " + data + " - " + sl + " - "# + json[data]["destaque"]
 
             d = Data()
             d.data = datetime.strptime(data, '%d/%m/%Y')
