@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'precompressed',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'django_medusa',
@@ -92,6 +93,7 @@ DATABASES = {
     }
 }
 
+AWS_IS_GZIPPED = True
 MEDUSA_RENDERER_CLASS = "django_medusa.renderers.S3StaticSiteRenderer"
 MEDUSA_MULTITHREAD = False
 AWS_ACCESS_KEY = "AKIAIDT4QTAPUFWW2ANQ"
@@ -119,7 +121,8 @@ STATIC_URL = "http://%s/" % AWS_S3_CUSTOM_DOMAIN
 
 # Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
 # you run `collectstatic`).
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'precompressed.storage.s3boto.PrecompressedS3BotoStorage'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

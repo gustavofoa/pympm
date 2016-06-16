@@ -4,6 +4,7 @@ requests
 MySQL-python
 django-htmlmin
 python-memcached
+django-precompressed
 django-storages
 boto
 https://github.com/alsoicode/django-medusa/tarball/master#egg=django-medusa
