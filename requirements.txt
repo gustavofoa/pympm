@@ -8,3 +8,4 @@ django-precompressed
 django-storages
 boto
 https://github.com/alsoicode/django-medusa/tarball/master#egg=django-medusa
+django-suit

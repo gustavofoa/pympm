@@ -17,7 +17,7 @@ class ImportCategorias:
         cont = 1
         ordem = 1
         for categoria in json:
-            print cont, ": " + parent + " -> " + categoria['slug']
+            print cont, ": " + parent + " -> " + 'http://musicasparamissa.com.br/musicas-de/'+categoria['slug']
             categoriaMae = None
             if( parent != ''):
                 categoriaMae = Categoria.objects.get(slug=parent)
@@ -53,7 +53,7 @@ class ImportMusicas:
         ordem = 1
         cont = 1
         for musica in json:
-            print cont, ": " + musica['slug']
+            print cont, ": " + 'http://musicasparamissa.com.br/musica/'+musica['slug']
             m = Musica(
                 slug = musica["slug"],
                 nome = musica["title"],
@@ -92,7 +92,7 @@ class ImportPaginasSugestoes:
     def importPaginasSugestoes(self, json):
         cont = 1
         for pagina in json:
-            print cont, ": " + pagina['slug']
+            print cont, ": " + 'http://musicasparamissa.com.br/sugestoes-para/'+pagina['slug']
             m = DiaLiturgico(slug = pagina["slug"], titulo = pagina["title"], img = pagina["img"])
             m.img = m.img.replace('cdn.musicasparamissa.com.br.s3-sa-east-1.amazonaws.com','musicasparamissa.com.br')
             print m.img
