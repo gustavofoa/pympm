@@ -7,7 +7,7 @@ from views.view_starratings import starratings_ajax
 from views.view_errors import page_not_found
 from django.contrib.sitemaps.views import sitemap
 from django.conf.urls import handler404
-from django.views.generic import RedirectView
+from django.views.generic import RedirectView, TemplateView
 from sitemap import MusicaSitemap, CategoriaSitemap, DiaLiturgicoSitemap
 
 sitemaps = {
@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^datas.json$', view_datas.datas, name='datas'),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     url(r'^(?P<slug>[-\w\d]+)/$', RedirectView.as_view(url='/sugestoes-para/%(slug)s')),
+    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 ]
 
 
