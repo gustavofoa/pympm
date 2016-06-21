@@ -3,6 +3,10 @@
 
 {% block title2 %}{% block title %}{{ diaLiturgico.titulo }} - Músicas para Missa{% endblock %}{% endblock %}
 
+{% block image-tag %}<meta property="og:image" content="{% static diaLiturgico.get_img_url %}" />{% endblock %}
+{% block url-tag %}<meta property="og:url" content="http://musicasparamissa.com.br{{ diaLiturgico.get_absolute_url }}" />{% endblock %}
+{% block description-tag %}<meta property="og:description" content="Sugestões de músicas para {{ diaLiturgico.titulo }}." />{% endblock %}
+
 {% block content %}
 
 {% include 'email-header.html' %}
