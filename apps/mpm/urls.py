@@ -28,6 +28,9 @@ urlpatterns = [
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     url(r'^(?P<slug>[-\w\d]+)/$', RedirectView.as_view(url='/sugestoes-para/%(slug)s')),
     url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    url(r'^confirme-seu-email$', TemplateView.as_view(template_name='mail/confirme-seu-email.html', content_type='text/html')),
+    url(r'^assinatura-confirmada$', TemplateView.as_view(template_name='mail/assinatura-confirmada.html', content_type='text/html')),
+    url(r'^desinscricao$', TemplateView.as_view(template_name='mail/desinscricao.html', content_type='text/html')),
 ]
 
 

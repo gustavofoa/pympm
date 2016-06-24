@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+
+	<title>Muito obrigado! Músicas para Missa</title>
+
+<meta property="og:title" content="Sugestões de Músicas para Missa" />
+<meta property="og:description" content="Receba GRATUITAMENTE sugestões de músicas para missa por e-mail!" />
+<meta property="og:site_name" content="Músicas para Missa" />
+<meta property="og:image" content="{% static 'images/MpMFace.png' %}" />
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'css/bootswatch.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/mail-style.min.gz.css' %}">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/social-buttons.min.css' %}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+
+	<center><img class="aligncenter" src="{% static 'images/logo/logoMpM-300x223.png' %}" alt="" /></center>
+	<h1 class="entry-title" style="font-size: 50px; text-align: center;">VOCÊ NÃO RECEBERÁ MAIS NOSSOS E-MAILS!</h1>
+	<p style="text-align: center;">Pode ficar tranquilo que não te enviaremos mais e-mails.</p>
+
+	<h2 style="text-align: center;">Nos desculpe ...</h2>
+	<p style="text-align: center;">Não sabemos o que te chateou, mas respeitamos seu desejo de não receber mais nossos e-mails. Pedimos desculpas se fomos inconvenientes, não era nossa intenção.</p>
+
+	<p style="text-align: center;">Foi bom o contato que tivemos. Muito Obrigado!</p>
+
+	<h3 style="text-align: center; padding-top: 40px;">Te enviamos um e-mail de despedida.</h3>
+	<h3 style="text-align: center; padding-top: 40px;">=(</h3>
+		&nbsp;
+<p style="text-align: center;">PS: Se você se desinscreveu sem querer, você pode <a href="http://www.musicasparamissa.com.br/">Voltar para o <strong>Musicas para Missa</strong></a> e se inscrever novamente!</p>
+<p style="text-align: center;">Ficaremos muito felizes em te receber de volta!</p>
+
+
+	    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	    <script src="{% static 'js/bootswatch.js' %}"></script>
+
+	</div>
+
+	<?php wp_footer(); ?>
+
+	</body>
+	</html>

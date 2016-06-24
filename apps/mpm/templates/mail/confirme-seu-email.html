@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+
+	<title>Confirme seu e-mail para receber sugestões de Músicas para Missa</title>
+
+<meta property="og:title" content="Sugestões de Músicas para Missa" />
+<meta property="og:description" content="Receba GRATUITAMENTE sugestões de músicas para missa por e-mail!" />
+<meta property="og:site_name" content="Músicas para Missa" />
+<meta property="og:image" content="{% static 'images/MpMFace.png' %}" />
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'css/bootswatch.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/mail-style.min.gz.css' %}">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/social-buttons.min.css' %}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 style="text-align: center; font-size: 50px;">Espere Um Minuto ...</h1>
+<h2 style="text-align: center;">Você precisa confirmar o seu e-mail.</h2>
+<h3 style="text-align: center;">Passo 1</h3>
+<p style="text-align: center;">Acesse a sua caixa de entrada. Se preferir pode acessar algum dos links abaixo.</p>
+
+<h4 style="text-align: center;"><a href="http://gmail.com" target="_blank">Acessar Gmail</a></h4>
+<h4 style="text-align: center;"><a href="http://login.live.com/" target="_blank">Acessar Hotmail</a></h4>
+<h4 style="text-align: center;"><a href="http://login.yahoo.com/" target="_blank">Acessar Yahoo</a></h4>
+<h3 style="text-align: center;">Passo 2</h3>
+<p style="text-align: center;">Procure pela mensagem com o nome: <strong>ATENÇÃO! Clique no LINK para confirmar o seu e-mail</strong></p>
+<p style="text-align: center;">Obs: O e-mail de confirmação pode demorar alguns minutos para chegar a sua caixa de entrada. <strong>Caso demore muito para o e-mail chegar, verifique a sua caixa de SPAM!</strong></p>
+
+<h3 style="text-align: center;">Passo 3</h3>
+<p style="text-align: center;">Clique no <strong>link</strong> dentro dessa mensagem.</p>
+
+<h2 style="text-align: center;">IMPORTANTE!</h2>
+<p style="text-align: center;">Adicione o e-mail: <span style="text-decoration: underline;">sugestoes@musicasparamissa.com.br</span> aos seus contatos para evitar que os e-mails caiam na caixa de spam. <strong>Se nosso e-mail de confirmação caiu na sua caixa de spam, por favor, marque-o como NÃO É SPAM</strong>!</p>
+
+<p style="text-align: center;"><a href="http://www.musicasparamissa.com.br/">Voltar para o <strong>Musicas para Missa</strong></p>
+
+
+
+
+	    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	    <script src="{% static 'js/bootswatch.js' %}"></script>
+
+	</div>
+
+	<?php wp_footer(); ?>
+
+	</body>
+	</html>

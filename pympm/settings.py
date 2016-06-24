@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*3@=r_c6xobh80utpje=$&-v-u@)ofb56#cg(8^@l-jd-q0-u#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'precompressed',
+    # 'precompressed',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'django_medusa',
@@ -48,7 +48,7 @@ INSTALLED_APPS = (
 
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.gzip.GZipMiddleware',
+    # 'django.middleware.gzip.GZipMiddleware',
     'htmlmin.middleware.HtmlMinifyMiddleware',
     'htmlmin.middleware.MarkRequestMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -96,11 +96,12 @@ DATABASES = {
     }
 }
 
-AWS_IS_GZIPPED = True
-MEDUSA_RENDERER_CLASS = "django_medusa.renderers.S3StaticSiteRenderer"
-MEDUSA_MULTITHREAD = False
+# AWS_IS_GZIPPED = False
 AWS_ACCESS_KEY = "AKIAIDT4QTAPUFWW2ANQ"
 AWS_SECRET_ACCESS_KEY = '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'
+
+MEDUSA_RENDERER_CLASS = "django_medusa.renderers.S3StaticSiteRenderer"
+MEDUSA_MULTITHREAD = False
 MEDUSA_AWS_STORAGE_BUCKET_NAME = "html.musicasparamissa.com.br" # (also accepts AWS_STORAGE_BUCKET_NAME)
 
 AWS_HEADERS = {
@@ -116,16 +117,18 @@ AWS_ACCESS_KEY_ID = AWS_ACCESS_KEY
 # it simple - just use this domain plus the path. (If this isn't set, things get complicated).
 # This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
 # We also use it in the next setting.
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_CUSTOM_DOMAIN = 'dm8sjho5caga5.cloudfront.net'
 
 # This is used by the `static` template tag from `static`, if you're using that. Or if anything else
 # refers directly to STATIC_URL. So it's safest to always set it.
-STATIC_URL = "http://%s/" % AWS_S3_CUSTOM_DOMAIN
+# STATIC_URL = "http://%s/" % AWS_S3_CUSTOM_DOMAIN
+STATIC_URL = 'https://dm8sjho5caga5.cloudfront.net/'
 
 # Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
 # you run `collectstatic`).
-# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-STATICFILES_STORAGE = 'precompressed.storage.s3boto.PrecompressedS3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+# STATICFILES_STORAGE = 'precompressed.storage.s3boto.PrecompressedS3BotoStorage'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
