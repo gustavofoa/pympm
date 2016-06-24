@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*3@=r_c6xobh80utpje=$&-v-u@)ofb56#cg(8^@l-jd-q0-u#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -48,7 +48,7 @@ INSTALLED_APPS = (
 
 
 MIDDLEWARE_CLASSES = (
-    # 'django.middleware.gzip.GZipMiddleware',
+    'django.middleware.gzip.GZipMiddleware',
     'htmlmin.middleware.HtmlMinifyMiddleware',
     'htmlmin.middleware.MarkRequestMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
