@@ -44,8 +44,14 @@ INSTALLED_APPS = (
     'apps.mpm',
     'suit',
     'django.contrib.admin',
+    'apps.mpmadmin',
+    'rest_framework',
 )
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGE_SIZE': 10
+}
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.gzip.GZipMiddleware',
