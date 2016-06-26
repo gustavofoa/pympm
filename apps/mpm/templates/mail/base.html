@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'css/bootswatch.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/mail-style.min.css' %}">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/social-buttons.min.css' %}">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta property="og:title" content="Sugestões de Músicas para Missa" />
+<meta property="og:description" content="Receba GRATUITAMENTE sugestões de músicas para missa por e-mail!" />
+<meta property="og:site_name" content="Músicas para Missa" />
+<meta property="og:image" content="http://musicasparamissa.com.br/wp-content/uploads/MpMFace.png">
+
+<title>Confirme seu e-mail para receber sugestões de Músicas para Missa</title>
+
+</head>
+<body>
+<div class="container">
+
+  {% block content %}{% endblock %}
+
+</div>
+</body>
+</html>

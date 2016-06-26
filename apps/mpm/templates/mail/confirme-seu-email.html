@@ -1,28 +1,6 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-
-  <meta charset="UTF-8">
-
-	<title>Confirme seu e-mail para receber sugestões de Músicas para Missa</title>
-
-<meta property="og:title" content="Sugestões de Músicas para Missa" />
-<meta property="og:description" content="Receba GRATUITAMENTE sugestões de músicas para missa por e-mail!" />
-<meta property="og:site_name" content="Músicas para Missa" />
-<meta property="og:image" content="{% static 'images/MpMFace.png' %}" />
-
-<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" media="screen">
-<link rel="stylesheet" href="{% static 'css/bootswatch.min.css' %}">
-<link rel="stylesheet" href="{% static 'css/mail-style.min.css' %}">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-<link rel="stylesheet" href="{% static 'css/social-buttons.min.css' %}">
-
-</head>
-
-<body>
-
-<div class="container">
+{% extends 'mail/base.html' %}
+{% block title %}Confirme se e-mail - Músicas para Missa{% endblock %}
+{% block content %}
 
 <h1 style="text-align: center; font-size: 50px;">Espere Um Minuto ...</h1>
 <h2 style="text-align: center;">Você precisa confirmar o seu e-mail.</h2>
@@ -44,16 +22,4 @@
 
 <p style="text-align: center;"><a href="http://www.musicasparamissa.com.br/">Voltar para o <strong>Musicas para Missa</strong></p>
 
-
-
-
-	    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-	    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-	    <script src="{% static 'js/bootswatch.js' %}"></script>
-
-	</div>
-
-	<?php wp_footer(); ?>
-
-	</body>
-	</html>
+{% endblock %}
