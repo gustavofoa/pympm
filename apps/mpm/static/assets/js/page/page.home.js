@@ -9,11 +9,11 @@ $(document).ready(function() {
     });
 
     //MAGINFIC POPUP
-    $('#owl-our-work').magnificPopup({
-        delegate: 'a', // child items selector, by clicking on it popup will open
-        type: 'image'
-            // other options
-    });
+    // $('#owl-our-work').magnificPopup({
+    //     delegate: 'a', // child items selector, by clicking on it popup will open
+    //     type: 'image'
+    //         // other options
+    // });
 
     //SLIDER OUR WORK
     $("#owl-our-work").owlCarousel({
