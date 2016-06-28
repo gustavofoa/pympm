@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from rest_framework import routers
-from app.mpm import views
+from views import views
 
 router = routers.DefaultRouter()
 router.register(r'mpmadmin/categorias', views.CategoriaViewSet)

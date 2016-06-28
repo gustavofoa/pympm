@@ -1,4 +1,4 @@
-from mpm.models import Categoria
+from apps.mpm.models import Categoria
 from rest_framework import serializers
 
 
