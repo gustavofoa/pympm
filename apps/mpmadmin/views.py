@@ -1,4 +1,4 @@
-from apps.mpm.models import Categoria
+from ..mpm.models.Categoria import Categoria
 from rest_framework import viewsets
 from serializers import CategoriaSerializer
 

@@ -1,9 +1,9 @@
 from django.conf.urls import url, include
 from rest_framework import routers
-from views import views
+from views import CategoriaViewSet
 
 router = routers.DefaultRouter()
-router.register(r'mpmadmin/categorias', views.CategoriaViewSet)
+router.register(r'categorias', CategoriaViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
