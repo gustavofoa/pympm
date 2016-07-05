@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from . import ItemLiturgia
+import random
 
 class SugestaoMusica(ItemLiturgia):
 	categorias = models.ManyToManyField("Categoria", related_name="categorias")
@@ -20,4 +21,5 @@ class SugestaoMusica(ItemLiturgia):
 		for mus in self.remover.all():
 			if mus in musicas:
 				musicas.remove(mus)
+		random.shuffle(musicas)
 		return musicas
