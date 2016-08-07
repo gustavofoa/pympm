@@ -117,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # AWS_IS_GZIPPED = False
-AWS_ACCESS_KEY = "AKIAIDT4QTAPUFWW2ANQ"
+AWS_ACCESS_KEY_ID = "AKIAIDT4QTAPUFWW2ANQ"
 AWS_SECRET_ACCESS_KEY = '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'
 
 AWS_HEADERS = {
@@ -126,8 +126,6 @@ AWS_HEADERS = {
 }
 
 AWS_STORAGE_BUCKET_NAME = 'pympm'
-AWS_ACCESS_KEY_ID = AWS_ACCESS_KEY
-
 
 # Tell django-storages that when coming up with the URL for an item in S3 storage, keep
 # it simple - just use this domain plus the path. (If this isn't set, things get complicated).
@@ -158,6 +156,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+SITE_ID = 1
 
 
 # Static files (CSS, JavaScript, Images)
