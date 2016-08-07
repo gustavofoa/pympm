@@ -1,5 +1,5 @@
 from django.contrib.sitemaps import Sitemap
-from models import Musica, Categoria, DiaLiturgico
+from .models import Musica, Categoria, DiaLiturgico
 
 class MusicaSitemap(Sitemap):
     changefreq = "weekly"

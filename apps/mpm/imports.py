@@ -17,7 +17,7 @@ class ImportCategorias:
         cont = 1
         ordem = 1
         for categoria in json:
-            print cont, ": " + parent + " -> " + 'http://musicasparamissa.com.br/musicas-de/'+categoria['slug']
+            print(cont, ": " + parent + " -> " + 'http://musicasparamissa.com.br/musicas-de/'+categoria['slug'])
             categoriaMae = None
             if( parent != ''):
                 categoriaMae = Categoria.objects.get(slug=parent)
@@ -32,17 +32,17 @@ class ImportCategorias:
 
     def run_import(self):
         Categoria.objects.all().delete()
-        print "Excluiu as categorias atuais"
+        print("Excluiu as categorias atuais")
         httpCategorias = requests.get(self.categoriaURL)
-        print "Buscou dados da URL"
+        print("Buscou dados da URL")
 
         if httpCategorias.status_code == 200:
-            print "Dados validos"
+            print("Dados validos")
             jsonCategorias = json.loads(httpCategorias.content)
             self.importCategorias(jsonCategorias, '')
-            print "Importou"
+            print("Importou")
         else:
-            print "Dados invalidos"
+            print("Dados invalidos")
 
 class ImportMusicas:
 
@@ -53,7 +53,7 @@ class ImportMusicas:
         ordem = 1
         cont = 1
         for musica in json:
-            print cont, ": " + 'http://musicasparamissa.com.br/musica/'+musica['slug']
+            print(cont, ": " + 'http://musicasparamissa.com.br/musica/'+musica['slug'])
             m = Musica(
                 slug = musica["slug"],
                 nome = musica["title"],
@@ -72,17 +72,17 @@ class ImportMusicas:
 
     def run_import(self):
         Musica.objects.all().delete()
-        print "Excluiu as musicas atuais"
+        print("Excluiu as musicas atuais")
         httpMusicas = requests.get(self.musicaURL)
-        print "Buscou dados da URL"
+        print("Buscou dados da URL")
 
         if httpMusicas.status_code == 200:
-            print "Dados validos"
+            print("Dados validos")
             jsonMusicas = json.loads(httpMusicas.content, strict=False)
             self.importMusicas(jsonMusicas)
-            print "Importou"
+            print("Importou")
         else:
-            print "Dados invalidos"
+            print("Dados invalidos")
 
 class ImportPaginasSugestoes:
 
@@ -92,14 +92,14 @@ class ImportPaginasSugestoes:
     def importPaginasSugestoes(self, json):
         cont = 1
         for pagina in json:
-            print cont, ": " + 'http://musicasparamissa.com.br/sugestoes-para/'+pagina['slug']
+            print(cont, ": " + 'http://musicasparamissa.com.br/sugestoes-para/'+pagina['slug'])
             m = DiaLiturgico(slug = pagina["slug"], titulo = pagina["title"], img = pagina["img"])
             m.img = m.img.replace('cdn.musicasparamissa.com.br.s3-sa-east-1.amazonaws.com','musicasparamissa.com.br')
-            print m.img
+            print(m.img)
             try:
                 m.img = m.img[m.img.rindex('/')+1:]
             except ValueError:
-				print "Pagina sem imagem"
+                print("Pagina sem imagem")
 
             m.save()
 
@@ -131,24 +131,24 @@ class ImportPaginasSugestoes:
                         if ret:
                             i.remover.add(Musica.objects.get(slug=ret.strip()))
                     i.save()
-                #print ">>> Importando Item. ", item["title"]
+                #print(">>> Importando Item. ", item["title"])
                 posicao = posicao + 1
 
             cont = cont + 1
 
     def run_import(self):
         DiaLiturgico.objects.all().delete()
-        print "Excluiu os dias liturgicos atuais"
+        print("Excluiu os dias liturgicos atuais")
         httpSugestoes = requests.get(self.URL)
-        print "Buscou dados da URL"
+        print("Buscou dados da URL")
 
         if httpSugestoes.status_code == 200:
-            print "Dados validos"
+            print("Dados validos")
             jsonSugestoes = json.loads(httpSugestoes.content, strict=False)
             self.importPaginasSugestoes(jsonSugestoes)
-            print "Importou"
+            print("Importou")
         else:
-            print "Dados invalidos"
+            print("Dados invalidos")
 
 class ImportDatas:
 
@@ -160,8 +160,8 @@ class ImportDatas:
         for data in json.keys():
             index = 16#json[data]["url"].index("/sugestoes-para/")+16
             sl = json[data]["url"][index:]
-            print json[data]
-            print cont, ": " + data + " - " + sl + " - "# + json[data]["destaque"]
+            print(json[data])
+            print(cont, ": " + data + " - " + sl + " - ")
 
             d = Data()
             d.data = datetime.strptime(data, '%d/%m/%Y')
@@ -176,25 +176,25 @@ class ImportDatas:
 
     def run_import(self):
         Data.objects.all().delete()
-        print "Excluiu as datas atuais"
+        print("Excluiu as datas atuais")
         param = "?p=%.0f" % time.time()
         httpDatas = requests.get(self.URL + param)
-        print "Buscou dados da URL"
+        print("Buscou dados da URL")
 
         if httpDatas.status_code == 200:
-            print "Dados validos"
+            print("Dados validos")
             jsonDatas = json.loads(httpDatas.content, strict=False)
             self.importDatas(jsonDatas)
-            print "Importou"
+            print("Importou")
         else:
-            print "Dados invalidos"
+            print("Dados invalidos")
 
 
 class ImportBlog:
 
     def run_import(self):
         Post.objects.all().delete()
-        print "Excluiu posts atuais"
+        print("Excluiu posts atuais")
 
         post1 = Post()
         post1.url = "http://blog.musicasparamissa.com.br/musicas-para-missa/como-nasceu-o-musicas-para-missa/"

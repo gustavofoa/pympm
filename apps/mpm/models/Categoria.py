@@ -1,5 +1,5 @@
 from django.db import models
-from Musica import Musica
+from .Musica import Musica
 
 class Categoria(models.Model):
 	slug = models.SlugField(primary_key=True, max_length=100)
@@ -13,7 +13,7 @@ class Categoria(models.Model):
 		nome_completo = ""
 		if(self.categoria_mae):
 			nome_completo += self.categoria_mae.__str__() + " / "
-		nome_completo += self.nome.encode('utf-8')
+		nome_completo += self.nome
 		return nome_completo
 	def get_musicas(self):
 		return Musica.objects.filter(categorias__slug=self.slug)
