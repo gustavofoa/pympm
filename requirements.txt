@@ -4,7 +4,7 @@ django-enumfield==1.2.1
 django-htmlmin==0.9.1
 django-storages==1.5.0
 djangorestframework==3.4.3
-PyMySQL==0.7.6
+mysqlclient
 python-dateutil==2.5.3
 python-memcached==1.58
 requests==2.9.1
