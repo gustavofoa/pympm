@@ -17,9 +17,9 @@ sudo pip install virtualenv
 # sudo apt-get -y install libmysqlclient-dev
 
 echo ">> Install npm"
-#sudo apt-get -y install npm
+sudo apt-get -y install npm
 
 echo ">> Install less"
-#sudo npm install -g less
+sudo npm install -g less
 
 echo ">> Done."
