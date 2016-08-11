@@ -13,8 +13,8 @@ sudo apt-get -y install -y openssh-server vim git zip bzip2 fontconfig curl make
 echo ">> Install Virtualenv"
 sudo pip install virtualenv
 
-# echo ">> Install Mysql client"
-# sudo apt-get -y install libmysqlclient-dev
+echo ">> Install Mysql client"
+sudo apt-get -y install libmysqlclient-dev
 
 echo ">> Install npm"
 sudo apt-get -y install npm
