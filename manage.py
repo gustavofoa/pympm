@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
-import pymysql
+#import pymysql
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pympm.settings")
@@ -20,5 +20,5 @@ if __name__ == "__main__":
                 "forget to activate a virtual environment?"
             )
         raise
-    pymysql.install_as_MySQLdb()
+    #pymysql.install_as_MySQLdb()
     execute_from_command_line(sys.argv)
