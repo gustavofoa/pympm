@@ -38,7 +38,7 @@ class ImportCategorias:
 
         if httpCategorias.status_code == 200:
             print("Dados validos")
-            jsonCategorias = json.loads(httpCategorias.content)
+            jsonCategorias = json.loads(httpCategorias.text)
             self.importCategorias(jsonCategorias, '')
             print("Importou")
         else:
@@ -53,32 +53,37 @@ class ImportMusicas:
         ordem = 1
         cont = 1
         for musica in json:
-            print(cont, ": " + 'http://musicasparamissa.com.br/musica/'+musica['slug'])
-            m = Musica(
+            #print(cont, ": " + 'http://musicasparamissa.com.br/musica/'+musica['slug'])
+            m, created = Musica.objects.update_or_create(
                 slug = musica["slug"],
-                nome = musica["title"],
-                letra = musica["letra"],
-                cifra = musica["cifra"],
-                info = musica["info"],
-                link_video = musica["video"].replace('\r\n',''),
-                rating = float(musica["rating"]),
-                votes = int(musica["votes"])
+                defaults={'nome': musica["title"],
+                    'letra': musica["letra"],
+                    'cifra': musica["cifra"],
+                    'info': musica["info"],
+                    'link_video': musica["video"].replace('\r\n','')
+                }
             )
-            m.save()
+
             for cat in musica["categorias"].split(","):
-                m.categorias.add(Categoria.objects.get(slug = cat))
+                try:
+                    m.categorias.add(Categoria.objects.get(slug = cat))
+                except Categoria.DoesNotExist:
+                    print("Falha ao buscar categoria: " + cat)
             m.save()
+            if(created):
+                print(cont, "Criou a musica: " + m.slug)
+            else:
+                print(cont, "Atualizou a musica: " + m.slug)
             cont = cont + 1
 
     def run_import(self):
-        Musica.objects.all().delete()
-        print("Excluiu as musicas atuais")
+        print("Não excluiu as musicas atuais")
         httpMusicas = requests.get(self.musicaURL)
         print("Buscou dados da URL")
 
         if httpMusicas.status_code == 200:
             print("Dados validos")
-            jsonMusicas = json.loads(httpMusicas.content, strict=False)
+            jsonMusicas = json.loads(httpMusicas.text, strict=False)
             self.importMusicas(jsonMusicas)
             print("Importou")
         else:
@@ -144,7 +149,7 @@ class ImportPaginasSugestoes:
 
         if httpSugestoes.status_code == 200:
             print("Dados validos")
-            jsonSugestoes = json.loads(httpSugestoes.content, strict=False)
+            jsonSugestoes = json.loads(httpSugestoes.text, strict=False)
             self.importPaginasSugestoes(jsonSugestoes)
             print("Importou")
         else:
@@ -183,7 +188,7 @@ class ImportDatas:
 
         if httpDatas.status_code == 200:
             print("Dados validos")
-            jsonDatas = json.loads(httpDatas.content, strict=False)
+            jsonDatas = json.loads(httpDatas.text, strict=False)
             self.importDatas(jsonDatas)
             print("Importou")
         else:
