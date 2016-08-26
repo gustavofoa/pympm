@@ -71,6 +71,9 @@ class ImportMusicas:
                     print("Falha ao buscar categoria: " + cat)
             m.save()
             if(created):
+                m.rating = 0
+                m.votes = 0
+                m.save()
                 print(cont, "Criou a musica: " + m.slug)
             else:
                 print(cont, "Atualizou a musica: " + m.slug)
