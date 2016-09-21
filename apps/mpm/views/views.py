@@ -1,6 +1,8 @@
 from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404, render
 from datetime import date, timedelta
+import random
+
 
 from ..models import Musica, Categoria, DiaLiturgico, Data, ItemLiturgia, Post
 
@@ -14,7 +16,14 @@ def base_context():
 	solenidadesEFestas = Categoria.objects.filter(categoria_mae=catSolenidadesEFestas)
 
 	destaques = Data.objects.filter(data__gt = (date.today()+timedelta(days=-1)), destaque = 1)
-	ctx = {'partesComuns': partesComuns, 'tempos': tempos, 'solenidadesEFestas': solenidadesEFestas, 'destaques': destaques}
+	ctx = {
+		'partesComuns': partesComuns,
+		'tempos': tempos,
+		'solenidadesEFestas': solenidadesEFestas,
+		'destaques': destaques,
+		'id_banner_1': random.randint(1, 7),
+		'id_banner_2': random.randint(1, 7)
+	}
 	return ctx
 
 def index(request):

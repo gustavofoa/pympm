@@ -3,7 +3,7 @@ from .models import Musica, Categoria, DiaLiturgico
 
 class MusicaSitemap(Sitemap):
     changefreq = "weekly"
-    priority = 0.5
+    priority = 0.6
 
     def items(self):
         return Musica.objects.all()
@@ -17,7 +17,7 @@ class CategoriaSitemap(Sitemap):
 
 class DiaLiturgicoSitemap(Sitemap):
     changefreq = "weekly"
-    priority = 0.5
+    priority = 0.7
 
     def items(self):
         return DiaLiturgico.objects.all()
