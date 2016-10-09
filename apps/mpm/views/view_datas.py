@@ -3,7 +3,9 @@ from django.http import JsonResponse
 from datetime import date, timedelta
 
 from ..models import Data
+from django.views.decorators.cache import never_cache
 
+@never_cache
 def datas(request):
     retorno = {}
     for dt in Data.objects.filter(data__gt = (date.today()+timedelta(days=-1, hours=-3))):
