@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'apps.mpm',
     'apps.mpmadmin',
     'rest_framework',
+    'corsheaders',
 )
 
 REST_FRAMEWORK = {
@@ -60,7 +61,14 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+)
 
+CORS_ORIGIN_WHITELIST = (
+    'musicasparamissa.com.br',
+    'blog.musicasparamissa.com.br',
+    'localhost:8000',
+    '127.0.0.1:8000'
 )
 
 ROOT_URLCONF = 'pympm.urls'
