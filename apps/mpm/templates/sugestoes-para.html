@@ -22,7 +22,7 @@
 
 <img class="img-responsive center" src="{% static diaLiturgico.get_img_url %}" />
 
-<p style="text-align:center;">{{ diaLiturgico.introducao }}</p>
+<p style="text-align:center;">{% autoescape off %}{{ diaLiturgico.introducao }}{% endautoescape %}</p>
 
 <div class="panel-group accordion nav-side" id="accorside1">
   <div class="panel accordion-group">

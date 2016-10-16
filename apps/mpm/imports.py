@@ -143,6 +143,13 @@ class ImportPaginasSugestoes:
                 posicao = posicao + 1
 
             cont = cont + 1
+    def importPaginasNatal(self):
+        m = DiaLiturgico(slug = 'missas-do-natal-dia-24', titulo = 'MISSAS DO NATAL DO SENHOR - 24 DE DEZEMBRO', img = 'presépio.jpg')
+        m.introducao = '<p>Confira a seguir qual a Liturgia correta para cada horário de Celebração:</p><h2>Dia 24 de Dezembro (MANHÃ):</h2><p>Se você for tocar na Missa do dia 24 de Dezembro na parte da manhã, consulte as leituras e sugestões de músicas nesse link:<br /><span style="color: #993300;"><a style="color: #993300;" href="http://musicasparamissa.com.br/sugestoes-para/ultimos-dias-antes-do-natal-24-de-dezembro/" target="_blank">http://musicasparamissa.com.br/sugestoes-para/ultimos-dias-antes-do-natal-24-de-dezembro/</a></span></p><h2>Dia 24 de Dezembro (TARDE):</h2><p>Missa da Vigília do Natal, instituída em Roma na segunda metade do século V, celebrada na tarde do dia 24, que representa a preparação para o dia de Natal.<br />Se você for tocar na Missa do dia 24 de Dezembro na parte da tarde, consulte as leituras e sugestões de músicas nesse link:<br /><span style="color: #993300;"><a style="color: #993300;" href="http://musicasparamissa.com.br/sugestoes-para/24-de-dezembro-vigilia-do-natal/" target="_blank">http://musicasparamissa.com.br/sugestoes-para/24-de-dezembro-vigilia-do-natal/</a></span></p><h2>Dia 24 de Dezembro (NOITE) ou 25 de Dezembro (MEIA NOITE):</h2><p>Conhecida como Missa da Meia-Noite, ou Missa do Galo, celebrada para anunciar o nascimento de Cristo.<br />IMPORTANTE: Em várias Paróquias e Comunidades a missa não acontece à meia noite do dia 25. Sendo Celebrada no dia 24 à noite. Porém seguem a mesma Liturgia: NATAL DE NOSSO SENHOR JESUS CRISTO!<br />Se você for tocar na Missa do dia 24 de Dezembro à noite ou dia 25 de Dezembro à meia noite, consulte as leituras e sugestões de músicas nesse link:<br /><span style="color: #993300;"><a style="color: #993300;" href="http://musicasparamissa.com.br/sugestoes-para/missa-do-natal-missa-da-noite/" target="_blank">http://musicasparamissa.com.br/sugestoes-para/missa-do-natal-missa-da-noite/</a></span></p>'
+        m.save()
+        m = DiaLiturgico(slug = 'missas-do-natal-dia-25', titulo = 'MISSAS DO NATAL DO SENHOR - 25 DE DEZEMBRO', img = 'presépio-12.jpg')
+        m.introducao = '<p>Confira a seguir qual a Liturgia correta para cada horário de Celebração:</p><h2>Dia 25 de Dezembro (MANHÃ):</h2><p><span style="color: #993300;">Missa da Aurora, </span>celebrada ao romper do dia, com o nascer do sol, a lembrar que Cristo representa o símbolo da luz.<br />Em algumas Paróquias e Comunidades essa Missa é Celebrada entre 5 e 6 horas da manhã.<br />Se você for tocar na Missa do dia 25 de Dezembro de manhãzinha, consulte as leituras e sugestões de músicas nesse link:<br /><span style="color: #993300;"><a style="color: #993300;" href="http://musicasparamissa.com.br/sugestoes-para/missa-do-natal-missa-da-aurora/" target="_blank">http://musicasparamissa.com.br/sugestoes-para/missa-do-natal-missa-da-aurora/</a></span></p><h2>Dia 25 de Dezembro (MISSA DO DIA):</h2><p><span style="color: #993300;">Missa do Dia</span>, celebrada no dia de Natal, independentemente da hora.<br />Se você for tocar na Missa do dia 25 de Dezembro (qualquer horário, exceto de manhãzinha ao nascer do sol) consulte as leituras e sugestões de músicas nesse link:<br /><span style="color: #993300;"><a style="color: #993300;" href="http://musicasparamissa.com.br/sugestoes-para/natal-do-senhor-missa-do-dia/" target="_blank">http://musicasparamissa.com.br/sugestoes-para/natal-do-senhor-missa-do-dia/</a></span></p>'
+        m.save()
 
     def run_import(self):
         DiaLiturgico.objects.all().delete()
@@ -155,6 +162,9 @@ class ImportPaginasSugestoes:
             jsonSugestoes = json.loads(httpSugestoes.text, strict=False)
             self.importPaginasSugestoes(jsonSugestoes)
             print("Importou")
+            print("Importando páginas do natal...")
+            self.importPaginasNatal()
+            print("Importou páginas do natal...")
         else:
             print("Dados invalidos")
 
@@ -196,31 +206,3 @@ class ImportDatas:
             print("Importou")
         else:
             print("Dados invalidos")
-
-
-class ImportBlog:
-
-    def run_import(self):
-        Post.objects.all().delete()
-        print("Excluiu posts atuais")
-
-        post1 = Post()
-        post1.url = "http://blog.musicasparamissa.com.br/musicas-para-missa/como-nasceu-o-musicas-para-missa/"
-        post1.titulo = "Como nasceu o M&uacute;sicas para Missa"
-        post1.imagem = "http://blog.musicasparamissa.com.br/wp-content/uploads/2014/11/IMG_20141111_1752531.jpg"
-        post1.autor = "Gustavo Furtado Alves"
-        post1.save()
-
-        post2 = Post()
-        post2.url = "http://blog.musicasparamissa.com.br/musicas-para-missa/porque-nao-cantar-o-abraco-da-paz-na-missa/"
-        post2.titulo = "Porque N&Atilde;O cantar o \"Abra&ccedil;o da Paz\" na missa"
-        post2.imagem = "http://blog.musicasparamissa.com.br/wp-content/uploads/2015/01/canto-abra%C3%A7o-da-paz.jpg"
-        post2.autor = "Gustavo Furtado Alves"
-        post2.save()
-
-        post3 = Post()
-        post3.url = "http://blog.musicasparamissa.com.br/musicas-para-missa/o-instrumento-mais-importante-musico-catolico/"
-        post3.titulo = "O instrumento mais importante do m&uacute;sico cat&oacute;lico!"
-        post3.imagem = "http://blog.musicasparamissa.com.br/wp-content/uploads/2015/02/m%C3%BAsico-e-ter%C3%A7o.png"
-        post3.autor = "Gustavo Furtado Alves"
-        post3.save()
