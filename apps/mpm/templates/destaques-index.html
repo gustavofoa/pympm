@@ -10,61 +10,15 @@
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">
         <div id="owl-our-work" class="owl-carousel">
-
-          {% if destaques.0 %}
-          <div class="item">
-            <a href="{{destaques.0.liturgia.get_absolute_url }}" class="img-wrapper rounded">
-              <img class="img-responsive img-rounded" src="{% static destaques.0.liturgia.get_img_url %}" alt="theme-img">
-            </a>
-            <a href="{{destaques.0.liturgia.get_absolute_url }}" class="category">{{ destaques.0.liturgia.titulo }}</a>
-            <p class="meta hidden-md hidden-sm">{{ destaques.0.data }}</p>
-          </div>
-          {% endif %}
-          {% if destaques.1 %}
-          <div class="item">
-            <a href="{{destaques.1.liturgia.get_absolute_url }}" class="img-wrapper rounded">
-              <img class="img-responsive img-rounded" src="{% static destaques.1.liturgia.get_img_url %}" alt="theme-img">
-            </a>
-            <a href="{{destaques.1.liturgia.get_absolute_url }}" class="category">{{ destaques.1.liturgia.titulo }}</a>
-            <p class="meta hidden-md hidden-sm">{{ destaques.1.data }}</p>
-          </div>
-          {% endif %}
-          {% if destaques.2 %}
-          <div class="item">
-            <a href="{{destaques.2.liturgia.get_absolute_url }}" class="img-wrapper rounded">
-              <img class="img-responsive img-rounded" src="{% static destaques.2.liturgia.get_img_url %}" alt="theme-img">
-            </a>
-            <a href="{{destaques.2.liturgia.get_absolute_url }}" class="category">{{ destaques.2.liturgia.titulo }}</a>
-            <p class="meta hidden-md hidden-sm">{{ destaques.2.data }}</p>
-          </div>
-          {% endif %}
-          {% if destaques.3 %}
-          <div class="item">
-            <a href="{{destaques.3.liturgia.get_absolute_url }}" class="img-wrapper rounded">
-              <img class="img-responsive img-rounded" src="{% static destaques.3.liturgia.get_img_url %}" alt="theme-img">
-            </a>
-            <a href="{{destaques.3.liturgia.get_absolute_url }}" class="category">{{ destaques.3.liturgia.titulo }}</a>
-            <p class="meta hidden-md hidden-sm">{{ destaques.3.data }}</p>
-          </div>
-          {% endif %}
-          {% if destaques.4 %}
-          <div class="item">
-            <a href="{{destaques.4.liturgia.get_absolute_url }}" class="img-wrapper rounded">
-              <img class="img-responsive img-rounded" src="{% static destaques.4.liturgia.get_img_url %}" alt="theme-img">
-            </a>
-            <a href="{{destaques.4.liturgia.get_absolute_url }}" class="category">{{ destaques.4.liturgia.titulo }}</a>
-            <p class="meta hidden-md hidden-sm">{{ destaques.4.data }}</p>
-          </div>
-          {% endif %}
-          {% if destaques.5 %}
-          <div class="item">
-            <a href="{{destaques.5.liturgia.get_absolute_url }}" class="img-wrapper rounded">
-              <img class="img-responsive img-rounded" src="{% static destaques.5.liturgia.get_img_url %}" alt="theme-img">
-            </a>
-            <a href="{{destaques.5.liturgia.get_absolute_url }}" class="category">{{ destaques.5.liturgia.titulo }}</a>
-            <p class="meta hidden-md hidden-sm">{{ destaques.5.data }}</p>
-          </div>
-          {% endif %}
+          {% for d in destaques %}
+            <div class="item">
+              <a href="{{d.liturgia.get_absolute_url }}" class="img-wrapper rounded">
+                <img class="img-responsive img-rounded" src="{% static d.liturgia.get_img_url %}" alt="theme-img">
+              </a>
+              <a href="{{d.liturgia.get_absolute_url }}" class="category">{{ d.liturgia.titulo }}</a>
+              <p class="meta hidden-md hidden-sm">{{ d.data }}</p>
+            </div>
+          {% endfor %}
         </div>
       </div>
     </div>
