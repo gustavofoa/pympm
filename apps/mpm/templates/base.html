@@ -20,7 +20,10 @@
 			      </div>
 			    </div>
 					{% block sub %}{% endblock %}
-			    </div>
+
+					{% include 'blog.html' %}
+
+		    </div>
 
 			  <!-- GRID POSTS END -->
 			  <!--===============================================================-->
@@ -28,6 +31,8 @@
 			</div>
 		</div>
 	</div>
+	
 	{% include 'footer.html' %}
 	{% block js-import %}{% endblock %}
+
 </body>

@@ -9,18 +9,20 @@ from ..models import Musica, Categoria, DiaLiturgico, Data, ItemLiturgia, Post
 def base_context():
 	catPartesComuns = Categoria.objects.get(slug='partes-comuns-da-missa')
 	partesComuns = Categoria.objects.filter(categoria_mae=catPartesComuns).order_by('ordem')
-
 	tempos = Categoria.objects.filter(categoria_mae=None,slug__startswith="tempo")
-
 	catSolenidadesEFestas = Categoria.objects.get(slug='solenidades-e-festas')
 	solenidadesEFestas = Categoria.objects.filter(categoria_mae=catSolenidadesEFestas)
 
 	destaques = Data.objects.filter(data__gt = (date.today()+timedelta(days=-1)), destaque = 1)
+
+	posts = Post.objects.all()
+
 	ctx = {
 		'partesComuns': partesComuns,
 		'tempos': tempos,
 		'solenidadesEFestas': solenidadesEFestas,
 		'destaques': destaques,
+		'posts': posts,
 		'id_banner_1': random.randint(1, 7),
 		'id_banner_2': random.randint(1, 7)
 	}
@@ -34,9 +36,6 @@ def musica(request, slug):
 	ctx = base_context();
 	musica = get_object_or_404(Musica, slug=slug)
 	ctx['musica'] = musica
-
-	posts = Post.objects.all()
-	ctx['posts'] = posts
 
 	return render(request, 'musica.html', ctx)
 
