@@ -10,6 +10,7 @@ class Musica(models.Model):
 	categorias = models.ManyToManyField("Categoria")
 	rating = models.FloatField(blank=True, null=True)
 	votes = models.PositiveIntegerField(blank=True, null=True)
+	link_lpsalmo = models.URLField(blank=True, null=True)
 	class Meta:
 		app_label = "mpm"
 	def __str__(self):
