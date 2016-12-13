@@ -67,8 +67,8 @@ MIDDLEWARE_CLASSES = (
 CORS_ORIGIN_WHITELIST = (
     'musicasparamissa.com.br',
     'blog.musicasparamissa.com.br',
-    'localhost:9000',
-    '127.0.0.1:9000'
+    'localhost:8000',
+    '127.0.0.1:8000'
 )
 
 ROOT_URLCONF = 'pympm.urls'
