@@ -178,7 +178,7 @@ class ImportDatas:
         for data in json.keys():
             index = 16#json[data]["url"].index("/sugestoes-para/")+16
             sl = json[data]["url"][index:]
-            print(json[data])
+            #print(json[data])
             print(cont, ": " + data + " - " + sl + " - ")
 
             d = Data()
