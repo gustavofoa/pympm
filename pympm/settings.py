@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv('SECRET_KEY', '*3@=r_c6xobh80utpje=$&-v-u@)ofb56#cg(8^@l-jd-q0-u#')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -142,11 +142,11 @@ AWS_S3_CUSTOM_DOMAIN = 'dm8sjho5caga5.cloudfront.net'
 # This is used by the `static` template tag from `static`, if you're using that. Or if anything else
 # refers directly to STATIC_URL. So it's safest to always set it.
 # STATIC_URL = "http://%s/" % AWS_S3_CUSTOM_DOMAIN
-#STATIC_URL = 'https://dm8sjho5caga5.cloudfront.net/'
+STATIC_URL = 'https://dm8sjho5caga5.cloudfront.net/'
 
 # Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
 # you run `collectstatic`).
-# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 # STATICFILES_STORAGE = 'precompressed.storage.s3boto.PrecompressedS3BotoStorage'
 
 # Internationalization
@@ -168,4 +168,4 @@ SITE_ID = 1
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR,'static/')
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
