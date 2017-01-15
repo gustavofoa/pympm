@@ -51,6 +51,6 @@ def sugestoes_para(request, slug):
 	ctx['diaLiturgico'] = diaLiturgico
 	for dt in Data.objects.filter(liturgia = diaLiturgico):
 		ctx['data'] = dt.data
-	ctx['items'] = ItemLiturgia.objects.filter(diaLiturgico = diaLiturgico)
+	ctx['items'] = ItemLiturgia.objects.filter(diaLiturgico = diaLiturgico).order_by('posicao')
 
 	return render(request, 'sugestoes-para.html', ctx)
