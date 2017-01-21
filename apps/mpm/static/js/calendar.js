@@ -14,7 +14,7 @@ var calendarOptions = {
   todayHighlight: true,
   datas: [],
   beforeShowDay: function(date) {
-
+    date.setHours(date.getHours()+1);
     var data = formatDate(date);
 
     if(this.datas[data])
@@ -37,7 +37,9 @@ $(document).ready(function() {
     calendarOptions.datas = datas;
 
     var onClick = function(e){
-      var data = formatDate(e.date);
+      var date = e.date;
+      date.setHours(date.getHours()+1);
+      var data = formatDate(date);
       var url = calendarOptions.datas[data].url;
       //window.open(url);
       document.location = url;
