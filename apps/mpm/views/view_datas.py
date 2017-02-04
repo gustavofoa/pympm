@@ -19,7 +19,7 @@ def datas(request):
 
 def datas_destaque(request):
     retorno = {}
-    for dt in Data.objects.filter(data__gt = (date.today()+timedelta(days=-1)), destaque = 1):
+    for dt in Data.objects.filter(data__gt = (date.today()+timedelta(days=-1)), destaque = 1)[0:10]:
         retorno[dt.data.strftime("%d/%m/%Y")] = {
             "url": "/sugestoes-para/" + dt.liturgia.slug,
             "title": dt.liturgia.titulo,

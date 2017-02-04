@@ -13,7 +13,7 @@ def base_context():
 	catSolenidadesEFestas = Categoria.objects.get(slug='solenidades-e-festas')
 	solenidadesEFestas = Categoria.objects.filter(categoria_mae=catSolenidadesEFestas)
 
-	destaques = Data.objects.filter(data__gt = (date.today()+timedelta(days=-1)), destaque = 1)
+	destaques = Data.objects.filter(data__gt = (date.today()+timedelta(days=-1)), destaque = 1)[0:10]
 
 	posts = Post.objects.all()
 
