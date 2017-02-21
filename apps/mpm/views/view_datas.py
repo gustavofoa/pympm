@@ -8,7 +8,7 @@ from django.views.decorators.cache import never_cache
 @never_cache
 def datas(request):
     retorno = {}
-    for dt in Data.objects.filter(data__gt = (date.today()+timedelta(days=-1, hours=-3))):
+    for dt in Data.objects.filter(data__gt = (date.today()+timedelta(days=-30))):
         retorno[dt.data.strftime("%d/%m/%Y")] = {
             "url": "/sugestoes-para/" + dt.liturgia.slug,
             "title": dt.liturgia.titulo,
