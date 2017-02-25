@@ -49,8 +49,9 @@ def sugestoes_para(request, slug):
 	ctx = base_context();
 	diaLiturgico = get_object_or_404(DiaLiturgico, slug=slug)
 	ctx['diaLiturgico'] = diaLiturgico
-	for dt in Data.objects.filter(liturgia = diaLiturgico):
-		ctx['data'] = dt.data
+
+	ctx['datas'] = Data.objects.filter(liturgia = diaLiturgico, data__gt = (date.today()+timedelta(days=-1)))
+
 	ctx['items'] = ItemLiturgia.objects.filter(diaLiturgico = diaLiturgico).order_by('posicao')
 
 	return render(request, 'sugestoes-para.html', ctx)

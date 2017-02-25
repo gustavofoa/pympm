@@ -18,7 +18,9 @@
 
 <h2 style="text-align:center;">{{ diaLiturgico.titulo }}</h2>
 
-<h3 style="text-align:center;">{{ data }}</h3>
+{% for dt in datas %}
+<h3 style="text-align:center;">{{ dt.data }}</h3>
+{% endfor %}
 
 <img class="img-responsive center" src="{% static diaLiturgico.get_img_url %}" />
 
