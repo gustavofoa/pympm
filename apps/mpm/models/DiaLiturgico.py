@@ -15,3 +15,5 @@ class DiaLiturgico(models.Model):
 		return "/images/diasLiturgicos/80x80/%s" %self.img
 	def get_img_url(self):
 		return "/images/diasLiturgicos/%s" %self.img
+	def get_img_300_url(self):
+		return "/images/diasLiturgicos/300/%s" %self.img
