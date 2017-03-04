@@ -1,6 +1,7 @@
 from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404, render
 from datetime import date, timedelta
+from django.views.decorators.cache import cache_control
 import random
 
 
@@ -28,10 +29,12 @@ def base_context():
 	}
 	return ctx
 
+@cache_control(max_age=86400)
 def index(request):
 	ctx = base_context();
 	return render(request, 'index.html', ctx)
 
+@cache_control(max_age=86400)
 def musica(request, slug):
 	ctx = base_context();
 	musica = get_object_or_404(Musica, slug=slug)
@@ -39,12 +42,14 @@ def musica(request, slug):
 
 	return render(request, 'musica.html', ctx)
 
+@cache_control(max_age=86400)
 def musicas_de(request, slug):
 	ctx = base_context();
 	categoria = get_object_or_404(Categoria, slug=slug)
 	ctx['categoria'] = categoria
 	return render(request, 'musicas-de.html', ctx)
 
+@cache_control(max_age=86400)
 def sugestoes_para(request, slug):
 	ctx = base_context();
 	diaLiturgico = get_object_or_404(DiaLiturgico, slug=slug)
