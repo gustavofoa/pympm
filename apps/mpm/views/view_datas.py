@@ -3,9 +3,10 @@ from django.http import JsonResponse
 from datetime import date, timedelta
 
 from ..models import Data
-from django.views.decorators.cache import cache_control
+from django.views.decorators.cache import cache_control, cache_page
 
-@cache_control(max_age=604800)
+@cache_control(max_age = 60 * 60 * 24)
+@cache_page(60 * 60 * 24)
 def datas(request):
     retorno = {}
     for dt in Data.objects.filter(data__gt = (date.today()+timedelta(days=-30))):
@@ -17,7 +18,7 @@ def datas(request):
 
     return JsonResponse(retorno, safe=False)
 
-@cache_control(max_age=604800)
+@cache_control(max_age = 60 * 60 * 24)
 def datas_destaque(request):
     retorno = {}
     for dt in Data.objects.filter(data__gt = (date.today()+timedelta(days=-1)), destaque = 1)[0:10]:
