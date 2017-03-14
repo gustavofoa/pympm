@@ -2,6 +2,11 @@
 {% load staticfiles %}
 {% block title2 %}{% block title %}{{ musica.nome }} - Músicas para Missa{% endblock %}{% endblock %}
 
+{% block image-tag %}
+<meta property="og:image" content="{% static 'images/musicas/'|add:musica.slug|add:'.png' %}" />
+<meta property="og:image:type" content="image/png">
+{% endblock %}
+
 {% block content %}
 
 <br />
