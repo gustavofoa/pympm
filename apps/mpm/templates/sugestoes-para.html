@@ -29,11 +29,13 @@
 
 <p style="text-align:center;">{% autoescape off %}{{ diaLiturgico.introducao }}{% endautoescape %}</p>
 
-{% for dt in datas %}
-  {% if dt.data.weekday == 5 %}
-    <p style="color: red;">Importante! Confira com o celebrante se a liturgia será esta de sábado ou a de domingo, pois aos sábados, geralmente se utiliza a liturgia de domingo se a missa for a noite.</p>
-  {% endif %}
-{% endfor %}
+{% if !diaLiturgico.slug.startswith('vigilia-pascal') %}
+  {% for dt in datas %}
+    {% if dt.data.weekday == 5 %}
+      <p style="color: red;">Importante! Confira com o celebrante se a liturgia será esta de sábado ou a de domingo, pois aos sábados, geralmente se utiliza a liturgia de domingo se a missa for a noite.</p>
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
 <div class="panel-group accordion nav-side" id="accorside1">
   <div class="panel accordion-group">
