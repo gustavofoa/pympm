@@ -59,8 +59,18 @@ def sugestoes_para(request, slug):
 	diaLiturgico = get_object_or_404(DiaLiturgico, slug=slug)
 	ctx['diaLiturgico'] = diaLiturgico
 
-	ctx['datas'] = Data.objects.filter(liturgia = diaLiturgico, data__gt = (date.today()+timedelta(days=-1)))
+	datas = Data.objects.filter(liturgia = diaLiturgico, data__gt = (date.today()+timedelta(days=-1)))
+
+	ctx['datas'] = datas
 
 	ctx['items'] = ItemLiturgia.objects.filter(diaLiturgico = diaLiturgico).order_by('posicao')
+
+	for dt in datas:
+		if dt.data.weekday() == 5:
+			ctx['saturday'] = True
+
+	if diaLiturgico.slug.startswith('vigilia-pascal'):
+		ctx['saturday'] = False
+
 
 	return render(request, 'sugestoes-para.html', ctx)
