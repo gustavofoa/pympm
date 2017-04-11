@@ -3,8 +3,13 @@
 {% block title2 %}{% block title %}{{ musica.nome }} - Músicas para Missa{% endblock %}{% endblock %}
 
 {% block image-tag %}
+{% if musica.tem_imagem %}
 <meta property="og:image" content="{% static 'images/musicas/'|add:musica.slug|add:'.png' %}" />
 <meta property="og:image:type" content="image/png">
+{% else %}
+<meta property="og:image" content="{% static 'images/MpMFace.png' %}" />
+<meta property="og:image:type" content="image/png">
+{% endif %}
 {% endblock %}
 
 {% block url-tag %}

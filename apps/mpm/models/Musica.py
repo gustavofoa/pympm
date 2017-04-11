@@ -11,6 +11,7 @@ class Musica(models.Model):
 	rating = models.FloatField(blank=True, null=True)
 	votes = models.PositiveIntegerField(blank=True, null=True)
 	link_lpsalmo = models.URLField(blank=True, null=True)
+	tem_imagem = models.BooleanField(default=False)
 	class Meta:
 		app_label = "mpm"
 	def __str__(self):
