@@ -36,7 +36,7 @@ def index(request):
 	return render(request, 'index.html', ctx)
 
 @cache_control(max_age = 60 * 60)
-@cache_page(60 * 60)
+@cache_page(5 * 60)
 def musica(request, slug):
 	ctx = base_context();
 	musica = get_object_or_404(Musica, slug=slug)
@@ -53,7 +53,7 @@ def musicas_de(request, slug):
 	return render(request, 'musicas-de.html', ctx)
 
 @cache_control(max_age = 60 * 60)
-@cache_page(60 * 60)
+@cache_page(5 * 60)
 def sugestoes_para(request, slug):
 	ctx = base_context();
 	diaLiturgico = get_object_or_404(DiaLiturgico, slug=slug)
