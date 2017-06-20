@@ -6,7 +6,7 @@ from ..models import Data
 from django.views.decorators.cache import cache_control, cache_page
 
 @cache_control(max_age = 60 * 60 * 24)
-@cache_page(60 * 60 * 24)
+@cache_page(60 * 60 * 2)
 def datas(request):
     retorno = {}
     for dt in Data.objects.filter(data__gt = (date.today()+timedelta(days=-30))):
