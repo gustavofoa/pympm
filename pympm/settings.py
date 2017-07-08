@@ -138,7 +138,7 @@ AWS_STORAGE_BUCKET_NAME = 'static.musicasparamissa.com.br'
 # This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
 # We also use it in the next setting.
 # AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_CUSTOM_DOMAIN = 'dm8sjho5caga5.cloudfront.net'
+AWS_S3_CUSTOM_DOMAIN = 'static.musicasparamissa.com.br'
 
 # This is used by the `static` template tag from `static`, if you're using that. Or if anything else
 # refers directly to STATIC_URL. So it's safest to always set it.

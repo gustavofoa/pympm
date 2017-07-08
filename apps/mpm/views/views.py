@@ -24,8 +24,8 @@ def base_context():
 		'solenidadesEFestas': solenidadesEFestas,
 		'destaques': destaques,
 		'posts': posts,
-		'id_banner_1': random.randint(1, 16),
-		'id_banner_2': random.randint(1, 16)
+		'id_banner_1': random.randint(1, 18),
+		'id_banner_2': random.randint(1, 18)
 	}
 	return ctx
 
