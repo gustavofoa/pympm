@@ -142,7 +142,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # This is used by the `static` template tag from `static`, if you're using that. Or if anything else
 # refers directly to STATIC_URL. So it's safest to always set it.
-STATIC_URL = "http://static.musicasparamissa.com.br/"
+STATIC_URL = "https://static.musicasparamissa.com.br/"
 
 # Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
 # you run `collectstatic`).
