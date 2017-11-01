@@ -15,7 +15,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Banner',
             fields=[
-                ('url', models.SlugField(max_length=255, primary_key=True, serialize=False)),
+                ('id', models.PositiveIntegerField(primary_key=True, serialize=False)),
+                ('url', models.SlugField(max_length=255)),
                 ('titulo', models.CharField(max_length=255)),
                 ('img', models.CharField(max_length=255)),
             ],
