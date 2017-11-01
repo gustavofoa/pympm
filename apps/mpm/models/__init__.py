@@ -6,3 +6,4 @@ from .Leitura import Leitura
 from .Musica import Musica
 from .Post import Post
 from .SugestaoMusica import SugestaoMusica
+from .Banner import Banner

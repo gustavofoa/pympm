@@ -5,7 +5,7 @@ from django.views.decorators.cache import cache_control, cache_page
 import random
 
 
-from ..models import Musica, Categoria, DiaLiturgico, Data, ItemLiturgia, Post
+from ..models import Musica, Categoria, DiaLiturgico, Data, ItemLiturgia, Post, Banner
 
 def base_context():
 	catPartesComuns = Categoria.objects.get(slug='partes-comuns-da-missa')
@@ -13,6 +13,9 @@ def base_context():
 	tempos = Categoria.objects.filter(categoria_mae=None,slug__startswith="tempo")
 	catSolenidadesEFestas = Categoria.objects.get(slug='solenidades-e-festas')
 	solenidadesEFestas = Categoria.objects.filter(categoria_mae=catSolenidadesEFestas)
+	number_of_banners = Banner.objects.count()
+	banner_lateral = Banner.objects.all().order_by('?')[0]
+	banner_footer = Banner.objects.all().order_by('?')[0]
 
 	destaques = Data.objects.filter(data__gt = (date.today()+timedelta(days=-1)), destaque = 1)[0:10]
 
@@ -24,8 +27,8 @@ def base_context():
 		'solenidadesEFestas': solenidadesEFestas,
 		'destaques': destaques,
 		'posts': posts,
-		'id_banner_1': random.randint(1, 18),
-		'id_banner_2': random.randint(1, 18)
+		'banner_lateral': banner_lateral,
+		'banner_footer': banner_footer
 	}
 	return ctx
 

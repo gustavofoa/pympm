@@ -5,8 +5,8 @@
 
 {% block image-tag %}<meta property="og:image" content="{% static diaLiturgico.get_img_url %}" />{% endblock %}
 {% block url-tag %}
-<link rel="canonical" href="http://musicasparamissa.com.br{{ diaLiturgico.get_absolute_url }}" />
-<meta property="og:url" content="http://musicasparamissa.com.br{{ diaLiturgico.get_absolute_url }}" />
+<link rel="canonical" href="httpa://musicasparamissa.com.br{{ diaLiturgico.get_absolute_url }}" />
+<meta property="og:url" content="https://musicasparamissa.com.br{{ diaLiturgico.get_absolute_url }}" />
 {% endblock %}
 {% block description-tag %}<meta property="og:description" content="Sugestões de músicas para {{ diaLiturgico.titulo }}." />{% endblock %}
 
@@ -14,7 +14,7 @@
 
 {% include 'email-header.html' %}
 
-{% include 'banner-top.html' %}
+{% include 'banners/banner-adsense-top.html' %}
 
 {% include 'container-default.html' %}
 
@@ -78,7 +78,7 @@
 </div>
 
 
-{% include 'banner-bottom.html' %}
+{% include 'banners/banner-adsense-bottom.html' %}
 
 {% include 'proximas-semanas.html' %}
 
