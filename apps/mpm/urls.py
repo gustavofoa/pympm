@@ -1,7 +1,6 @@
 from django.conf.urls import url
 
 from .views import views
-from .views.view_import import import_data
 from .views.view_search import search
 from .views.view_starratings import starratings_ajax
 from .views.view_errors import page_not_found
@@ -23,7 +22,6 @@ urlpatterns = [
     url(r'^confirme-seu-email/?$', TemplateView.as_view(template_name='mail/confirme-seu-email.html', content_type='text/html')),
     url(r'^assinatura-confirmada/?$', TemplateView.as_view(template_name='mail/assinatura-confirmada.html', content_type='text/html')),
     url(r'^desinscricao/?$', TemplateView.as_view(template_name='mail/desinscricao.html', content_type='text/html')),
-    url(r'^import-data/?', import_data, name='import-data'),
     url(r'^starratings-ajax.do$', starratings_ajax, name='starratings-ajax'),
     url(r'^datas.json$', datas, name='datas'),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
