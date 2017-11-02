@@ -1,8 +1,6 @@
-from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404, render
 from datetime import date, timedelta
 from django.views.decorators.cache import cache_control, cache_page
-import random
 
 
 from ..models import Musica, Categoria, DiaLiturgico, Data, ItemLiturgia, Post, Banner
@@ -13,7 +11,6 @@ def base_context():
 	tempos = Categoria.objects.filter(categoria_mae=None,slug__startswith="tempo")
 	catSolenidadesEFestas = Categoria.objects.get(slug='solenidades-e-festas')
 	solenidadesEFestas = Categoria.objects.filter(categoria_mae=catSolenidadesEFestas)
-	number_of_banners = Banner.objects.count()
 	banner_lateral = Banner.objects.all().order_by('?')[0]
 	banner_footer = Banner.objects.all().order_by('?')[0]
 
@@ -77,3 +74,12 @@ def sugestoes_para(request, slug):
 
 
 	return render(request, 'sugestoes-para.html', ctx)
+
+
+@cache_control(max_age= 60 * 60 * 24 * 30)
+def privacy_policy(request):
+
+	ctx = base_context()
+
+	print('>>Pagina de Política de Privacidade!')
+	return render(request, 'pages/privacy_policy.html', ctx)

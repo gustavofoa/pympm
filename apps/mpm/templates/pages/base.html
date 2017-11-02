@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title2 %}{% block title %}Músicas para Missa{% endblock %}{% endblock %}
+
+{% block content %}
+
+{% include 'banners/banner-adsense-top.html' %}
+
+{% include 'container-default.html' %}
+
+{% block sub-content %}{% endblock %}
+
+{% include 'banners/banner-adsense-bottom.html' %}
+
+{% include 'proximas-semanas.html' %}
+
+{% endblock %}
+
+{% block js-import %}
+<script src="{% static 'js/musica-tools.min.js' %}"></script>
+{% endblock %}
