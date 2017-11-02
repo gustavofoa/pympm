@@ -7,4 +7,4 @@ def page_not_found(request, exeption):
     ctx = {}
 
     print('>>Pagina de Erro!')
-    return render(request, 'pages/404.html', ctx)
+    return render(request, '404.html', ctx)
