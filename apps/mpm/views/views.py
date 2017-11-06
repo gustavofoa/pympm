@@ -11,8 +11,6 @@ def base_context():
 	tempos = Categoria.objects.filter(categoria_mae=None,slug__startswith="tempo")
 	catSolenidadesEFestas = Categoria.objects.get(slug='solenidades-e-festas')
 	solenidadesEFestas = Categoria.objects.filter(categoria_mae=catSolenidadesEFestas)
-	banner_lateral = Banner.objects.all().order_by('?')[0]
-	banner_footer = Banner.objects.all().order_by('?')[0]
 
 	destaques = Data.objects.filter(data__gt = (date.today()+timedelta(days=-1)), destaque = 1)[0:10]
 
@@ -23,9 +21,7 @@ def base_context():
 		'tempos': tempos,
 		'solenidadesEFestas': solenidadesEFestas,
 		'destaques': destaques,
-		'posts': posts,
-		'banner_lateral': banner_lateral,
-		'banner_footer': banner_footer
+		'posts': posts
 	}
 	return ctx
 
@@ -33,6 +29,8 @@ def base_context():
 @cache_page(60 * 60 * 2)
 def index(request):
 	ctx = base_context();
+	ctx['banner_footer'] = Categoria.objects.first().banner_footer
+	print('ctx', ctx['banner_footer'])
 	return render(request, 'index.html', ctx)
 
 @cache_control(max_age = 60 * 60)
@@ -41,6 +39,8 @@ def musica(request, slug):
 	ctx = base_context();
 	musica = get_object_or_404(Musica, slug=slug)
 	ctx['musica'] = musica
+	ctx['banner_lateral'] = musica.banner_lateral
+	ctx['banner_footer'] = musica.banner_footer
 
 	return render(request, 'musica.html', ctx)
 
@@ -50,6 +50,9 @@ def musicas_de(request, slug):
 	ctx = base_context();
 	categoria = get_object_or_404(Categoria, slug=slug)
 	ctx['categoria'] = categoria
+	ctx['banner_lateral'] = categoria.banner_lateral
+	ctx['banner_footer'] = categoria.banner_footer
+
 	return render(request, 'musicas-de.html', ctx)
 
 @cache_control(max_age = 60 * 60)
@@ -58,6 +61,9 @@ def sugestoes_para(request, slug):
 	ctx = base_context();
 	diaLiturgico = get_object_or_404(DiaLiturgico, slug=slug)
 	ctx['diaLiturgico'] = diaLiturgico
+	ctx['banner_lateral'] = diaLiturgico.banner_lateral
+	ctx['banner_footer'] = diaLiturgico.banner_footer
+
 
 	datas = Data.objects.filter(liturgia = diaLiturgico, data__gt = (date.today()+timedelta(days=-1)))
 
