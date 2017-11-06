@@ -23,6 +23,9 @@ SECRET_KEY = os.getenv('SECRET_KEY', '*3@=r_c6xobh80utpje=$&-v-u@)ofb56#cg(8^@l-
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+STATIC_URL = "https://static.musicasparamissa.com.br/"
+STATIC_ROOT = os.path.join(BASE_DIR,'static/')
+# STATIC_URL = "/static/"
 
 ALLOWED_HOSTS = ['*']
 
@@ -82,11 +85,6 @@ DATABASES = {
     }
 }
 
-# This is used by the `static` template tag from `static`, if you're using that. Or if anything else
-# refers directly to STATIC_URL. So it's safest to always set it.
-STATIC_URL = "https://static.musicasparamissa.com.br/"
-# STATIC_URL = "/static/"
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 LANGUAGE_CODE = 'pt-br'
@@ -95,11 +93,6 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 SITE_ID = 1
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR,'static/')
-# STATIC_URL = '/static/'
 
 # LOGGING = {
 #     'version': 1,
