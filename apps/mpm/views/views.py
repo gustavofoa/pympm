@@ -1,9 +1,11 @@
-from django.shortcuts import get_object_or_404, render
 from datetime import date, timedelta
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
 from django.views.decorators.cache import cache_control, cache_page
 
+from apps.mpm.scripts.tasks import *
+from ..models import Musica, Categoria, DiaLiturgico, Data, ItemLiturgia, Post
 
-from ..models import Musica, Categoria, DiaLiturgico, Data, ItemLiturgia, Post, Banner
 
 def base_context():
 	catPartesComuns = Categoria.objects.get(slug='partes-comuns-da-missa')
@@ -89,3 +91,13 @@ def privacy_policy(request):
 
 	print('>>Pagina de Política de Privacidade!')
 	return render(request, 'pages/privacy_policy.html', ctx)
+
+
+
+def update_banners(request):
+
+    print('>>Update posts')
+
+    banner_refresh();
+
+    return HttpResponse('result')

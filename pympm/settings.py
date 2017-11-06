@@ -34,7 +34,6 @@ INSTALLED_APPS = (
     'storages',
     'apps.mpm',
     'corsheaders',
-    'django_crontab',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,7 +56,6 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-#                'django.core.context_processors.request',
             ],
         },
     }
@@ -68,10 +66,6 @@ CORS_ORIGIN_WHITELIST = (
     'blog.musicasparamissa.com.br',
     'localhost:8000',
 )
-
-CRONJOBS = [
-    ('0 * * * *', 'apps.mpm.cron.banner_refresh')
-]
 
 WSGI_APPLICATION = 'pympm.wsgi.application'
 

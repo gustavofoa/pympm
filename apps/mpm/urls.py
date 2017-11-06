@@ -23,10 +23,14 @@ urlpatterns = [
     url(r'^desinscricao/?$', TemplateView.as_view(template_name='mail/desinscricao.html', content_type='text/html')),
     url(r'^starratings-ajax.do$', starratings_ajax, name='starratings-ajax'),
     url(r'^politica-de-privacidade/?$', views.privacy_policy, name="privacy-policy"),
+    url(r'^update-banners/?$', views.update_banners, name='update-banners'),
     url(r'^datas.json$', datas, name='datas'),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
     url(r'^(?P<slug>[-\w\d]+)/?$', RedirectView.as_view(url='/sugestoes-para/%(slug)s')),
+
+
+
     url(r'^musica/(?P<slug>[-\w\d]+)/?$', views.musica, name='musica'),
     url(r'^musicas-de/(?P<slug>[-\w\d]+)/?$', views.musicas_de, name='musicas-de'),
     url(r'^sugestoes-para/(?P<slug>[-\w\d]+)/?$', views.sugestoes_para, name='sugestoes-para'),
