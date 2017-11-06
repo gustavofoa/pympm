@@ -69,7 +69,7 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:8000',
 )
 CRONJOBS = [
-    ('* * * * *', 'myapp.cron.banner_refresh')
+    ('* * * * *', 'apps.mpm.cron.banner_refresh')
 ]
 
 WSGI_APPLICATION = 'pympm.wsgi.application'
