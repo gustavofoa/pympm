@@ -100,4 +100,4 @@ def update_banners(request):
 
     banner_refresh();
 
-    return HttpResponse('result')
+    return HttpResponse('OK')
