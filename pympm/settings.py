@@ -84,8 +84,8 @@ DATABASES = {
 
 # This is used by the `static` template tag from `static`, if you're using that. Or if anything else
 # refers directly to STATIC_URL. So it's safest to always set it.
-# STATIC_URL = "https://static.musicasparamissa.com.br/"
-STATIC_URL = "/static/"
+STATIC_URL = "https://static.musicasparamissa.com.br/"
+# STATIC_URL = "/static/"
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
