@@ -12,6 +12,8 @@ class Musica(models.Model):
 	votes = models.PositiveIntegerField(blank=True, null=True)
 	link_lpsalmo = models.URLField(blank=True, null=True)
 	tem_imagem = models.BooleanField(default=False)
+	banner_lateral = models.ForeignKey("Banner", related_name="banner_lateral_mus", blank=True, null=True)
+	banner_footer = models.ForeignKey("Banner", related_name="banner_footer_mus", blank=True, null=True)
 	class Meta:
 		app_label = "mpm"
 	def __str__(self):

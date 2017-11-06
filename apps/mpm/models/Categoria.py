@@ -7,6 +7,8 @@ class Categoria(models.Model):
 	descricao = models.CharField(max_length=500)
 	categoria_mae = models.ForeignKey("self", blank=True, null=True)
 	ordem = models.PositiveSmallIntegerField()
+	banner_lateral = models.ForeignKey("Banner", related_name="banner_lateral_cat", blank=True, null=True)
+	banner_footer = models.ForeignKey("Banner", related_name="banner_footer_cat", blank=True, null=True)
 	class Meta:
 		app_label = "mpm"
 	def __str__(self):

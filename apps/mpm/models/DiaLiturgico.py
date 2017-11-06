@@ -5,6 +5,8 @@ class DiaLiturgico(models.Model):
 	titulo = models.CharField(max_length=255)
 	introducao = models.TextField()
 	img = models.URLField(max_length=255, blank=True, null=True)
+	banner_lateral = models.ForeignKey("Banner", related_name="banner_lateral_dia", blank=True, null=True)
+	banner_footer = models.ForeignKey("Banner", related_name="banner_footer_dia", blank=True, null=True)
 	class Meta:
 		app_label = "mpm"
 	def __str__(self):
