@@ -1,4 +1,4 @@
-from ..models import Banner, Musica, Categoria, DiaLiturgico
+from .models import Banner, Musica, Categoria, DiaLiturgico
 import random
 
 
