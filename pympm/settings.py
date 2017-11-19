@@ -66,12 +66,15 @@ TEMPLATES = [
 
 CORS_ORIGIN_WHITELIST = (
     'musicasparamissa.com.br',
-    'blog.musicasparamissa.com.br',
-    'localhost:8000',
     'http://musicasparamissa.com.br',
-    'http://blog.musicasparamissa.com.br',
     'https://musicasparamissa.com.br',
+    'blog.musicasparamissa.com.br',
+    'http://blog.musicasparamissa.com.br',
     'https://blog.musicasparamissa.com.br',
+    'localhost:8000',
+    'http://localhost:8000',
+    'localhost:1337',
+    'http://localhost:1337',
 )
 
 WSGI_APPLICATION = 'pympm.wsgi.application'
