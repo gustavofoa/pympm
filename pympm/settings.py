@@ -46,7 +46,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+#    'django.middleware.security.SecurityMiddleware',
 )
 
 ROOT_URLCONF = 'pympm.urls'
@@ -65,8 +65,8 @@ TEMPLATES = [
     }
 ]
 
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_SSL_REDIRECT = True
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 CORS_ORIGIN_WHITELIST = (
     'musicasparamissa.com.br',
