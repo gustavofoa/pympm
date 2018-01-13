@@ -7,17 +7,22 @@
           <div class="col-sm-4 col-md-3" style="padding-top: 8px;">
             <h1 class="heading-page text-center-xs">Músicas por e-mail?</h1>
           </div>
-          <form action="http://mail.gustavofurtado.com.br/subscribe" method="POST" id="sugestoes-subscription">
+          <form action="https://mautic.musicasparamissa.com.br/form/submit?formId=1" method="POST" id="sugestoes-subscription-header">
             <input type="hidden" name="list" value="JbGmTEEDc0JKcDmFiosVAQ"/>
+            <input type="hidden" name="mauticform[formId]" id="mauticform_sugestoessignin_id" value="1"/>
+            <input type="hidden" name="mauticform[return]" id="mauticform_sugestoessignin_return" value=""/>
+            <input type="hidden" name="mauticform[formName]" id="mauticform_sugestoessignin_name" value="sugestoessignin"/>
+
             <div class="col-sm-4 col-md-3">
-              <input type="text" class="form-control input-lg" name="name" required="required" id="name" placeholder="Primeiro Nome">
+              <input type="text" class="form-control input-lg" name="mauticform[primeiro_nome]" required="required" id="name" placeholder="Primeiro Nome">
             </div>
             <div class="col-sm-4 col-md-3">
-              <input type="email" class="form-control input-lg" name="email" required="required" id="email" placeholder="E-mail">
+              <input type="email" class="form-control input-lg" name="mauticform[email]" required="required" id="email" placeholder="E-mail">
             </div>
             <div class="col-sm-4 col-md-3">
-              <button type="submit" class="btn btn-primary input-lg btn-z-index" form="sugestoes-subscription" value="Submit"><i class="fa fa-paper-plane"></i>Quero receber as sugestões</button>
+              <button type="submit" class="btn btn-primary input-lg btn-z-index" form="sugestoes-subscription-header" value="Submit"><i class="fa fa-paper-plane"></i>Quero receber as sugestões</button>
             </div>
+
           </form>
         </div>
       </div>
