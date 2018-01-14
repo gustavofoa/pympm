@@ -32,7 +32,7 @@
 
     <div class="star-ratings top-right rgt">
       <div class="sr-stars sr-star gray">
-        <div class="sr-fuel sr-star yellow" style="width:{{ musica.get_formated_rating }}%;"></div>
+        <div class="sr-fuel sr-star yellow" data-star="{{ musica.slug }}"></div>
         <!-- sr-fuel --><a href="#1"></a><a href="#2"></a><a href="#3"></a><a href="#4"></a><a href="#5"></a>
       </div>
     </div>
@@ -52,6 +52,5 @@
 {% include 'banners/banner-adsense-bottom.html' %}
 
 {% include 'proximas-semanas.html' %}
-
 
 {% endblock %}

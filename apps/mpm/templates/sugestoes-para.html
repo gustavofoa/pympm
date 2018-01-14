@@ -58,7 +58,7 @@
             {% for mus in item.sugestaomusica.get_musicas %}
             <div class="star-ratings top-right rgt">
               <div class="sr-stars sr-star gray">
-                <div class="sr-fuel sr-star yellow" style="width:{{ mus.get_formated_rating }}%;"></div>
+                <div class="sr-fuel sr-star yellow" data-star="{{ mus.slug }}"></div>
                 <!-- sr-fuel --><a href="#1"></a><a href="#2"></a><a href="#3"></a><a href="#4"></a><a href="#5"></a>
               </div>
             </div>

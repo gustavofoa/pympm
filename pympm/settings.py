@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv('SECRET_KEY', '*3@=r_c6xobh80utpje=$&-v-u@)ofb56#cg(8^@l-jd-q0-u#')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 DEBUG = False
 STATIC_URL = "https://static.musicasparamissa.com.br/"
-STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 # STATIC_URL = "/static/"
 
 ALLOWED_HOSTS = ['*']

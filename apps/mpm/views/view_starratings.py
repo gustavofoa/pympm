@@ -1,6 +1,7 @@
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, JsonResponse
+from django.views.decorators.cache import cache_control, cache_page
 
 from ..models import Musica
 
@@ -27,3 +28,14 @@ def starratings_ajax(request):
 		return JsonResponse(jsonObj)
 
 	return HttpResponse(str("0"))
+
+@cache_control(max_age = 60 * 60)
+@cache_page(60 * 5)#5 minutes
+def stars(request):
+	musicas = Musica.objects.all()
+
+	jsonObj = {}
+	for musica in musicas:
+		jsonObj[musica.slug] = {"r": musica.rating if musica.rating else 0, "v":musica.votes if musica.votes else 0}
+
+	return JsonResponse(jsonObj)
