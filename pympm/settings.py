@@ -24,7 +24,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '*3@=r_c6xobh80utpje=$&-v-u@)ofb56#cg(8^@l-
 # SECURITY WARNING: don't run with debug turned on in production!
 STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 DEBUG = False
-STATIC_URL = "https://static2.musicasparamissa.com.br/"
+STATIC_URL = "https://static.musicasparamissa.com.br/"
 # STATIC_URL = "/static/"
 
 ALLOWED_HOSTS = ['*']
